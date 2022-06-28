@@ -1,0 +1,18 @@
+.search {
+    @extend %body-primary;
+
+    background: $neutral-gray-lightest;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: $neutral-black;
+
+    &::placeholder {
+        color: $neutral-gray;
+    }
+
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+}
