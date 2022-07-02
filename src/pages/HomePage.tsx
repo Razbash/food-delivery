@@ -3,9 +3,12 @@ import PromoList from "../components/PromoList/PromoList";
 
 const HomePage = () => {
     return(
-        <div className="">
+        <div>
             <Header/>
-            <PromoList/>
+
+            <div className="container">
+                <PromoList/>
+            </div>
         </div>
     )
 }

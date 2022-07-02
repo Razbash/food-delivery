@@ -1,0 +1,53 @@
+.promotion-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    &__item {
+        width: 100%;
+        border-radius: $border-radius;
+        display: flex;
+        overflow: hidden;
+        padding: 24px;
+
+        & + & {
+            margin-left: 20px;
+        }
+    }
+
+    &__info,
+    &__image-wrapper {
+        width: 100%;
+    }
+
+    &__image-wrapper {
+        position: relative;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: -40px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        @extend %h5;
+        color: $neutral-black;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        @extend %h2;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+    }
+
+    &__category {
+        @extend %body-primary;
+        color: $neutral-gray;
+    }
+}
