@@ -1,0 +1,41 @@
+.categories-list {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        outline: 1px solid $neutral-gray-lightest;
+        cursor: pointer;
+        padding: 14px 0;
+        width: 100%;
+        border-radius: 16px;
+        transition: all 0.2s ease-in-out;
+        box-sizing: border-box;
+
+        & + & {
+            margin-left: 30px;
+        }
+
+        &--selected {
+            outline: 2px solid $primary-default;
+            background: $primary-light;
+            color: $primary-default;
+        }
+
+        &:hover,
+        &:focus {
+            outline-color: $primary-hover;
+            background: $primary-lightest;
+        }
+    }
+
+    &__image {
+        margin: 0 auto 12px auto;
+    }
+
+    &__name {
+        @extend %small-primary;
+    }
+}
