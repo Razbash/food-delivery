@@ -1,4 +1,4 @@
-import searchImage from '../../assets/icons/search.svg';
+import SearchIcon from "../../assets/icons/SearchIcon";
 
 const Search = () => {
     return(
@@ -8,12 +8,9 @@ const Search = () => {
                 placeholder="Search"
             />
 
-            <img src={searchImage}
-                alt="Search"
-                className="search__icon"
-                width="16"
-                height="16"
-            />
+            <div className="search__icon">
+                <SearchIcon/>
+            </div>
         </div>
     )
 }
