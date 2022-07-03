@@ -5,14 +5,9 @@ import sushiImage from '../../assets/images/categories/sushi.png';
 import veganImage from '../../assets/images/categories/vegan.png';
 import dessertImage from '../../assets/images/categories/dessert.png';
 import CategoryListItem from '../CategoryListItem/CategoryListItem';
+import { ICategory } from "../../interfaces/ICategory";
 
 const CategoryList = () => {
-    interface ICategory {
-        id: number,
-        name: string,
-        icon: string,
-    }
-
     const categories:Array<ICategory> = [
         {
             id: 0,
@@ -52,21 +47,7 @@ const CategoryList = () => {
                 const {id, name, icon} = element;
 
                 return(
-                    <div className="categories-list__item"
-                        onClick={(e) => e.currentTarget.classList.toggle("categories-list__item--selected")}
-                        key={id}
-                    >
-                        <img src={icon}
-                            alt={name}
-                            className="categories-list__image"
-                            width="24"
-                            height="24"
-                        />
-
-                        <span className="categories-list__name">
-                            {name}
-                        </span>
-                    </div>
+                    <CategoryListItem id={id} name={name} icon={icon} />
                 )
             })}
         </div>
