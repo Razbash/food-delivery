@@ -4,6 +4,7 @@ import bbqImage from '../../assets/images/categories/bbq.png';
 import sushiImage from '../../assets/images/categories/sushi.png';
 import veganImage from '../../assets/images/categories/vegan.png';
 import dessertImage from '../../assets/images/categories/dessert.png';
+import CategoryListItem from '../CategoryListItem/CategoryListItem';
 
 const CategoryList = () => {
     interface ICategory {
@@ -48,12 +49,12 @@ const CategoryList = () => {
     return(
         <div className="categories-list">
             {categories.map(element => {
-                const {name, icon} = element;
+                const {id, name, icon} = element;
 
                 return(
                     <div className="categories-list__item"
                         onClick={(e) => e.currentTarget.classList.toggle("categories-list__item--selected")}
-                        key={element.id}
+                        key={id}
                     >
                         <img src={icon}
                             alt={name}

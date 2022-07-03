@@ -1,0 +1,71 @@
+.reustorants-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 32px;
+
+    &__item {
+        position: relative;
+        border: 1px solid $neutral-gray-lightest;
+        border-radius: $border-radius;
+    }
+
+    &__image {
+        border-radius: $border-radius $border-radius 0 0;
+        height: 160px;
+    }
+
+    &__info {
+        padding: 16px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    &__name {
+        @extend %h6;
+        color: $neutral-black;
+    }
+
+    &__delivery-info {
+        @extend %small-secondary;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $neutral-gray;
+    }
+
+    &__separator {
+        width: 4px;
+        height: 4px;
+        background: $primary-default;
+        border-radius: 50%;
+    }
+
+    &__label {
+        @extend %caption;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-transform: uppercase;
+        color: $neutral-white;
+        padding: 8px 16px;
+        border-radius: 0 $border-radius;
+        background: $primary-default;
+    }
+
+    .cart-icon {
+        width: 20px;
+        height: 20px;
+        fill: $neutral-gray-light;
+    }
+
+    .clock-icon {
+        width: 12px;
+        height: 12px;
+        fill: $neutral-gray-light;
+    }
+}
