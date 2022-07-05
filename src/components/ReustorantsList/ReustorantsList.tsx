@@ -83,46 +83,50 @@ const ReustorantsList = () => {
     ];
 
     return(
-        <div className="reustorants-list">
-            {reustorants.map(element => {
-                const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, categories, featured, image} = element;
-                const backgroundImageStyle = {
-                    'background': 'url(' + image + ')',
-                    'backgroundSize': 'cover',
-                    'backgroundPosition': 'center'
-                }
+        <>
+            <div className="reustorants-list">
+                {reustorants.map(element => {
+                    const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, categories, featured, image} = element;
+                    const backgroundImageStyle = {
+                        'background': 'url(' + image + ')',
+                        'backgroundSize': 'cover',
+                        'backgroundPosition': 'center'
+                    }
 
-                return(
-                    <div className="reustorants-list__item" key={id}>
-                        <div className="reustorants-list__image" style={backgroundImageStyle}></div>
-                        <div className="reustorants-list__info">
-                            <div className="reustorants-list__title">
-                                <h6 className="reustorants-list__name">
-                                    {name}
-                                </h6>
+                    return(
+                        <div className="reustorants-list__item" key={id}>
+                            <div className="reustorants-list__image" style={backgroundImageStyle}></div>
+                            <div className="reustorants-list__info">
+                                <div className="reustorants-list__title">
+                                    <h6 className="reustorants-list__name">
+                                        {name}
+                                    </h6>
 
-                                <CartIcon/>
+                                    <CartIcon/>
+                                </div>
+                                <div className="reustorants-list__delivery-info">
+                                    <span className="reustorants-list__clock-icon">
+                                        <ClockIcon/>
+                                    </span>
+                                    <span>
+                                        {minDeliveryTime}-{maxDeliveryTime} min
+                                    </span>
+                                    <div className="reustorants-list__separator"></div>
+                                    <span>
+                                        ${minAmount} min sum
+                                    </span>
+                                </div>
+                                (Иконка категории)
                             </div>
-                            <div className="reustorants-list__delivery-info">
-                                <span className="reustorants-list__clock-icon">
-                                    <ClockIcon/>
-                                </span>
-                                <span>
-                                    {minDeliveryTime}-{maxDeliveryTime} min
-                                </span>
-                                <div className="reustorants-list__separator"></div>
-                                <span>
-                                    ${minAmount} min sum
-                                </span>
-                            </div>
-                            (Иконка категории)
+
+                            {featured ? <span className="reustorants-list__label">Featured</span> : null}
                         </div>
+                    )
+                })}
+            </div>
 
-                        {featured ? <span className="reustorants-list__label">Featured</span> : null}
-                    </div>
-                )
-            })}
-        </div>
+            <button className="button reustorants-list__load-more-button">Load more</button>
+        </>
     )
 }
 

@@ -1,0 +1,26 @@
+.button {
+    @extend %button-primary;
+    cursor: pointer;
+    color: $primary-default;
+    border: 1px solid $primary-default;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    display: block;
+
+    &--disabled {
+        color: $neutral-gray-light;
+        border-color: $neutral-gray-lightest;
+        opacity: 50%;
+    }
+
+    &:hover {
+        color: $neutral-white;
+        background: $primary-default;
+    }
+
+    &:active {
+        background: $primary-dark;
+    }
+}
