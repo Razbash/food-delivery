@@ -7,8 +7,15 @@
     line-height: 1;
 
     &__primary {
-        color: $neutral-black;
         margin-bottom: 4px;
+
+        &--black {
+            color: $neutral-black;
+        }
+
+        &--white {
+            color: $neutral-white;
+        }
     }
 
     &__secondary {

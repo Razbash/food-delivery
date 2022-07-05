@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header">
             <div className="container header__wrapper">
                 <div className="header__left">
-                    <Logo/>
+                    <Logo color={"black"}/>
                     <Search/>
                 </div>
                 <div className="header__right">
