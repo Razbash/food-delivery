@@ -1,4 +1,4 @@
-import { ICategory } from "../../interfaces/ICategory";
+import ICategory from "../../interfaces/ICategory";
 
 const CategoryListItem = (props: ICategory) => {
     const {id, name, icon} = props;

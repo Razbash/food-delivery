@@ -5,6 +5,7 @@ import './css/general.scss';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const DealsPage = lazy(() => import('./pages/DealsPage'));
+const ReustorantDetailPage = lazy(() => import('./pages/ReustorantDetailPage'));
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <div className="App">
         <Suspense>
           <Routes>
-            <Route path="/" element={<HomePage/>} />
+            {/* <Route path="/" element={<HomePage/>} /> */}
+            <Route path="/" element={<ReustorantDetailPage/>} />
             <Route path="/deals" element={<DealsPage/>} />
           </Routes>
         </Suspense>

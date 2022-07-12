@@ -30,21 +30,6 @@
         color: $neutral-black;
     }
 
-    &__delivery-info {
-        @extend %small-secondary;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: $neutral-gray;
-    }
-
-    &__separator {
-        width: 4px;
-        height: 4px;
-        background: $primary-default;
-        border-radius: 50%;
-    }
-
     &__label {
         @extend %caption;
         position: absolute;
@@ -64,12 +49,6 @@
     .cart-icon {
         width: 20px;
         height: 20px;
-        fill: $neutral-gray-light;
-    }
-
-    .clock-icon {
-        width: 12px;
-        height: 12px;
         fill: $neutral-gray-light;
     }
 }

@@ -1,4 +1,4 @@
-export interface IDeal {
+export default interface IDeal {
     id: number,
     title: string,
     status: string,

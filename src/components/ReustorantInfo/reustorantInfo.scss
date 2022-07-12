@@ -1,0 +1,24 @@
+.reustorant-detail-page {
+    background: $neutral-background;
+    padding: 60px 0;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__image {
+        border-radius: $border-radius;
+        margin-right: 30px;
+    }
+
+    &__name {
+        @extend %h2;
+        color: $neutral-black;
+        margin-bottom: 4px;
+    }
+
+    &__description {
+        @extend %body-primary;
+        color: $neutral-black;
+    }
+}

@@ -1,4 +1,4 @@
-import { IDeal } from "../../interfaces/IDeal";
+import IDeal from "../../interfaces/IDeal";
 import CalendarIcon from "../../assets/icons/CalendarIcon";
 import GeoIcon from "../../assets/icons/GeoIcon";
 

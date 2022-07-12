@@ -5,7 +5,7 @@ import sushiImage from '../../assets/images/categories/sushi.png';
 import veganImage from '../../assets/images/categories/vegan.png';
 import dessertImage from '../../assets/images/categories/dessert.png';
 import CategoryListItem from '../CategoryListItem/CategoryListItem';
-import { ICategory } from "../../interfaces/ICategory";
+import ICategory from "../../interfaces/ICategory";
 
 const CategoryList = () => {
     const categories:Array<ICategory> = [

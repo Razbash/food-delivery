@@ -1,5 +1,5 @@
 import DealsListItem from '../DealsListItem/DealsListItem';
-import { IDeal } from '../../interfaces/IDeal';
+import IDeal from '../../interfaces/IDeal';
 
 import forVeganImage from '../../assets/images/deals/20-for-vegans.png';
 import forMealsImage from '../../assets/images/deals/5-for-meals.png';

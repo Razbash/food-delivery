@@ -4,7 +4,7 @@ import DealsList from "../components/DealsList/DealsList";
 
 const DealsPage = () => {
     return(
-        <div>
+        <>
             <Header/>
 
             <div className="container">
@@ -12,7 +12,7 @@ const DealsPage = () => {
             </div>
 
             <Footer/>
-        </div>
+        </>
     )
 }
 

@@ -5,7 +5,7 @@ import sushiMasterImage from '../../assets/images/reustorants/sushi-master.png';
 import japaneseSushiImage from '../../assets/images/reustorants/japanese-sushi.png';
 import kobeImage from '../../assets/images/reustorants/kobe.png';
 import CartIcon from '../../assets/icons/CartIcon';
-import ClockIcon from '../../assets/icons/ClockIcon';
+import ReustorantDeliveryInfo from '../ReustorantDelivryInfo/ReustorantDeliveryInfo';
 
 interface IReaustorant {
     id: number,
@@ -104,18 +104,12 @@ const ReustorantsList = () => {
 
                                     <CartIcon/>
                                 </div>
-                                <div className="reustorants-list__delivery-info">
-                                    <span className="reustorants-list__clock-icon">
-                                        <ClockIcon/>
-                                    </span>
-                                    <span>
-                                        {minDeliveryTime}-{maxDeliveryTime} min
-                                    </span>
-                                    <div className="reustorants-list__separator"></div>
-                                    <span>
-                                        ${minAmount} min sum
-                                    </span>
-                                </div>
+
+                                <ReustorantDeliveryInfo
+                                    minDeliveryTime={minDeliveryTime}
+                                    maxDeliveryTime={maxDeliveryTime}
+                                    minAmount={minAmount}
+                                />
                                 (Иконка категории)
                             </div>
 
