@@ -1,0 +1,15 @@
+.deals-list {
+    margin-bottom: 30px;
+
+    &__title {
+        @extend %h5;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}

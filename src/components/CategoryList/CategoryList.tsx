@@ -44,10 +44,8 @@ const CategoryList = () => {
     return(
         <div className="categories-list">
             {categories.map(element => {
-                const {id, name, icon} = element;
-
                 return(
-                    <CategoryListItem id={id} name={name} icon={icon} />
+                    <CategoryListItem key={element.id} {...element} />
                 )
             })}
         </div>
