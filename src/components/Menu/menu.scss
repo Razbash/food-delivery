@@ -13,6 +13,11 @@
         cursor: pointer;
         margin-inline-end: 28px;
         transition: color 0.2s ease-in-out;
+        color: $neutral-black;
+
+        a {
+            text-decoration: none;
+        }
 
         &:last-of-type {
             &::before {

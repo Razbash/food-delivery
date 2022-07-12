@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CartIcon from "../../assets/icons/CartIcon";
 import userImage from "../../assets/images/users/user-1.jpg";
 
@@ -5,9 +6,17 @@ const Menu = () => {
     return(
         <div className="menu">
             <ul className="menu__text">
-                <li className="menu__text-item">Restaurants</li>
-                <li className="menu__text-item">Deals</li>
-                <li className="menu__text-item">My orders</li>
+                <li className="menu__text-item">
+                    Restaurants
+                </li>
+                <li className="menu__text-item">
+                    <NavLink to="/deals" end style={({isActive}) => ({color: isActive ? '#4E60FF' : 'inherit'})}>
+                        Deals
+                    </NavLink>
+                </li>
+                <li className="menu__text-item">
+                    My orders
+                </li>
             </ul>
             <div className="menu__cart">
                 <div className="menu__cart-icon">

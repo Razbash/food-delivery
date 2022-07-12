@@ -1,13 +1,24 @@
-import HomePage from './pages/HomePage';
-import DealsPage from './pages/DealsPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
 import './css/general.scss';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const DealsPage = lazy(() => import('./pages/DealsPage'));
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <HomePage/> */}
-      <DealsPage/>
-    </div>
+    <Router>
+      <div className="App">
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/deals" element={<DealsPage/>} />
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 
