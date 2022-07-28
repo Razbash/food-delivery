@@ -6,6 +6,7 @@ import japaneseSushiImage from '../../assets/images/reustorants/japanese-sushi.p
 import kobeImage from '../../assets/images/reustorants/kobe.png';
 import CartIcon from '../../assets/icons/CartIcon';
 import ReustorantDeliveryInfo from '../ReustorantDelivryInfo/ReustorantDeliveryInfo';
+import { Link } from 'react-router-dom';
 
 interface IReaustorant {
     id: number,
@@ -98,9 +99,9 @@ const ReustorantsList = () => {
                             <div className="reustorants-list__image" style={backgroundImageStyle}></div>
                             <div className="reustorants-list__info">
                                 <div className="reustorants-list__title">
-                                    <h6 className="reustorants-list__name">
+                                    <Link to="/reustorants/reustorant" className="reustorants-list__name">
                                         {name}
-                                    </h6>
+                                    </Link>
 
                                     <CartIcon/>
                                 </div>

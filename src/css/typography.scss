@@ -19,6 +19,12 @@
     letter-spacing: 0.1px;
 }
 
+%subtitle-secondary {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+}
+
 %small-primary {
     font-weight: 700;
     font-size: 13px;
@@ -42,6 +48,13 @@
     font-weight: 800;
     font-size: 40px;
     line-height: 56px;
+    letter-spacing: 0.1px;
+}
+
+%h4 {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
     letter-spacing: 0.1px;
 }
 

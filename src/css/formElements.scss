@@ -1,0 +1,8 @@
+.selectbox {
+    @extend %subtitle-secondary;
+    color: $neutral-black;
+    background: $neutral-white;
+    border-radius: 8px;
+    padding: 8px 8px 8px 12px;
+    border: 1px solid $neutral-gray-light;
+}

@@ -1,9 +1,15 @@
 .reustorant-detail-page {
-    background: $neutral-background;
-    padding: 60px 0;
+    margin-bottom: 24px;
+
+    &__header {
+        background: $neutral-background;
+    }
 
     &__wrapper {
         display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 24px 0;
     }
 
     &__image {
@@ -20,5 +26,16 @@
     &__description {
         @extend %body-primary;
         color: $neutral-black;
+        margin-right: 120px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 30px;
+    }
+
+    ymaps {
+        border-radius: 12px;
     }
 }

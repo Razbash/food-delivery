@@ -22,6 +22,7 @@
   },
   "include": [
     "src",
-    "custom.d.ts"
+    "custom.d.ts",
+    "ymaps.d.ts"
   ]
 }

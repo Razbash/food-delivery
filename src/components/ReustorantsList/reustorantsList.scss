@@ -28,6 +28,7 @@
     &__name {
         @extend %h6;
         color: $neutral-black;
+        text-decoration: none;
     }
 
     &__label {

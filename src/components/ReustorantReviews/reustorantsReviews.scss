@@ -1,0 +1,120 @@
+.reustorant-reviews {
+    &__label {
+        @extend %h5;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        border: 1px solid $neutral-gray-lightest;
+        border-radius: $border-radius;
+        padding: 16px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $neutral-gray-lightest;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+
+    &__overall-rating-label {
+        @extend %small-primary;
+        color: $neutral-black;
+        margin-bottom: 4px;
+    }
+
+    &__rating-statictic,
+    &__likes-and-dislikes,
+    &__likes,
+    &__dislikes {
+        display: flex;
+        align-items: center;
+    }
+
+    &__average-score {
+        @extend %h5;
+        color: $primary-default;
+        margin-right: 12px;
+    }
+
+    &__count-votes {
+        @extend %small-tertiary;
+        color: $neutral-gray;
+    }
+
+    &__stars {
+        margin-right: 12px;
+    }
+
+    &__sort {
+        display: block;
+        margin: 0 auto 26px auto;
+    }
+
+    &__list-item {
+        display: flex;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $neutral-gray-lightest;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__user-image {
+        margin-right: 12px;
+        border-radius: 50%;
+    }
+
+    &__user-name {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+    }
+
+    &__user-estimation {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    &__date-publication {
+        @extend %small-tertiary;
+        color: $neutral-gray;
+        margin-left: 10px;
+    }
+
+    &__text {
+        @extend %body-primary;
+        color: $neutral-black;
+        margin-bottom: 12px;
+    }
+
+    &__likes {
+        margin-right: 20px;
+    }
+
+    &__likes-count,
+    &__dislikes-count {
+        @extend %small-secondary;
+    }
+
+    .hand-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .star-icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 4px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

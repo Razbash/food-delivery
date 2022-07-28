@@ -4,6 +4,7 @@
 @import './app.scss';
 @import './typography.scss';
 @import './buttons.scss';
+@import './formElements.scss';
 
 @import '../components/Logo/logo.scss';
 @import '../components//Search/search.scss';
@@ -17,3 +18,5 @@
 @import '../components/DealsListItem/dealsListItem.scss';
 @import '../components/ReustorantInfo/reustorantInfo.scss';
 @import '../components/ReustorantDelivryInfo/reustorantDeliveryInfo.scss';
+@import '../components/ReustorantMenu/reustorantMenu.scss';
+@import '../components/ReustorantReviews/reustorantsReviews.scss';
