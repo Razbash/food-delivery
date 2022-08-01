@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import Spinner from "./tools/Spinner";
 
 import './css/general.scss';
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Suspense>
+        <Suspense fallback={<Spinner/>}>
           <Routes>
             <Route path="/" element={<HomePage/>} />
             <Route path="/reustorants/reustorant" element={<ReustorantDetailPage/>} />
