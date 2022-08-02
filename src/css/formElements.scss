@@ -6,3 +6,141 @@
     padding: 8px 8px 8px 12px;
     border: 1px solid $neutral-gray-light;
 }
+
+.input-label {
+    @extend %small-secondary;
+    color: $neutral-gray-dark;
+    margin-bottom: 4px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.input {
+    @extend %body-primary;
+    color: $neutral-black;
+    padding: 12px;
+    border-radius: 8px;
+    outline: 1px solid $neutral-gray-light;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 1.5px solid $primary-default;
+    }
+}
+
+.input-with-icon {
+    position: relative;
+
+    .icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        width: 28px;
+        height: 20px;
+        stroke: $neutral-gray-light;
+        fill: none;
+        transition: stroke 0.2s ease-in-out;
+
+        &:hover {
+            stroke: $neutral-gray;
+        }
+    }
+
+    .input {
+        padding-right: 40px;
+    }
+
+    .input:focus + .icon {
+        stroke: $neutral-gray;
+    }
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__input + &__label::before {
+        border: 2px solid $neutral-gray-light;
+    }
+
+    &__input:hover:not(:checked):not(:disabled) + &__label::before {
+        border-color: $neutral-gray;
+        background: $neutral-gray-lightest;
+    }
+
+    &__input:not(:disabled):active + &__label::before {
+        border-color: $primary-thirty;
+        background: $primary-thirty;
+    }
+
+    &__input:checked + &__label::before {
+        border-color: $primary-default;
+        background-color: $primary-default;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+
+    &__input:checked:hover + &__label::before {
+        background-color: $primary-hover;
+        border-color: $primary-hover;
+    }
+
+    &__input:checked:active + &__label::before {
+        background-color: $primary-light;
+        border-color: $primary-light;
+    }
+
+    &__input:focus + &__label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    &__input:focus:not(:checked) + &__label::before {
+        border-color: #80bdff;
+    }
+
+    &__input:disabled + &__label {
+        opacity: 40%;
+    }
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #adb5bd;
+            border-radius: 0.25em;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+
+    .check-icon {
+        width: 12px;
+        height: 12px;
+    }
+}

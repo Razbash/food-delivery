@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CartIcon from "../../assets/icons/CartIcon";
 import userImage from "../../assets/images/users/user-1.jpg";
 
@@ -24,12 +24,14 @@ const Menu = () => {
                 </div>
                 <span className="menu__cart-counter">4</span>
             </div>
-            <img src={userImage}
-                alt="User image"
-                className="menu__user-image"
-                width="48"
-                height="48"
-            />
+            <Link to="/auth">
+                <img src={userImage}
+                    alt="User image"
+                    className="menu__user-image"
+                    width="48"
+                    height="48"
+                />
+            </Link>
         </div>
     )
 }

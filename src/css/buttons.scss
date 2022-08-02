@@ -9,15 +9,31 @@
     transition: all 0.2s ease-in-out;
     display: block;
 
+    &--contained {
+        color: $neutral-white;
+        background: $primary-default;
+        box-shadow: 0px 8px 20px rgba(78, 96, 255, 0.16);
+
+        &:hover {
+            background: $primary-hover;
+            box-shadow: 0px 12px 20px rgba(102, 120, 255, 0.24);
+        }
+
+        &:active {
+            background: $primary-dark;
+            box-shadow: 0px 4px 12px rgba(58, 76, 235, 0.2);;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+    }
+
     &--disabled {
         color: $neutral-gray-light;
         border-color: $neutral-gray-lightest;
         opacity: 50%;
-    }
-
-    &:hover {
-        color: $neutral-white;
-        background: $primary-default;
     }
 
     &:active {

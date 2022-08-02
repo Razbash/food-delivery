@@ -1,0 +1,152 @@
+.auth {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    &__background {
+        background: $primary-hover;
+        padding: 48px 68px;
+    }
+
+    &__title {
+        @extend %h3;
+        color: $neutral-white;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    &__text {
+        @extend %body-primary;
+        color: $neutral-white;
+        text-align: center;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    &__gallery {
+        position: relative;
+        height: 100%;
+    }
+
+    &__image {
+        position: absolute;
+        border-radius: 14px;
+        box-shadow: 0px 0px 80px rgba(49, 57, 120, 0.4);
+
+        &--primary {
+            top: 45%;
+            z-index: 1;
+        }
+
+        &--secondary {
+            left: 40%;
+            top: 5%;
+        }
+
+        &--thirty {
+            left: 5%;
+        }
+    }
+
+    &__info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 132px;
+    }
+
+    .logo {
+        margin: 20px 0 auto 0;
+    }
+}
+
+.auth-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__title {
+        @extend %h1;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__subtitle {
+        @extend %body-primary;
+        color: $neutral-gray-dark;
+        margin:  0 0 32px 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+
+    &__forgot-password {
+        @extend %button-primary;
+        color: $primary-default;
+        text-decoration: none;
+        text-align: center;
+        width: auto;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 24px;
+
+        &:hover {
+            color: $primary-hover;
+        }
+
+        &:active {
+            color: $primary-dark;
+        }
+
+        &:focus {
+            outline: 1px solid $primary-default;
+        }
+    }
+
+    &__sign-up {
+        @extend %button-primary;
+        font-weight: 400;
+        margin-bottom: 40px;
+        color: $neutral-gray-dark;
+        display: block;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    &__sign-up-link {
+        @extend %button-primary;
+        color: $primary-default;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary-hover;
+        }
+
+        &:active {
+            color: $primary-dark;
+        }
+
+        &:focus {
+            outline: 1px solid $primary-default;
+        }
+    }
+
+    .checkbox {
+        margin-bottom: 40px;
+    }
+}
