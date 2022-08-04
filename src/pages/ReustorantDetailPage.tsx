@@ -5,7 +5,7 @@ import ReustorantInfo from "../components/ReustorantInfo/ReustorantInfo";
 const ReustorantDetailPage = () => {
     return(
         <>
-            <Header/>
+            <Header type="user"/>
             <ReustorantInfo/>
             <Footer/>
         </>

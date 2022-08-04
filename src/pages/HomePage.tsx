@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 const HomePage = () => {
     return(
         <>
-            <Header/>
+            <Header type="user"/>
 
             <div className="container">
                 <PromoList/>

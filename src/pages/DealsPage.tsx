@@ -5,7 +5,7 @@ import DealsList from "../components/DealsList/DealsList";
 const DealsPage = () => {
     return(
         <>
-            <Header/>
+            <Header type="user"/>
 
             <div className="container">
                 <DealsList/>

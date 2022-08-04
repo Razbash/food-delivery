@@ -1,26 +1,69 @@
 import { NavLink, Link } from "react-router-dom";
 import CartIcon from "../../assets/icons/CartIcon";
+import BellIcon from "../../assets/icons/BellIcon";
 import userImage from "../../assets/images/users/user-1.jpg";
 
-const Menu = () => {
+interface IMenu {
+    type: string;
+}
+
+const Menu = (props: IMenu) => {
+    const userMenu = [
+        {
+            title: "Restaurants",
+            link: "/",
+        },
+        {
+            title: "Deals",
+            link: "/deals",
+        },
+        {
+            title: "My orders",
+            link: "/",
+        }
+    ];
+
+    const adminMenu = [
+        {
+            title: "Dashboard",
+            link: "/",
+        },
+        {
+            title: "Orders",
+            link: "/",
+        },
+        {
+            title: "Customers",
+            link: "/",
+        },
+        {
+            title: "Menu",
+            link: "/",
+        },
+        {
+            title: "Promotions",
+            link: "/",
+        }
+    ];
+
+    const menu = props.type === "user" ? userMenu : adminMenu;
+
     return(
         <div className="menu">
             <ul className="menu__text">
-                <li className="menu__text-item">
-                    Restaurants
-                </li>
-                <li className="menu__text-item">
-                    <NavLink to="/deals" end style={({isActive}) => ({color: isActive ? '#4E60FF' : 'inherit'})}>
-                        Deals
-                    </NavLink>
-                </li>
-                <li className="menu__text-item">
-                    My orders
-                </li>
+                {menu.map((element, index) => {
+                    return(
+                        <li className="menu__text-item" key={index}>
+                            <NavLink to={element.link} end style={({isActive}) => ({color: isActive ? '#4E60FF' : 'inherit'})}>
+                                {element.title}
+                            </NavLink>
+                        </li>
+                    )
+                })}
             </ul>
             <div className="menu__cart">
                 <div className="menu__cart-icon">
-                    <CartIcon/>
+                    {props.type === "user" ? <CartIcon/> : <BellIcon/>}
                 </div>
                 <span className="menu__cart-counter">4</span>
             </div>
