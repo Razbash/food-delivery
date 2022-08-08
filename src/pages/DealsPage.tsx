@@ -8,6 +8,7 @@ const DealsPage = () => {
             <Header type="user"/>
 
             <div className="container">
+                <h5 className="block-title">All deals</h5>
                 <DealsList/>
             </div>
 

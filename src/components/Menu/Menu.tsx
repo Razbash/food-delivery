@@ -26,7 +26,7 @@ const Menu = (props: IMenu) => {
     const adminMenu = [
         {
             title: "Dashboard",
-            link: "/",
+            link: "/admin",
         },
         {
             title: "Orders",
@@ -42,7 +42,7 @@ const Menu = (props: IMenu) => {
         },
         {
             title: "Promotions",
-            link: "/",
+            link: "/admin/deals",
         }
     ];
 
