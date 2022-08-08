@@ -36,7 +36,7 @@ const EnhancedDeals = () => {
                 })}
             </div>
 
-            <DealsList filter={currentTab}/>
+            <DealsList display={currentTab}/>
         </div>
     )
 }

@@ -15,13 +15,12 @@ import { fetchDeals } from '../../store/actions/dealsActions';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
 interface IDealList {
-    filter?: string
+    display: string
 }
 
 const DealsList = (props:IDealList) => {
     const dispatch = useAppDispatch();
     const {error, loading, deals} = useAppSelector(state => state.deals);
-    const filter = props.filter ? props.filter : "all";
 
     useEffect(() => {
         dispatch(fetchDeals());
@@ -31,7 +30,7 @@ const DealsList = (props:IDealList) => {
         <div className="deals-list">
             <div className="deals-list__wrapper">
                 {deals.map(element => {
-                    if (filter === "all" || filter === element.status) {
+                    if (props.display === "all" || props.display === element.status) {
                         return(
                             <DealsListItem key={element.id} {...element} />
                         )

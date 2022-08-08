@@ -9,7 +9,7 @@ const DealsPage = () => {
 
             <div className="container">
                 <h5 className="block-title">All deals</h5>
-                <DealsList/>
+                <DealsList display="all"/>
             </div>
 
             <Footer/>
