@@ -6,7 +6,7 @@ const CategoryListItem = (props: ICategory) => {
     return(
         <div className="categories-list__item"
             onClick={(e) => e.currentTarget.classList.toggle("categories-list__item--selected")}
-            key={id}
+            tabIndex={1}
         >
             <img src={icon}
                 alt={name}
