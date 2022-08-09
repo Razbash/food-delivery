@@ -67,7 +67,7 @@ const Menu = (props: IMenu) => {
                 </div>
                 <span className="menu__cart-counter">4</span>
             </div>
-            <Link to="/auth">
+            <Link to="/user">
                 <img src={userImage}
                     alt="User image"
                     className="menu__user-image"
