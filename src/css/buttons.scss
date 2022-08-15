@@ -25,6 +25,21 @@
         }
     }
 
+    &--contained-light-blue {
+        border: none;
+        background: $primary-light;
+        color: $primary-default;
+
+        &:hover {
+            background: $primary-hover;
+            color: $neutral-white;
+        }
+
+        &:active {
+            background: $primary-dark;
+        }
+    }
+
     &--outlined-blue {
         &:hover {
             background: $primary-default;

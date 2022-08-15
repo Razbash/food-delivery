@@ -1,6 +1,6 @@
 const MastercardIcon = () => {
     return(
-    <svg viewBox="0 0 564.5 366.9">
+    <svg viewBox="0 0 564.5 366.9" className="icon mastercard-icon">
         <g transform="matrix(1.2152823,0,0,1.2152823,-67.025868,-37.711623)">
             <g>
                 <g>

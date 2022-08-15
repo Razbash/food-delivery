@@ -1,0 +1,41 @@
+.summary {
+    &__inputs {
+        margin-bottom: 28px;
+        border-bottom: 1px solid $neutral-gray-lightest;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+    &__label {
+        @extend %body-secondary;
+        color: $neutral-gray-dark;
+
+        &--bold {
+            @extend %body-primary;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+    }
+
+    &__value {
+        @extend %subtitle-secondary;
+        color: $neutral-black;
+
+        &--bold {
+            @extend %subtitle-primary;
+            margin-top: 4px;
+        }
+    }
+
+    &__total {
+        margin-bottom: 16px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

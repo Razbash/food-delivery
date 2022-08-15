@@ -1,0 +1,105 @@
+.payments {
+    &__cards {
+        display: flex;
+        margin-bottom: 48px;
+    }
+
+    &__card-item {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid $neutral-gray-light;
+        margin-right: 16px;
+        min-width: 222px;
+    }
+
+    &__number-and-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    &__number {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+    }
+
+    &__terms {
+        @extend %small-secondary;
+        color: $neutral-gray;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    &__cardholder {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__cardholder-name {
+        @extend %body-secondary;
+        color: $neutral-gray-dark;
+    }
+
+    &__add-new-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__add-new-card-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: $neutral-gray-lightest;
+        cursor: pointer;
+        margin-bottom: 8px;
+    }
+
+    &__add-new-card-text {
+        @extend %small-primary;
+        color: $neutral-gray-dark;
+    }
+
+    &__label {
+        @extend %h6;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__new-card-info {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-gap: 16px;
+    }
+
+    &__new-card-cardholder {
+        margin-bottom: 14px;
+    }
+
+    &__new-card-controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .icon {
+        height: 24px;
+        width: 24px;
+    }
+
+    .dots-icon {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        fill: $neutral-gray-dark;
+    }
+
+    .plus-icon {
+        width: 12px;
+        height: 12px;
+    }
+}
