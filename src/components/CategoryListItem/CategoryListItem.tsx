@@ -1,7 +1,7 @@
 import ICategory from "../../interfaces/ICategory";
 
 const CategoryListItem = (props: ICategory) => {
-    const {id, name, icon} = props;
+    const {title, icon} = props;
 
     return(
         <div className="categories-list__item"
@@ -9,14 +9,14 @@ const CategoryListItem = (props: ICategory) => {
             tabIndex={1}
         >
             <img src={icon}
-                alt={name}
+                alt={title}
                 className="categories-list__image"
                 width="24"
                 height="24"
             />
 
             <span className="categories-list__name">
-                {name}
+                {title}
             </span>
         </div>
     )

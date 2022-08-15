@@ -72,5 +72,37 @@
             "date": "13 April, 2021",
             "reustorant": "Parallax Restaurant"
         }
+    ],
+    "categories": [
+        {
+            "id": 0,
+            "title": "Pizza",
+            "icon": "../../assets/images/categories/pizza.png"
+        },
+        {
+            "id": 1,
+            "title": "Burger",
+            "icon": "../../assets/images/categories/burger.png"
+        },
+        {
+            "id": 2,
+            "title": "BBQ",
+            "icon": "../../assets/images/categories/bbq.png"
+        },
+        {
+            "id": 3,
+            "title": "Sushi",
+            "icon": "../../assets/images/categories/sushi.png"
+        },
+        {
+            "id": 4,
+            "title": "Vegan",
+            "icon": "../../assets/images/categories/vegan.png"
+        },
+        {
+            "id": 5,
+            "title": "Dessert",
+            "icon": "../../assets/images/categories/dessert.png"
+        }
     ]
 }

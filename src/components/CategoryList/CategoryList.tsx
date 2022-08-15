@@ -1,55 +1,46 @@
-import pizzaImage from '../../assets/images/categories/pizza.png';
-import burgerImage from '../../assets/images/categories/burger.png';
-import bbqImage from '../../assets/images/categories/bbq.png';
-import sushiImage from '../../assets/images/categories/sushi.png';
-import veganImage from '../../assets/images/categories/vegan.png';
-import dessertImage from '../../assets/images/categories/dessert.png';
 import CategoryListItem from '../CategoryListItem/CategoryListItem';
-import ICategory from "../../interfaces/ICategory";
+import { useEffect } from 'react';
+import { fetchCategories } from '../../store/actions/categoriesActions';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
 const CategoryList = () => {
-    const categories:Array<ICategory> = [
-        {
-            id: 0,
-            name: "Pizza",
-            icon: pizzaImage,
-        },
-        {
-            id: 1,
-            name: "Burger",
-            icon: burgerImage,
-        },
-        {
-            id: 2,
-            name: "BBQ",
-            icon: bbqImage,
-        },
-        {
-            id: 3,
-            name: "Sushi",
-            icon: sushiImage,
-        },
-        {
-            id: 4,
-            name: "Vegan",
-            icon: veganImage,
-        },
-        {
-            id: 5,
-            name: "Dessert",
-            icon: dessertImage,
-        }
-    ];
+    const dispatch = useAppDispatch();
+    const {error, loading, categories} = useAppSelector(state => state.categories);
+
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, []);
 
     return(
         <div className="categories-list">
-            {categories.map(element => {
+            {loading ? <SkeletonCategoryList/> : null}
+            {error ? <ErrorCategoryList/> : null}
+            {categories ? categories.map(element => {
                 return(
                     <CategoryListItem key={element.id} {...element} />
                 )
-            })}
+            }): null}
         </div>
     );
+}
+
+const SkeletonCategoryList = () => {
+    return(
+        <>
+            <div className="categories-list__skeleton-item"></div>
+            <div className="categories-list__skeleton-item"></div>
+            <div className="categories-list__skeleton-item"></div>
+            <div className="categories-list__skeleton-item"></div>
+            <div className="categories-list__skeleton-item"></div>
+            <div className="categories-list__skeleton-item"></div>
+        </>
+    )
+};
+
+const ErrorCategoryList = () => {
+    return(
+        <span className="categories-list__error">При загрузке данных произошла обшибка! Попробуйте перезагрузить страницу</span>
+    )
 }
 
 export default CategoryList;

@@ -1,5 +1,5 @@
 export default interface ICategory {
     id: number,
-    name: string,
+    title: string,
     icon: string,
 }
