@@ -80,72 +80,23 @@
         color: $neutral-gray-dark;
     }
 
-    &__content {
-        border-radius: $border-radius;
-        border: 1px solid $neutral-gray-lightest;
-        padding: 24px 16px;
-    }
-
-    &__content-title {
+    .user-profile-block-title {
         @extend %h6;
         color: $neutral-black;
         margin-bottom: 16px;
     }
 
-    &__label {
-        @extend %small-secondary;
-        color: $neutral-gray-dark;
-        margin-bottom: 8px;
-        display: block;
-    }
-
-    &__image-controls {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    &__user-image {
+    .user-profile-content {
         border-radius: $border-radius;
-        margin-right: 20px;
+        border: 1px solid $neutral-gray-lightest;
+        padding: 24px 16px;
     }
 
-    &__cnahge-button {
-        margin-right: 20px;
-    }
-
-    &__textareas {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 12px 16px;
-    }
-
-    &__chapter {
+    .user-profile-chapter {
         margin-bottom: 64px;
 
         &:last-of-type {
             margin-bottom: 0;
-        }
-    }
-
-    &__notifications {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 12px;
-        margin-bottom: 36px;
-    }
-
-    &__controls {
-        padding-top: 24px;
-        border-top: 1px solid $neutral-gray-lightest;
-        display: flex;
-
-        .button {
-            margin-right: 16px;
-
-            &:first-of-type {
-                margin-right: auto;
-            }
         }
     }
 }
