@@ -14,6 +14,7 @@ const AuthPage              = lazy(() => import('./pages/AuthPage'));
 const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
 const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
 const CheckoutPage          = lazy(() => import('./pages/CheckoutPage'));
+const ProductDetailPage     = lazy(() => import('./pages/ProductDetailPage'));
 
 const store = setupStore();
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/auth" element={<AuthPage/>} />
               <Route path="/user" element={<UserProfilePage/>} />
               <Route path="/checkout" element={<CheckoutPage/>} />
+              <Route path="/product" element={<ProductDetailPage/>}></Route>
               <Route path="/admin" element={<AdminDashboard/>}></Route>
               <Route path="/admin/deals" element={<AdminDealsPage/>}></Route>
             </Routes>

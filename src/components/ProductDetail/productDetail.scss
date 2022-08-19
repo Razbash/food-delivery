@@ -1,0 +1,125 @@
+.product-detail {
+    margin-bottom: 56px;
+
+    &__image {
+        width: 78px;
+        height: 78px;
+        border-radius: 12px;
+        border: 1px solid $neutral-gray-lightest;
+        margin-bottom: 12px;
+        opacity: 30%;
+        transition: all 0.2s ease-in-out;
+        background-size: cover;
+        background-position: center;
+
+        &--active {
+            opacity: 1;
+            border-color: $primary-default;
+        }
+    }
+
+    &__main-image {
+        width: 635px;
+        height: 480px;
+        border-radius: 12px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__images-gallery,
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__images-gallery {
+        margin-right: 30px;
+    }
+
+    &__images {
+        margin-right: 16px;
+    }
+
+    &__title {
+        @extend %h4;
+        color: $neutral-black;
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        @extend %body-primary;
+        color: $neutral-gray;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid $neutral-gray-lightest;
+    }
+
+    &__price {
+        @extend %h4;
+        color: $neutral-black;
+        margin-right: auto;
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        margin-right: 24px;
+        user-select: none;
+    }
+
+    &__quantity-decrease,
+    &__quantity-value,
+    &__quantity-increase {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+    }
+
+    &__quantity-decrease,
+    &__quantity-increase {
+        border-radius: 8px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $neutral-gray-lightest;
+        cursor: pointer;
+    }
+
+    &__quantity-decrease {
+        margin-right: 8px;
+        transition: opacity 0.2s ease-in-out;
+
+        &--disabled {
+            opacity: 20%;
+            pointer-events: none;
+        }
+    }
+
+    &__quantity-increase {
+        margin-left: 8px;
+    }
+
+    &__additional-info-item {
+        margin-bottom: 24px;
+    }
+
+    &__additional-info-title {
+        @extend %small-primary;
+        color: $neutral-black;
+        margin-bottom: 4px;
+    }
+
+    &__additional-info-value {
+        @extend %body-secondary;
+        color: $neutral-gray;
+    }
+}

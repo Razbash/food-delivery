@@ -1,6 +1,7 @@
 import nigiriSetImage from '../../assets/images/menu/nigiriSet.png';
 import rollSetImage from '../../assets/images/menu/rollSet.png';
 import PlusIcon from '../../assets/icons/PlusIcon';
+import { Link } from 'react-router-dom';
 
 import IReustorantMenu from '../../interfaces/IReustorantMenu';
 
@@ -52,9 +53,9 @@ const ReustorantMenu = () => {
                     return(
                         <div className="reustorant-menu__item" key={id}>
                             <div className="reustorant-menu__image" style={backgroundImageStyle}></div>
-                            <h6 className="reustorant-menu__name">
+                            <Link to="/product" className="reustorant-menu__name">
                                 {name}
-                            </h6>
+                            </Link>
                             <p className="reustorant-menu__description">
                                 {description}
                             </p>

@@ -5,6 +5,7 @@ import Summary from "../Summary/Summary";
 const Checkout = () => {
     return(
         <div className="checkout">
+            {/* TODO: Вынеси в компонент */}
             <div className="checkout__back-to-cart">
                 <ArrowIcon/>
                 <span className="checkout__back-to-cart-text">Back to cart</span>
