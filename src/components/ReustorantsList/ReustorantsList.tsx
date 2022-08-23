@@ -19,7 +19,13 @@ interface IReaustorant {
     image: string,
 }
 
-const ReustorantsList = () => {
+interface IProps {
+    showCounter?: boolean,
+    shortList?: boolean
+}
+
+const ReustorantsList = (props: IProps) => {
+    const {showCounter, shortList} = props;
     const reustorants: IReaustorant[] = [
         {
             id: 0,
@@ -85,6 +91,7 @@ const ReustorantsList = () => {
 
     return(
         <>
+            {showCounter ? <span className="reustorants-list-counter">Found 12 restaurants</span> : null}
             <div className="reustorants-list">
                 {reustorants.map(element => {
                     const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, categories, featured, image} = element;
@@ -120,7 +127,7 @@ const ReustorantsList = () => {
                 })}
             </div>
 
-            <button className="button reustorants-list__load-more-button">Load more</button>
+            {shortList ? <button className="button reustorants-list__load-more-button">Load more</button> : null}
         </>
     )
 }

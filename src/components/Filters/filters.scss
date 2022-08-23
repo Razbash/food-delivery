@@ -1,0 +1,24 @@
+.filters {
+    display: flex;
+    margin-bottom: 32px;
+
+    &__item {
+        @extend %button-secondary;
+        padding: 6px 12px;
+        border-radius: $border-radius;
+        border: 1px solid $neutral-gray-light;
+        text-transform: uppercase;
+        color: $neutral-gray;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        & + & {
+            margin-left: 20px;
+        }
+
+        &:hover {
+            color: $primary-default;
+            border-color: $primary-default;
+        }
+    }
+}

@@ -5,7 +5,6 @@ import Spinner from "./tools/Spinner";
 import './css/general.scss';
 import { Provider } from "react-redux";
 import { setupStore } from "./store";
-import UserProfilePage from "./pages/UserProfilePage";
 
 const HomePage              = lazy(() => import('./pages/HomePage'));
 const DealsPage             = lazy(() => import('./pages/DealsPage'));
@@ -14,7 +13,9 @@ const AuthPage              = lazy(() => import('./pages/AuthPage'));
 const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
 const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
 const CheckoutPage          = lazy(() => import('./pages/CheckoutPage'));
+const UserProfilePage       = lazy(() => import('./pages/UserProfilePage'));
 const ProductDetailPage     = lazy(() => import('./pages/ProductDetailPage'));
+const ReustorantsPage       = lazy(() => import('./pages/ReustorantsPage'));
 
 const store = setupStore();
 
@@ -26,6 +27,7 @@ function App() {
           <Suspense fallback={<Spinner/>}>
             <Routes>
               <Route path="/" element={<HomePage/>} />
+              <Route path="/reustorants" element={<ReustorantsPage/>} />
               <Route path="/reustorants/reustorant" element={<ReustorantDetailPage/>} />
               <Route path="/deals" element={<DealsPage/>} />
               <Route path="/auth" element={<AuthPage/>} />

@@ -12,7 +12,7 @@ const HomePage = () => {
             <div className="container">
                 <PromoList/>
                 <CategoryList/>
-                <ReustorantsList/>
+                <ReustorantsList shortList={true}/>
             </div>
 
             <Footer/>

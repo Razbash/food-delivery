@@ -11,7 +11,7 @@ const Menu = (props: IMenu) => {
     const userMenu = [
         {
             title: "Restaurants",
-            link: "/",
+            link: "/reustorants",
         },
         {
             title: "Deals",
