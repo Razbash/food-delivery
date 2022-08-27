@@ -31,12 +31,6 @@
         grid-gap: 30px;
     }
 
-    &__item {
-        padding: 16px;
-        border-radius: $border-radius;
-        border: 1px solid $neutral-gray-lightest;
-    }
-
     &__label {
         @extend %h6;
         color: $neutral-black;

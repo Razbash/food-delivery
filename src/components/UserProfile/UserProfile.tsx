@@ -4,8 +4,13 @@ import ShieldIcon from "../../assets/icons/ShieldIcon";
 import UserIcon from "../../assets/icons/UserIcon";
 import UserPersonalInformation from "../UserPersonalInformation/UserPersonalInformation";
 import UserAddresses from "../UserAddresses/UserAddresses";
+import Payments from "../Payments/Payments";
+import UserSecurity from "../UserSecurity/UserSecurity";
+import { useState } from "react";
 
 const UserProfile = () => {
+    const [currentTabId, setCurrentTabId] = useState<Number>(0);
+
     const tabs = [
         {
             title: "Account",
@@ -29,6 +34,10 @@ const UserProfile = () => {
         },
     ];
 
+    const onTabClickHandler = (id: number) => {
+        setCurrentTabId(id);
+    }
+
     return(
         <div className="user-profile">
             <div className="user-profile__navigation">
@@ -36,9 +45,14 @@ const UserProfile = () => {
                 <div className="user-profile__tabs">
                     {tabs.map((element, index) => {
                         const {title, description, icon} = element;
+                        const tabMeta = currentTabId === index ? "user-profile__tab-item user-profile__tab-item--active" : "user-profile__tab-item";
 
                         return(
-                            <div className="user-profile__tab-item" key={index} tabIndex={1}>
+                            <div className={tabMeta}
+                                key={index}
+                                tabIndex={1}
+                                onClick={() => onTabClickHandler(index)}
+                            >
                                 <div className="user-profile__tab-icon-wrapper">
                                     {icon}
                                 </div>
@@ -56,8 +70,10 @@ const UserProfile = () => {
                 </div>
             </div>
 
-            {/* <UserPersonalInformation/> */}
-            <UserAddresses/>
+            {currentTabId === 0 ? <UserPersonalInformation/> : null}
+            {currentTabId === 1 ? <UserAddresses/> : null}
+            {currentTabId === 2 ? <Payments title={"Connected payment methods"}/> : null}
+            {currentTabId === 3 ? <UserSecurity/> : null}
         </div>
     )
 }

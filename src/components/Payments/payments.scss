@@ -1,4 +1,8 @@
 .payments {
+    padding: 16px;
+    border-radius: $border-radius;
+    border: 1px solid $neutral-gray-lightest;
+
     &__cards {
         display: flex;
         margin-bottom: 48px;
@@ -84,6 +88,11 @@
     &__new-card-controls {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        .button {
+            margin-left: auto;
+        }
     }
 
     .icon {

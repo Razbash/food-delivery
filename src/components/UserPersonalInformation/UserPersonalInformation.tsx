@@ -3,7 +3,6 @@ import userImage from "../../assets/images/users/user-1.jpg";
 const UserPersonalInformation = () => {
     return(
         <div className="user-personal-information">
-            <h5 className="block-title">Account</h5>
             <div className="user-personal-information__content user-profile-content">
                 <h6 className="user-personal-information__content-title user-profile-block-title">Personal information</h6>
                 <div className="user-personal-information__chapter user-profile-chapter">

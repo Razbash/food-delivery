@@ -1,6 +1,6 @@
 .user-profile {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 350px auto;
     grid-gap: 30px;
     margin-bottom: 24px;
 
@@ -17,8 +17,10 @@
         display: flex;
         align-items: center;
         transition: all 0.2s ease-in-out;
+        cursor: pointer;
 
-        &:hover {
+        &:hover,
+        &--active {
             background: $primary-light;
             outline: 2px solid $primary-default;
 

@@ -13,8 +13,10 @@ const Checkout = () => {
 
             <div className="checkout__wrapper">
                 <div className="checkout__item">
-                    <h6 className="checkout__label">Select payment method</h6>
-                    <Payments/>
+                    <Payments title={"Select payment method"}
+                        cardToAdd={true}
+                        cardSavingCheckbox={true}
+                    />
                 </div>
                 <div className="checkout__item">
                     <h6 className="checkout__label">Payment summary</h6>

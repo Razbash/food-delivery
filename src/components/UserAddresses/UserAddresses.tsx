@@ -35,7 +35,6 @@ const UserAddresses = () => {
 
     return(
         <div className="user-addresses">
-            <h5 className="block-title">Address</h5>
             <div className="user-addresses__content user-profile-content">
                 <h6 className="user-addresses__content-title user-profile-block-title">Existing shipping addresses</h6>
                 <div className="user-addresses__chapter user-profile-chapter">
