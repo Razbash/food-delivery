@@ -21,22 +21,24 @@ const ReustorantInfo = () => {
         <div className="reustorant-detail-page">
             <div className="reustorant-detail-page__header">
                 <div className="container reustorant-detail-page__wrapper">
-                    <img src={reustorantImage}
-                        alt="Royal sushi house"
-                        width="160"
-                        height="160"
-                        className="reustorant-detail-page__image"
-                    />
-
-                    <div className="reustorant-detail-page__info">
-                        <h2 className="reustorant-detail-page__name">Royal sushi house</h2>
-                        <p className="reustorant-detail-page__description">Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.</p>
-
-                        <ReustorantDeliveryInfo
-                            minDeliveryTime={30}
-                            maxDeliveryTime={40}
-                            minAmount={32}
+                    <div className="reustorant-detail-page__image-and-info">
+                        <img src={reustorantImage}
+                            alt="Royal sushi house"
+                            width="160"
+                            height="160"
+                            className="reustorant-detail-page__image"
                         />
+
+                        <div className="reustorant-detail-page__info">
+                            <h2 className="reustorant-detail-page__name">Royal sushi house</h2>
+                            <p className="reustorant-detail-page__description">Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.</p>
+
+                            <ReustorantDeliveryInfo
+                                minDeliveryTime={30}
+                                maxDeliveryTime={40}
+                                minAmount={32}
+                            />
+                        </div>
                     </div>
 
                     <div className="reustorant-detail-page__map-wrapper">

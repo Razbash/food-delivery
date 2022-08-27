@@ -73,3 +73,11 @@
         fill: $primary-default;
     }
 }
+
+@media (max-width: $mobile-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

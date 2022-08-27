@@ -55,7 +55,7 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                         <div className="reustorants-list__image" style={backgroundImageStyle}></div>
                         <div className="reustorants-list__info">
                             <div className="reustorants-list__title">
-                                <Link to="/reustorants/reustorant" className="reustorants-list__name">
+                                <Link to={`/reustorants/reustorant`} className="reustorants-list__name">
                                     {name}
                                 </Link>
 
