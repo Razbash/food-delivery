@@ -61,6 +61,13 @@
         margin: 0 auto 64px auto;
     }
 
+    &__skeleton-item {
+        background: #f6f6f6;
+        height: 264px;
+        border-radius: 16px;
+        animation: .8s infinite loading-blink;
+    }
+
     .cart-icon {
         width: 20px;
         height: 20px;

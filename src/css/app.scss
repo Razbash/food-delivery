@@ -33,3 +33,17 @@ h1, h2, h3, h4, h5, h6 {
     color: $neutral-black;
     margin-bottom: 16px;
 }
+
+@keyframes loading-blink {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}

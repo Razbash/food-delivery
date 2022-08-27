@@ -104,5 +104,67 @@
             "title": "Dessert",
             "icon": "../../assets/images/categories/dessert.png"
         }
+    ],
+    "reustorants" : [
+        {
+            "id": 0,
+            "name": "Royal Sushi House",
+            "minDeliveryTime": 30,
+            "maxDeliveryTime": 40,
+            "minAmount": 32,
+            "categories": ["sushi"],
+            "featured": true,
+            "image": "../../assets/images/reustorants/royal-sushi-house.png"
+        },
+        {
+            "id": 1,
+            "name": "Burgers & Pizza",
+            "minDeliveryTime": 40,
+            "maxDeliveryTime": 60,
+            "minAmount": 24,
+            "categories": ["burger", "pizza"],
+            "featured": true,
+            "image": "../../assets/images/reustorants/burgers-pizza.png"
+        },
+        {
+            "id": 2,
+            "name": "Ninja Sushi",
+            "minDeliveryTime": 20,
+            "maxDeliveryTime": 40,
+            "minAmount": 40,
+            "categories": ["sushi"],
+            "featured": false,
+            "image": "../../assets/images/reustorants/ninja-sushi.png"
+        },
+        {
+            "id": 3,
+            "name": "Sushi Master",
+            "minDeliveryTime": 60,
+            "maxDeliveryTime": 70,
+            "minAmount": 49,
+            "categories": ["sushi"],
+            "featured": false,
+            "image": "../../assets/images/reustorants/sushi-master.png"
+        },
+        {
+            "id": 4,
+            "name": "Japanese Sushi",
+            "minDeliveryTime": 30,
+            "maxDeliveryTime": 50,
+            "minAmount": 104,
+            "categories": ["sushi"],
+            "featured": false,
+            "image": "../../assets/images/reustorants/japanese-sushi.png"
+        },
+        {
+            "id": 5,
+            "name": "Kobe",
+            "minDeliveryTime": 20,
+            "maxDeliveryTime": 30,
+            "minAmount": 57,
+            "categories": ["sushi"],
+            "featured": false,
+            "image": "../../assets/images/reustorants/kobe.png"
+        }
     ]
 }

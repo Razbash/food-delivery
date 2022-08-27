@@ -1,17 +1,3 @@
-@keyframes loading-blink {
-    0% {
-        opacity: .5;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: .5;
-    }
-  }
-
 .categories-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
