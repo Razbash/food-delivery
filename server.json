@@ -114,7 +114,61 @@
             "minAmount": 32,
             "categories": ["sushi"],
             "featured": true,
-            "image": "../../assets/images/reustorants/royal-sushi-house.png"
+            "image": "../../assets/images/reustorants/royal-sushi-house.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         },
         {
             "id": 1,
@@ -124,7 +178,61 @@
             "minAmount": 24,
             "categories": ["burger", "pizza"],
             "featured": true,
-            "image": "../../assets/images/reustorants/burgers-pizza.png"
+            "image": "../../assets/images/reustorants/burgers-pizza.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         },
         {
             "id": 2,
@@ -134,7 +242,61 @@
             "minAmount": 40,
             "categories": ["sushi"],
             "featured": false,
-            "image": "../../assets/images/reustorants/ninja-sushi.png"
+            "image": "../../assets/images/reustorants/ninja-sushi.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         },
         {
             "id": 3,
@@ -144,7 +306,61 @@
             "minAmount": 49,
             "categories": ["sushi"],
             "featured": false,
-            "image": "../../assets/images/reustorants/sushi-master.png"
+            "image": "../../assets/images/reustorants/sushi-master.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         },
         {
             "id": 4,
@@ -154,7 +370,61 @@
             "minAmount": 104,
             "categories": ["sushi"],
             "featured": false,
-            "image": "../../assets/images/reustorants/japanese-sushi.png"
+            "image": "../../assets/images/reustorants/japanese-sushi.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         },
         {
             "id": 5,
@@ -164,7 +434,61 @@
             "minAmount": 57,
             "categories": ["sushi"],
             "featured": false,
-            "image": "../../assets/images/reustorants/kobe.png"
+            "image": "../../assets/images/reustorants/kobe.png",
+            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+            "coordinates": [-33.517315, 164.182682],
+            "reviews": [
+                {
+                    "id": 0,
+                    "userName": "Savannah Miles",
+                    "userImage": "../../assets/images/users/miles.png",
+                    "dateOfPublication": "10 days ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                },
+                {
+                    "id": 1,
+                    "userName": "Jacob Jones",
+                    "userImage": "../../assets/images/users/jacob.png",
+                    "dateOfPublication": "1 day ago",
+                    "estimate": 4,
+                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+                    "likes": 14,
+                    "dislikes": 4
+                }
+            ],
+            "menu": [
+                {
+                    "id": 0,
+                    "name": "Nigiri set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 16.80,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 1,
+                    "name": "Roll set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 22.56,
+                    "image": "../../assets/images/menu/rollSet.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Star set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 50.56,
+                    "image": "../../assets/images/menu/nigiriSet.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Razbash set",
+                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+                    "price": 55.00,
+                    "image": "../../assets/images/menu/rollSet.png"
+                }
+            ]
         }
     ]
 }

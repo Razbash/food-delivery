@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import dealsReducer from './slices/dealsSlice';
 import categoriesReducer from './slices/caregoriesSlice';
 import reustorantsReducer from './slices/reustorantsSlice';
+import reustorantReducer from './slices/reustorantSlice';
 
 const rootReducer = combineReducers({
     deals: dealsReducer,
     categories: categoriesReducer,
     reustorants: reustorantsReducer,
+    reustorant: reustorantReducer
 });
 
 export function setupStore() {

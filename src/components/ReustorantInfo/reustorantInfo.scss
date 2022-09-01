@@ -20,6 +20,11 @@
     &__image {
         border-radius: $border-radius;
         margin-right: 30px;
+        width: 160px;
+        height: 160px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
     }
 
     &__name {

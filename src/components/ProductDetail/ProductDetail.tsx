@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
 // TODO: Убери
 import one from "../../assets/images/products/1.png";
@@ -9,6 +10,7 @@ import four from "../../assets/images/products/4.png";
 const ProductDetail = () => {
     const [activeImage, setActiveImage] = useState<number>(0);
     const [counter, setCounter] = useState<number>(1);
+    const {reustorantId} = useParams();
 
     const images = [one, two, three, four];
     const quantityDecreaseMeta = counter === 1

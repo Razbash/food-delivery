@@ -1,32 +1,16 @@
 import StarIcon from "../../assets/icons/StarIcon";
 import HandIcon from "../../assets/icons/HandIcon";
-import milesImage from "../../assets/images/users/miles.png";
-import jacobImage from "../../assets/images/users/jacob.png";
-import IReview from "../../interfaces/IReview";
+import IReustorantReviews from "../../interfaces/IReustorantReviews";
 
-const ReustorantReviews = () => {
-    const reviews:Array<IReview> = [
-        {
-            id: 0,
-            userName: "Savannah Miles",
-            estimation: 5,
-            date: "10 days ago",
-            review: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-            likes: 14,
-            dislikes: 4,
-            image: milesImage
-        },
-        {
-            id: 1,
-            userName: "Jacob Jones",
-            estimation: 4,
-            date: "1 day ago",
-            review: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-            likes: 14,
-            dislikes: 4,
-            image: jacobImage
-        }
-    ];
+interface IReustorantReviewsProps {
+    reviews: IReustorantReviews[]
+}
+
+const ReustorantReviews = (props: IReustorantReviewsProps) => {
+    const {reviews} = props;
+    const countVotes = reviews.length;
+
+    const calculateOverallRating = () => (reviews.reduce((sum, item) => Number(sum) + Number(item.estimate), 0) / reviews.length).toFixed(1);
 
     return(
         <div className="reustorant-reviews">
@@ -39,7 +23,7 @@ const ReustorantReviews = () => {
                             Overall rating
                         </span>
                         <div className="reustorant-reviews__rating-statictic">
-                            <span className="reustorant-reviews__average-score">4.2</span>
+                            <span className="reustorant-reviews__average-score">{calculateOverallRating()}</span>
                             <div className="reustorant-reviews__stars">
                                 <StarIcon fill={true}/>
                                 <StarIcon fill={true}/>
@@ -47,9 +31,7 @@ const ReustorantReviews = () => {
                                 <StarIcon fill={true}/>
                                 <StarIcon fill={false}/>
                             </div>
-                            <span className="reustorant-reviews__count-votes">
-                                3 votes
-                            </span>
+                            <span className="reustorant-reviews__count-votes">{countVotes} votes</span>
                         </div>
                     </div>
                     <button className="button">Leave review</button>
@@ -62,11 +44,11 @@ const ReustorantReviews = () => {
                 </select>
                 <div className="reustorant-reviews__list">
                     {reviews.map(element => {
-                        const {id, userName, estimation, date, review, likes, dislikes, image} = element;
+                        const {id, userName, userImage, dateOfPublication, estimate, feedback, likes, dislikes} = element;
 
                         return(
                             <div className="reustorant-reviews__list-item" key={id}>
-                                <img src={image}
+                                <img src={userImage}
                                     alt={userName}
                                     className="reustorant-reviews__user-image"
                                     width={36}
@@ -85,11 +67,11 @@ const ReustorantReviews = () => {
                                         <StarIcon fill={false}/>
 
                                         <span className="reustorant-reviews__date-publication">
-                                            {date}
+                                            {dateOfPublication}
                                         </span>
                                     </div>
                                     <div className="reustorant-reviews__text">
-                                        {review}
+                                        {feedback}
                                     </div>
                                     <div className="reustorant-reviews__likes-and-dislikes">
                                         <div className="reustorant-reviews__likes">

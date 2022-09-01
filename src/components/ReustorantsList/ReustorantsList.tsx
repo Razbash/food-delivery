@@ -51,13 +51,13 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                 }
 
                 return(
-                    <div className="reustorants-list__item" key={id}>
+                    <Link to={`/reustorant/${id}`} className="reustorants-list__item" key={id}>
                         <div className="reustorants-list__image" style={backgroundImageStyle}></div>
                         <div className="reustorants-list__info">
                             <div className="reustorants-list__title">
-                                <Link to={`/reustorants/reustorant`} className="reustorants-list__name">
+                                <h3 className="reustorants-list__name">
                                     {name}
-                                </Link>
+                                </h3>
 
                                 <CartIcon/>
                             </div>
@@ -71,7 +71,7 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                         </div>
 
                         {featured ? <span className="reustorants-list__label">Featured</span> : null}
-                    </div>
+                    </Link>
                 )
             })}
         </>

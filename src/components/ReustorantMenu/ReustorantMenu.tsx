@@ -1,41 +1,13 @@
-import nigiriSetImage from '../../assets/images/menu/nigiriSet.png';
-import rollSetImage from '../../assets/images/menu/rollSet.png';
 import PlusIcon from '../../assets/icons/PlusIcon';
 import { Link } from 'react-router-dom';
-
 import IReustorantMenu from '../../interfaces/IReustorantMenu';
 
-const ReustorantMenu = () => {
-    const menu:Array<IReustorantMenu> = [
-        {
-            id: 0,
-            name: "Nigiri set",
-            description: "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            price: 16.80,
-            image: nigiriSetImage
-        },
-        {
-            id: 1,
-            name: "Roll set",
-            description: "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            price: 22.56,
-            image: rollSetImage
-        },
-        {
-            id: 2,
-            name: "Star set",
-            description: "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            price: 50.56,
-            image: nigiriSetImage
-        },
-        {
-            id: 3,
-            name: "Razbash set",
-            description: "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            price: 55.00,
-            image: rollSetImage
-        }
-    ];
+interface IreustorantMenuProps {
+    menu: IReustorantMenu[]
+}
+
+const ReustorantMenu = (props: IreustorantMenuProps) => {
+    const {menu} = props;
 
     return(
         <div className="reustorant-menu">

@@ -4,25 +4,35 @@ import IReaustorant from '../../interfaces/IReustorant';
 interface ReustorantState {
     loading: boolean,
     error: string,
-    reustorants: IReaustorant[],
+    reustorant: IReaustorant,
 }
 
 const initialState:ReustorantState = {
     loading: false,
     error: '',
-    reustorants: [],
+    reustorant: {
+        id: 0,
+        name: "",
+        minDeliveryTime: 0,
+        maxDeliveryTime: 0,
+        minAmount: 0,
+        categories: [],
+        featured: false,
+        image: "",
+        description: ""
+    },
 }
 
-export const reustorantsSlice = createSlice({
-    name: 'reustorants',
+export const reustorantSlice = createSlice({
+    name: 'reustorant',
     initialState: initialState,
     reducers: {
         fetching(state) {
             state.loading = true;
         },
-        fetchSuccess(state, action: PayloadAction<IReaustorant[]>) {
+        fetchSuccess(state, action: PayloadAction<IReaustorant>) {
             state.loading = false;
-            state.reustorants = action.payload;
+            state.reustorant = action.payload;
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.loading = false;
@@ -31,4 +41,4 @@ export const reustorantsSlice = createSlice({
     }
 })
 
-export default reustorantsSlice.reducer;
+export default reustorantSlice.reducer;
