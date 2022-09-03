@@ -37,8 +37,8 @@ const Menu = (props: IMenu) => {
             link: "/",
         },
         {
-            title: "Menu",
-            link: "/",
+            title: "Reustorants",
+            link: "/admin/reustorants",
         },
         {
             title: "Promotions",

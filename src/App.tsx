@@ -10,12 +10,14 @@ const HomePage              = lazy(() => import('./pages/HomePage'));
 const DealsPage             = lazy(() => import('./pages/DealsPage'));
 const ReustorantDetailPage  = lazy(() => import('./pages/ReustorantDetailPage'));
 const AuthPage              = lazy(() => import('./pages/AuthPage'));
-const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
-const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
 const CheckoutPage          = lazy(() => import('./pages/CheckoutPage'));
 const UserProfilePage       = lazy(() => import('./pages/UserProfilePage'));
 const ProductDetailPage     = lazy(() => import('./pages/ProductDetailPage'));
 const ReustorantsPage       = lazy(() => import('./pages/ReustorantsPage'));
+
+const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
+const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
+const AdminReustorantsPage  = lazy(() => import('./pages/AdminReustorantsPage'));
 
 const store = setupStore();
 
@@ -36,6 +38,7 @@ function App() {
               <Route path="/product" element={<ProductDetailPage/>}></Route>
               <Route path="/admin" element={<AdminDashboard/>}></Route>
               <Route path="/admin/deals" element={<AdminDealsPage/>}></Route>
+              <Route path="/admin/reustorants" element={<AdminReustorantsPage/>}></Route>
             </Routes>
           </Suspense>
         </div>
