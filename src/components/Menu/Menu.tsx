@@ -19,7 +19,7 @@ const Menu = (props: IMenu) => {
         },
         {
             title: "My orders",
-            link: "/",
+            link: "/orders",
         }
     ];
 
