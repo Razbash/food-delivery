@@ -19,6 +19,7 @@ const UserOrdersPage        = lazy(() => import('./pages/UserOrdersPage'));
 const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
 const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
 const AdminReustorantsPage  = lazy(() => import('./pages/AdminReustorantsPage'));
+const AdminOrdersPage       = lazy(() => import('./pages/AdminOrdersPage'));
 
 const store = setupStore();
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="/admin" element={<AdminDashboard/>}></Route>
               <Route path="/admin/deals" element={<AdminDealsPage/>}></Route>
               <Route path="/admin/reustorants" element={<AdminReustorantsPage/>}></Route>
+              <Route path="/admin/orders" element={<AdminOrdersPage/>}></Route>
             </Routes>
           </Suspense>
         </div>

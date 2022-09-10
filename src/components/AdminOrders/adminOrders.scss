@@ -1,0 +1,39 @@
+.admin-orders {
+    .user-orders {
+        &__header,
+        &__table {
+            grid-template-columns: 1fr repeat(2, 2fr) repeat(4, 1fr);
+        }
+
+        &__header-item {
+            &:last-of-type {
+                text-align: initial;
+            }
+        }
+
+        &__table-item {
+            &--customer {
+                display: flex;
+                align-items: center;
+            }
+
+            &--total-amount {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 24px;
+            }
+        }
+
+        &__customer-image {
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+    }
+
+    .dots-icon {
+        width: 20px;
+        height: 20px;
+        fill: $neutral-gray;
+    }
+}

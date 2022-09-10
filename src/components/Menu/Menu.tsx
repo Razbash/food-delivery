@@ -30,7 +30,7 @@ const Menu = (props: IMenu) => {
         },
         {
             title: "Orders",
-            link: "/",
+            link: "/admin/orders",
         },
         {
             title: "Customers",

@@ -56,7 +56,7 @@ const UserOrders = () => {
                 const {id, reustorant, date, time, status, totalAmount} = element;
                 const statusMeta = 'user-orders__status user-orders__status--' + status;
                 return(
-                    <div className="user-orders__table">
+                    <div className="user-orders__table" key={id}>
                         <span className="user-orders__table-item">{id}</span>
                         <span className="user-orders__table-item user-orders__table-item--link">{reustorant}</span>
                         <span className="user-orders__table-item">{date}</span>
