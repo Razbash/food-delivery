@@ -25,7 +25,9 @@ const ReustorantInfo = () => {
 
     useEffect(() => {
         dispatch(fetchReustorant({id: Number(reustorantId)}));
+    }, []);
 
+    if (coordinates) {
         ymaps.ready().then(() => {
             let map =  new ymaps.Map("reustorant_location", {
                 center: coordinates,
@@ -33,7 +35,7 @@ const ReustorantInfo = () => {
                 controls: ['none']
             });
         });
-    }, []);
+    }
 
     return(
         <div className="reustorant-detail-page">

@@ -45,6 +45,10 @@
         grid-gap: 30px;
     }
 
+    &__map {
+        overflow: hidden;
+    }
+
     ymaps {
         border-radius: 12px;
     }
