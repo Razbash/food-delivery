@@ -1,0 +1,23 @@
+.options-panel {
+    border-radius: $border-radius;
+    background: $neutral-white;
+    border: 1px solid $neutral-gray-lightest;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+
+    &__item {
+        text-align: left;
+        color: $neutral-gray;
+        margin-bottom: 8px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}
