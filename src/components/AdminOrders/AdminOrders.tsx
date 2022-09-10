@@ -1,59 +1,15 @@
+import { useEffect } from 'react';
 import DotsIcon from '../../assets/icons/DotsIcon';
-import userImage from '../../assets/images/users/user-1.jpg';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { fetchOrders } from '../../store/actions/ordersActions';
 
 const AdminOders = () => {
-    const orders = [
-        {
-            id: 0,
-            customerName: "Leslie Alexander",
-            customerImage: userImage,
-            address: "8502 Preston Rd. Inglewood",
-            creationDate: "21 Apr, 2021",
-            creationTime: "05:51 pm",
-            status: "in progress",
-            totalAmount: "149.40",
-        },
-        {
-            id: 1,
-            customerName: "Cody Fisher",
-            customerImage: userImage,
-            address: "3517 W. Gray St. Utica",
-            creationDate: "20 Apr, 2021",
-            creationTime: "07:38 am",
-            status: "in progress",
-            totalAmount: "351.22",
-        },
-        {
-            id: 2,
-            customerName: "Kristin Watson",
-            customerImage: userImage,
-            address: "6391 Elgin St. Celina",
-            creationDate: "21 Apr, 2021",
-            creationTime: "05:49 pm",
-            status: "completed",
-            totalAmount: "258.28",
-        },
-        {
-            id: 3,
-            customerName: "Annette Black",
-            customerImage: userImage,
-            address: "1901 Thornridge Cir. Shiloh",
-            creationDate: "20 Apr, 2021",
-            creationTime: "04:02 pm",
-            status: "completed",
-            totalAmount: "795.86",
-        },
-        {
-            id: 4,
-            customerName: "Robert Fox",
-            customerImage: userImage,
-            address: "2715 Ash Dr. San Jose",
-            creationDate: "21 Apr, 2021",
-            creationTime: "04:01 pm",
-            status: "completed",
-            totalAmount: "162.24",
-        },
-    ]
+    const dispatch = useAppDispatch();
+    const {error, loading, orders} = useAppSelector(state => state.orders);
+
+    useEffect(() => {
+        dispatch(fetchOrders());
+    }, []);
 
     return(
         // TODO: fixme

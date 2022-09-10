@@ -490,5 +490,57 @@
                 }
             ]
         }
+    ],
+    "orders": [
+        {
+            "id": 0,
+            "customerName": "Leslie Alexander",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "address": "8502 Preston Rd. Inglewood",
+            "creationDate": "21 Apr, 2021",
+            "creationTime": "05:51 pm",
+            "status": "in progress",
+            "totalAmount": "149.40"
+        },
+        {
+            "id": 1,
+            "customerName": "Cody Fisher",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "address": "3517 W. Gray St. Utica",
+            "creationDate": "20 Apr, 2021",
+            "creationTime": "07:38 am",
+            "status": "in progress",
+            "totalAmount": "351.22"
+        },
+        {
+            "id": 2,
+            "customerName": "Kristin Watson",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "address": "6391 Elgin St. Celina",
+            "creationDate": "21 Apr, 2021",
+            "creationTime": "05:49 pm",
+            "status": "completed",
+            "totalAmount": "258.28"
+        },
+        {
+            "id": 3,
+            "customerName": "Annette Black",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "address": "1901 Thornridge Cir. Shiloh",
+            "creationDate": "20 Apr, 2021",
+            "creationTime": "04:02 pm",
+            "status": "completed",
+            "totalAmount": "795.86"
+        },
+        {
+            "id": 4,
+            "customerName": "Robert Fox",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "address": "2715 Ash Dr. San Jose",
+            "creationDate": "21 Apr, 2021",
+            "creationTime": "04:01 pm",
+            "status": "completed",
+            "totalAmount": "162.24"
+        }
     ]
 }

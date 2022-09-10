@@ -3,12 +3,14 @@ import dealsReducer from './slices/dealsSlice';
 import categoriesReducer from './slices/caregoriesSlice';
 import reustorantsReducer from './slices/reustorantsSlice';
 import reustorantReducer from './slices/reustorantSlice';
+import ordersReducer from './slices/ordersSlice';
 
 const rootReducer = combineReducers({
     deals: dealsReducer,
     categories: categoriesReducer,
     reustorants: reustorantsReducer,
-    reustorant: reustorantReducer
+    reustorant: reustorantReducer,
+    orders: ordersReducer,
 });
 
 export function setupStore() {
