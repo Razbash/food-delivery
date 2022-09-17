@@ -7,21 +7,13 @@ import { fetchReustorant } from "../../store/actions/reustorantActions";
 import ReustorantDeliveryInfo from "../ReustorantDelivryInfo/ReustorantDeliveryInfo";
 import ReustorantMenu from "../ReustorantMenu/ReustorantMenu";
 import ReustorantReviews from "../ReustorantReviews/ReustorantReviews";
+import IReaustorant from "../../interfaces/IReustorant";
 
 const ReustorantInfo = () => {
     const dispatch = useAppDispatch();
     const {error, loading, reustorant} = useAppSelector(state => state.reustorant);
     const {reustorantId} = useParams();
-    const {image,
-        name,
-        description,
-        coordinates,
-        menu,
-        minDeliveryTime,
-        maxDeliveryTime,
-        minAmount,
-        reviews,
-    } = reustorant;
+    const {coordinates} = reustorant;
 
     useEffect(() => {
         dispatch(fetchReustorant({id: Number(reustorantId)}));
@@ -36,6 +28,38 @@ const ReustorantInfo = () => {
             });
         });
     }
+
+    return(
+        <>
+            {loading ? <SkeletonReustorantInfo/> : null}
+            {error ? <ErrorReustorantInfo/> : null}
+            {reustorant ? <ReustorantInfoRender {...reustorant}/> : null}
+        </>
+    )
+}
+
+const SkeletonReustorantInfo = () => {
+    return(
+        <div className="reustorant-detail-page reustorant-detail-page--skeleton">
+            <div className="reustorant-detail-page__header"></div>
+            <div className="reustorant-detail-page__content container">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    )
+}
+
+const ReustorantInfoRender = (props: IReaustorant) => {
+    const {image,
+        name,
+        description,
+        menu,
+        minDeliveryTime,
+        maxDeliveryTime,
+        minAmount,
+        reviews,
+    } = props;
 
     return(
         <div className="reustorant-detail-page">
@@ -69,6 +93,12 @@ const ReustorantInfo = () => {
                 {reviews ? <ReustorantReviews reviews={reviews}/> : null}
             </div>
         </div>
+    )
+}
+
+const ErrorReustorantInfo = () => {
+    return(
+        <span className="categories-list__error">При загрузке данных произошла обшибка! Попробуйте перезагрузить страницу</span>
     )
 }
 

@@ -52,6 +52,22 @@
     ymaps {
         border-radius: 12px;
     }
+
+    &--skeleton &__header,
+    &--skeleton &__content div {
+        background: #f6f6f6;
+        animation: .8s infinite loading-blink;
+        margin-bottom: 30px;
+        border-radius: 16px;
+    }
+
+    &--skeleton &__header {
+        height: 278px;
+    }
+
+    &--skeleton &__content div {
+        height: 690px;
+    }
 }
 
 @media (max-width: $wide-tablet-width) {
