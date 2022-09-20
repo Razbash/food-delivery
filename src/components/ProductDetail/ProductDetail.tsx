@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
-// TODO: Убери
-import one from "../../assets/images/products/1.png";
-import two from "../../assets/images/products/2.png";
-import three from "../../assets/images/products/3.png";
-import four from "../../assets/images/products/4.png";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchProduct } from "../../store/actions/productAction";
 
@@ -29,7 +24,8 @@ const ProductDetail = () => {
         image,
         ingredients,
         nutritionalValue,
-        images
+        images,
+        reustorant
     } = product;
 
     const quantityDecreaseMeta = counter === 1
@@ -59,7 +55,7 @@ const ProductDetail = () => {
             {/* TODO: Вынеси в компонент */}
             <div className="checkout__back-to-cart">
                 <ArrowIcon/>
-                <span className="checkout__back-to-cart-text">Royal Sushi House</span>
+                <span className="checkout__back-to-cart-text">{reustorant}</span>
             </div>
             <div className="product-detail__wrapper">
                 <div className="product-detail__images-gallery">
@@ -77,7 +73,7 @@ const ProductDetail = () => {
                                 <div className={imageMeta}
                                     key={index}
                                     style={imageStyle}
-                                    onClick={() => switchImage(index)}
+                                    onMouseEnter={() => switchImage(index)}
                                 ></div>
                             )
                         })}

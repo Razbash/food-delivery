@@ -25,7 +25,7 @@ const ReustorantMenu = (props: IreustorantMenuProps) => {
                     return(
                         <div className="reustorant-menu__item" key={id}>
                             <div className="reustorant-menu__image" style={backgroundImageStyle}></div>
-                            <Link to="/product/0" className="reustorant-menu__name">
+                            <Link to={`/products/${id}`} className="reustorant-menu__name">
                                 {name}
                             </Link>
                             <p className="reustorant-menu__description">

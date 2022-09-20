@@ -10,7 +10,7 @@ export const fetchProduct = (props: IFetchProductProps) => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(productSlice.actions.fetching());
-            const response = await axios.get(`product/${props.id}`);
+            const response = await axios.get(`products/${props.id}`);
             dispatch(productSlice.actions.fetchSuccess(response.data));
         } catch (error) {
             dispatch(productSlice.actions.fetchError(error as Error));

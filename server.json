@@ -138,44 +138,6 @@
                     "likes": 14,
                     "dislikes": 4
                 }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png",
-                    "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
-                    "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-                    "images": [
-                        {"0": "../../assets/images/products/1.png"},
-                        {"1": "../../assets/images/products/2.png"},
-                        {"2": "../../assets/images/products/3.png"},
-                        {"3": "../../assets/images/products/4.png"}
-                    ]
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
-                }
             ]
         },
         {
@@ -209,36 +171,6 @@
                     "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
                     "likes": 14,
                     "dislikes": 4
-                }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
                 }
             ]
         },
@@ -274,36 +206,6 @@
                     "likes": 14,
                     "dislikes": 4
                 }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
-                }
             ]
         },
         {
@@ -337,36 +239,6 @@
                     "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
                     "likes": 14,
                     "dislikes": 4
-                }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
                 }
             ]
         },
@@ -402,36 +274,6 @@
                     "likes": 14,
                     "dislikes": 4
                 }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
-                }
             ]
         },
         {
@@ -465,36 +307,6 @@
                     "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
                     "likes": 14,
                     "dislikes": 4
-                }
-            ],
-            "menu": [
-                {
-                    "id": 0,
-                    "name": "Nigiri set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 1,
-                    "name": "Roll set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 22.56,
-                    "image": "../../assets/images/menu/rollSet.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Star set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 50.56,
-                    "image": "../../assets/images/menu/nigiriSet.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Razbash set",
-                    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-                    "price": 55.00,
-                    "image": "../../assets/images/menu/rollSet.png"
                 }
             ]
         }
@@ -551,7 +363,7 @@
             "totalAmount": "162.24"
         }
     ],
-    "product": [
+    "products": [
         {
             "id": 0,
             "name": "Nigiri set",
@@ -560,12 +372,34 @@
             "image": "../../assets/images/menu/nigiriSet.png",
             "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
             "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
+            "reustorant": "Royal Sushi House",
             "images": [
                 "../../assets/images/products/1.png",
                 "../../assets/images/products/2.png",
                 "../../assets/images/products/3.png",
                 "../../assets/images/products/4.png"
             ]
+        },
+        {
+            "id": 1,
+            "name": "Roll set",
+            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+            "price": 22.56,
+            "image": "../../assets/images/menu/rollSet.png"
+        },
+        {
+            "id": 2,
+            "name": "Star set",
+            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+            "price": 50.56,
+            "image": "../../assets/images/menu/nigiriSet.png"
+        },
+        {
+            "id": 3,
+            "name": "Razbash set",
+            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+            "price": 55.00,
+            "image": "../../assets/images/menu/rollSet.png"
         }
     ]
 }

@@ -6,6 +6,7 @@ interface IProduct {
     image: string,
     ingredients: string,
     nutritionalValue: string,
+    reustorant: string,
     images: []
 }
 

@@ -8,15 +8,26 @@ import ReustorantDeliveryInfo from "../ReustorantDelivryInfo/ReustorantDeliveryI
 import ReustorantMenu from "../ReustorantMenu/ReustorantMenu";
 import ReustorantReviews from "../ReustorantReviews/ReustorantReviews";
 import IReaustorant from "../../interfaces/IReustorant";
+import { fetchProducts } from "../../store/actions/productsActions";
+import IProduct from "../../interfaces/IProduct";
+
+interface IReustorantProps {
+    reustorant: IReaustorant,
+    reustorantMenu: IProduct[],
+}
 
 const ReustorantInfo = () => {
     const dispatch = useAppDispatch();
     const {error, loading, reustorant} = useAppSelector(state => state.reustorant);
+    const {products} = useAppSelector(state => state.products);
     const {reustorantId} = useParams();
     const {coordinates} = reustorant;
 
+    const reustorantMenu = products.filter(product => product.reustorant == reustorant.name);
+
     useEffect(() => {
         dispatch(fetchReustorant({id: Number(reustorantId)}));
+        dispatch(fetchProducts());
     }, []);
 
     if (coordinates) {
@@ -33,7 +44,7 @@ const ReustorantInfo = () => {
         <>
             {loading ? <SkeletonReustorantInfo/> : null}
             {error ? <ErrorReustorantInfo/> : null}
-            {reustorant ? <ReustorantInfoRender {...reustorant}/> : null}
+            {reustorant ? <ReustorantInfoRender reustorant={reustorant} reustorantMenu={reustorantMenu}/> : null}
         </>
     )
 }
@@ -50,16 +61,17 @@ const SkeletonReustorantInfo = () => {
     )
 }
 
-const ReustorantInfoRender = (props: IReaustorant) => {
+const ReustorantInfoRender = (props: IReustorantProps) => {
     const {image,
         name,
         description,
-        menu,
         minDeliveryTime,
         maxDeliveryTime,
         minAmount,
         reviews,
-    } = props;
+    } = props.reustorant;
+
+    const reustorantMenu = props.reustorantMenu;
 
     return(
         <div className="reustorant-detail-page">
@@ -89,7 +101,7 @@ const ReustorantInfoRender = (props: IReaustorant) => {
                 </div>
             </div>
             <div className="reustorant-detail-page__content container">
-                {menu ? <ReustorantMenu menu={menu}/> : null}
+                {reustorantMenu ? <ReustorantMenu menu={reustorantMenu}/> : null}
                 {reviews ? <ReustorantReviews reviews={reviews}/> : null}
             </div>
         </div>
