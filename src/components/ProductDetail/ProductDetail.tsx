@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
 // TODO: Убери
@@ -6,13 +6,32 @@ import one from "../../assets/images/products/1.png";
 import two from "../../assets/images/products/2.png";
 import three from "../../assets/images/products/3.png";
 import four from "../../assets/images/products/4.png";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { fetchProduct } from "../../store/actions/productAction";
 
 const ProductDetail = () => {
     const [activeImage, setActiveImage] = useState<number>(0);
     const [counter, setCounter] = useState<number>(1);
-    const {reustorantId} = useParams();
+    const {productId} = useParams();
 
-    const images = [one, two, three, four];
+    const dispatch = useAppDispatch();
+    const {error, loading, product} = useAppSelector(state => state.product);
+
+    useEffect(() => {
+        dispatch(fetchProduct({id: Number(productId)}));
+    }, []);
+
+    const {
+        id,
+        name,
+        description,
+        price,
+        image,
+        ingredients,
+        nutritionalValue,
+        images
+    } = product;
+
     const quantityDecreaseMeta = counter === 1
         ? 'product-detail__quantity-decrease product-detail__quantity-decrease--disabled'
         : 'product-detail__quantity-decrease';
@@ -56,6 +75,7 @@ const ProductDetail = () => {
 
                             return(
                                 <div className={imageMeta}
+                                    key={index}
                                     style={imageStyle}
                                     onClick={() => switchImage(index)}
                                 ></div>
@@ -65,10 +85,10 @@ const ProductDetail = () => {
                     <div className="product-detail__main-image" style={mainImageStyle}></div>
                 </div>
                 <div className="product-detail__info">
-                    <h4 className="product-detail__title">Nigiri set</h4>
-                    <p className="product-detail__description">Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe. No malis harum saperet eum, eu minim perfecto salutandi cum, usu at constituto mnesarchum.</p>
+                    <h4 className="product-detail__title">{name}</h4>
+                    <p className="product-detail__description">{description}</p>
                     <div className="product-detail__controls">
-                        <span className="product-detail__price">$ {(16.80 * counter).toFixed(2)}</span>
+                        <span className="product-detail__price">$ {(price * counter).toFixed(2)}</span>
                         <div className="product-detail__quantity">
                             <span className={quantityDecreaseMeta} onClick={() => changeCount('decrease')}>-</span>
                             <span className="product-detail__quantity-value">{counter}</span>
@@ -79,11 +99,11 @@ const ProductDetail = () => {
                     <div className="product-detail__additional-info">
                         <div className="product-detail__additional-info-item">
                             <span className="product-detail__additional-info-title">Ingredients</span>
-                            <p className="product-detail__additional-info-value">Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.</p>
+                            <p className="product-detail__additional-info-value">{ingredients}</p>
                         </div>
                         <div className="product-detail__additional-info-item">
                             <span className="product-detail__additional-info-title">Nutritional value</span>
-                            <p className="product-detail__additional-info-value">Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)</p>
+                            <p className="product-detail__additional-info-value">{nutritionalValue}</p>
                         </div>
                     </div>
                 </div>

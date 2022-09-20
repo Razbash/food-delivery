@@ -145,7 +145,15 @@
                     "name": "Nigiri set",
                     "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
                     "price": 16.80,
-                    "image": "../../assets/images/menu/nigiriSet.png"
+                    "image": "../../assets/images/menu/nigiriSet.png",
+                    "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+                    "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
+                    "images": [
+                        {"0": "../../assets/images/products/1.png"},
+                        {"1": "../../assets/images/products/2.png"},
+                        {"2": "../../assets/images/products/3.png"},
+                        {"3": "../../assets/images/products/4.png"}
+                    ]
                 },
                 {
                     "id": 1,
@@ -541,6 +549,23 @@
             "creationTime": "04:01 pm",
             "status": "completed",
             "totalAmount": "162.24"
+        }
+    ],
+    "product": [
+        {
+            "id": 0,
+            "name": "Nigiri set",
+            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+            "price": 16.80,
+            "image": "../../assets/images/menu/nigiriSet.png",
+            "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+            "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
+            "images": [
+                "../../assets/images/products/1.png",
+                "../../assets/images/products/2.png",
+                "../../assets/images/products/3.png",
+                "../../assets/images/products/4.png"
+            ]
         }
     ]
 }
