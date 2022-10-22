@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import IUser from "../../interfaces/IUser";
 import { fetchOrders } from "../../store/actions/ordersActions";
+import { fetchReustorants } from "../../store/actions/reustorantsActions";
 
 const UserOrders = () => {
     const JSONuserData = localStorage.getItem('userData');
     const dispatch = useAppDispatch();
     const {error, loading, orders} = useAppSelector(state => state.orders);
+    const {reustorants} = useAppSelector(state => state.reustorants);
     const [userName, setUserName] = useState<string>("");
 
     let navigate = useNavigate();
@@ -18,7 +19,16 @@ const UserOrders = () => {
             : navigate('/auth');
 
         dispatch(fetchOrders());
+        dispatch(fetchReustorants());
     }, []);
+
+    const redirectOnReustorantPage = (reustorantName: string) => {
+        reustorants.forEach(element => {
+            if (element.name === reustorantName) {
+                navigate(`/reustorant/${element.id}`);
+            }
+        });
+    }
 
     return(
         <div className="user-orders">
@@ -42,7 +52,7 @@ const UserOrders = () => {
                 return(
                     <div className="user-orders__table" key={id}>
                         <span className="user-orders__table-item">{id}</span>
-                        <span className="user-orders__table-item user-orders__table-item--link">{reustorant}</span>
+                        <span className="user-orders__table-item user-orders__table-item--link" onClick={() => redirectOnReustorantPage(reustorant)}>{reustorant}</span>
                         <span className="user-orders__table-item">{creationDate}</span>
                         <span className="user-orders__table-item">{creationTime}</span>
                         <span className="user-orders__table-item user-orders__table-item--status">
