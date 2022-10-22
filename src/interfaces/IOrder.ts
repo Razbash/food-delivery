@@ -2,6 +2,7 @@ interface IOrder {
     id: number,
     customerName: string,
     customerImage: string,
+    reustorant: string,
     address: string,
     creationDate: string,
     creationTime: string,

@@ -6,6 +6,7 @@ import reustorantReducer from './slices/reustorantSlice';
 import ordersReducer from './slices/ordersSlice';
 import productReducer from './slices/productSlice';
 import productsReducer from './slices/productsSlice';
+import usersReducer from './slices/usersSlice';
 
 const rootReducer = combineReducers({
     deals: dealsReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     orders: ordersReducer,
     product: productReducer,
     products: productsReducer,
+    users: usersReducer,
 });
 
 export function setupStore() {

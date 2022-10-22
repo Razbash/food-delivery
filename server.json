@@ -316,6 +316,7 @@
             "id": 0,
             "customerName": "Leslie Alexander",
             "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Bluepoint Sage Cafe",
             "address": "8502 Preston Rd. Inglewood",
             "creationDate": "21 Apr, 2021",
             "creationTime": "05:51 pm",
@@ -326,6 +327,7 @@
             "id": 1,
             "customerName": "Cody Fisher",
             "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Bluepoint Sage Cafe",
             "address": "3517 W. Gray St. Utica",
             "creationDate": "20 Apr, 2021",
             "creationTime": "07:38 am",
@@ -336,6 +338,7 @@
             "id": 2,
             "customerName": "Kristin Watson",
             "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Bluepoint Sage Cafe",
             "address": "6391 Elgin St. Celina",
             "creationDate": "21 Apr, 2021",
             "creationTime": "05:49 pm",
@@ -346,6 +349,7 @@
             "id": 3,
             "customerName": "Annette Black",
             "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Bluepoint Sage Cafe",
             "address": "1901 Thornridge Cir. Shiloh",
             "creationDate": "20 Apr, 2021",
             "creationTime": "04:02 pm",
@@ -356,6 +360,18 @@
             "id": 4,
             "customerName": "Robert Fox",
             "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Bluepoint Sage Cafe",
+            "address": "2715 Ash Dr. San Jose",
+            "creationDate": "21 Apr, 2021",
+            "creationTime": "04:01 pm",
+            "status": "completed",
+            "totalAmount": "162.24"
+        },
+        {
+            "id": 5,
+            "customerName": "Dmitry Bezzubov",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Kobe",
             "address": "2715 Ash Dr. San Jose",
             "creationDate": "21 Apr, 2021",
             "creationTime": "04:01 pm",
@@ -400,6 +416,14 @@
             "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
             "price": 55.00,
             "image": "../../assets/images/menu/rollSet.png"
+        }
+    ],
+    "users": [
+        {
+            "id": 0,
+            "name": "Dmitry Bezzubov",
+            "email": "bezzubovds@mail.ru",
+            "password": "211989211989"
         }
     ]
 }

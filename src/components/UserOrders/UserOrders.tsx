@@ -1,46 +1,25 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import IUser from "../../interfaces/IUser";
+import { fetchOrders } from "../../store/actions/ordersActions";
+
 const UserOrders = () => {
-    const orders = [
-        {
-            id: 0,
-            reustorant: "Bluepoint Sage Cafe",
-            date: "21 Apr, 2021",
-            time: "05:51 pm",
-            status: "in progress",
-            totalAmount: 149.40,
-        },
-        {
-            id: 1,
-            reustorant: "P. F. Chang's China Bistro",
-            date: "20 Apr, 2021",
-            time: "07:38 am",
-            status: "in progress",
-            totalAmount: 351.22,
-        },
-        {
-            id: 2,
-            reustorant: "Texas Roadhouse",
-            date: "20 Apr, 2021",
-            time: "05:49 am",
-            status: "completed",
-            totalAmount: 258.28,
-        },
-        {
-            id: 3,
-            reustorant: "Famous Dave's",
-            date: "20 Apr, 2021",
-            time: "05:49 am",
-            status: "completed",
-            totalAmount: 795.86,
-        },
-        {
-            id: 4,
-            reustorant: "BJ's Restaurant & Brewery",
-            date: "20 Apr, 2021",
-            time: "04:01 am",
-            status: "completed",
-            totalAmount: 162.86,
-        }
-    ]
+    const JSONuserData = localStorage.getItem('userData');
+    const dispatch = useAppDispatch();
+    const {error, loading, orders} = useAppSelector(state => state.orders);
+    const [userName, setUserName] = useState<string>("");
+
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        JSONuserData
+            ? setUserName(JSON.parse(JSONuserData).name)
+            : navigate('/auth');
+
+        dispatch(fetchOrders());
+    }, []);
+
     return(
         <div className="user-orders">
             <div className="user-orders__header">
@@ -53,14 +32,19 @@ const UserOrders = () => {
             </div>
 
             {orders.map(element => {
-                const {id, reustorant, date, time, status, totalAmount} = element;
+                if (userName !== element.customerName) {
+                    return
+                }
+
+                const {id, reustorant, creationDate, creationTime, status, totalAmount} = element;
                 const statusMeta = 'user-orders__status user-orders__status--' + status;
+
                 return(
                     <div className="user-orders__table" key={id}>
                         <span className="user-orders__table-item">{id}</span>
                         <span className="user-orders__table-item user-orders__table-item--link">{reustorant}</span>
-                        <span className="user-orders__table-item">{date}</span>
-                        <span className="user-orders__table-item">{time}</span>
+                        <span className="user-orders__table-item">{creationDate}</span>
+                        <span className="user-orders__table-item">{creationTime}</span>
                         <span className="user-orders__table-item user-orders__table-item--status">
                             <div className={statusMeta}></div>
                             {status}
