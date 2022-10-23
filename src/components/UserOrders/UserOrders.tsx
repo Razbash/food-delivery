@@ -5,6 +5,7 @@ import { fetchOrders } from "../../store/actions/ordersActions";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
 
 const UserOrders = () => {
+    // Вынести
     const JSONuserData = localStorage.getItem('userData');
     const dispatch = useAppDispatch();
     const {error, loading, orders} = useAppSelector(state => state.orders);
@@ -22,6 +23,7 @@ const UserOrders = () => {
         dispatch(fetchReustorants());
     }, []);
 
+    // Вынести в общую функцию
     const redirectOnReustorantPage = (reustorantName: string) => {
         reustorants.forEach(element => {
             if (element.name === reustorantName) {

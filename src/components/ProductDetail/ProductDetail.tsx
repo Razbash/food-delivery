@@ -3,18 +3,32 @@ import { useParams } from "react-router-dom";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchProduct } from "../../store/actions/productAction";
+import { fetchReustorants } from "../../store/actions/reustorantsActions";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetail = () => {
     const [activeImage, setActiveImage] = useState<number>(0);
     const [counter, setCounter] = useState<number>(1);
     const {productId} = useParams();
-
     const dispatch = useAppDispatch();
     const {error, loading, product} = useAppSelector(state => state.product);
+    const {reustorants} = useAppSelector(state => state.reustorants);
+
+    let navigate = useNavigate();
 
     useEffect(() => {
         dispatch(fetchProduct({id: Number(productId)}));
+        dispatch(fetchReustorants());
     }, []);
+
+    // Вынести в общую функцию
+    const redirectOnReustorantPage = (reustorantName: string) => {
+        reustorants.forEach(element => {
+            if (element.name === reustorantName) {
+                navigate(`/reustorant/${element.id}`);
+            }
+        });
+    }
 
     const {
         id,
@@ -39,6 +53,7 @@ const ProductDetail = () => {
         setActiveImage(index);
     }
 
+    // Вынести
     const changeCount = (type: string) => {
         switch(type) {
             case 'increase':
@@ -50,10 +65,31 @@ const ProductDetail = () => {
         }
     }
 
+    const addProductToCart = () => {
+        const JSONuserCartData = localStorage.getItem('userCart');
+
+        if (JSONuserCartData === null) {
+            localStorage.setItem('userCart', JSON.stringify([{
+                productName: name,
+                count: counter
+            }]));
+        } else {
+            const userCartData = JSON.parse(JSONuserCartData);
+            const orderInfo = {
+                productName: name,
+                count: counter
+            }
+
+            userCartData.push(orderInfo);
+
+            localStorage.setItem('userCart', JSON.stringify(userCartData));
+        }
+    }
+
     return(
         <div className="product-detail">
             {/* TODO: Вынеси в компонент */}
-            <div className="checkout__back-to-cart">
+            <div className="checkout__back-to-cart" onClick={() => redirectOnReustorantPage(reustorant)}>
                 <ArrowIcon/>
                 <span className="checkout__back-to-cart-text">{reustorant}</span>
             </div>
@@ -90,7 +126,7 @@ const ProductDetail = () => {
                             <span className="product-detail__quantity-value">{counter}</span>
                             <span className="product-detail__quantity-increase" onClick={() => changeCount('increase')}>+</span>
                         </div>
-                        <button className="button button--contained">Add to cart</button>
+                        <button className="button button--contained" onClick={addProductToCart}>Add to cart</button>
                     </div>
                     <div className="product-detail__additional-info">
                         <div className="product-detail__additional-info-item">
