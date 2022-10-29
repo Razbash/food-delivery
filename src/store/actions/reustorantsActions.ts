@@ -1,5 +1,6 @@
 import { AppDispatch } from "..";
 import axios from "../../axios/index";
+import IReaustorant from "../../interfaces/IReustorant";
 import { reustorantsSlice } from "../slices/reustorantsSlice";
 
 export const fetchReustorants = () => {
@@ -11,5 +12,11 @@ export const fetchReustorants = () => {
         } catch (error) {
             dispatch(reustorantsSlice.actions.fetchError(error as Error));
         }
+    }
+}
+
+export const changeFilterReustorants = (reustorants: IReaustorant[]) => {
+    return (dispatch: AppDispatch) => {
+        dispatch(reustorantsSlice.actions.fetchSuccess(reustorants));
     }
 }

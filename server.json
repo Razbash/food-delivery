@@ -180,7 +180,7 @@
             "minDeliveryTime": 20,
             "maxDeliveryTime": 40,
             "minAmount": 40,
-            "categories": ["sushi"],
+            "categories": ["dessert"],
             "featured": false,
             "image": "../../assets/images/reustorants/ninja-sushi.png",
             "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",

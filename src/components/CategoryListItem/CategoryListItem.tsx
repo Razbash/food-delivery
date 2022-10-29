@@ -1,12 +1,35 @@
-import ICategory from "../../interfaces/ICategory";
+import { useState } from "react";
 
-const CategoryListItem = (props: ICategory) => {
-    const {title, icon} = props;
+interface IProps {
+    title: string,
+    icon: string,
+    setActiveFilters: any,
+    activeFilters: any
+}
+
+const CategoryListItem = (props: IProps) => {
+    const [active, setActive] = useState<boolean>();
+    const {title, icon, setActiveFilters, activeFilters} = props;
+    const itemMeta = active ? "categories-list__item categories-list__item--selected" : "categories-list__item"
+
+    const toggleActive = () => {
+        setActive(active => !active);
+
+        if (!active) {
+            activeFilters.length
+                ? setActiveFilters([...activeFilters, title])
+                : setActiveFilters([title]);
+        } else {
+            activeFilters.length
+                ? setActiveFilters(activeFilters.filter((filter: string) => filter !== title))
+                : setActiveFilters([]);
+        }
+    }
 
     return(
-        <div className="categories-list__item"
-            onClick={(e) => e.currentTarget.classList.toggle("categories-list__item--selected")}
+        <div className={itemMeta}
             tabIndex={1}
+            onClick={() => toggleActive()}
         >
             <img src={icon}
                 alt={title}

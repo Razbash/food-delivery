@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { fetchReustorants } from '../../store/actions/reustorantsActions';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import IReaustorant from '../../interfaces/IReustorant';
+import ICategory from '../../interfaces/ICategory';
 
 interface IProps {
     showCounter?: boolean,
@@ -67,7 +68,8 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                                 maxDeliveryTime={maxDeliveryTime}
                                 minAmount={minAmount}
                             />
-                            (Иконка категории)
+
+                            (иконка категории)
                         </div>
 
                         {featured ? <span className="reustorants-list__label">Featured</span> : null}
