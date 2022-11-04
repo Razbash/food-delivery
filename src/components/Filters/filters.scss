@@ -1,6 +1,9 @@
 .filters {
     display: flex;
     margin-bottom: 32px;
+    padding-bottom: 12px;
+    overflow-x: auto;
+    position: relative;
 
     &__item {
         @extend %button-secondary;
@@ -11,6 +14,7 @@
         color: $neutral-gray;
         transition: all 0.2s ease-in-out;
         cursor: pointer;
+        white-space: nowrap;
 
         & + & {
             margin-left: 20px;
@@ -20,5 +24,14 @@
             color: $primary-default;
             border-color: $primary-default;
         }
+    }
+
+    &__transparent-separator {
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 70px;
+        right: 0;
+        background: linear-gradient(90deg, transparent, $neutral-white 50%);
     }
 }

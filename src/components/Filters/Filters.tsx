@@ -8,6 +8,7 @@ const Filters = () => {
                     <div className="filters__item" key={index}>{element}</div>
                 )
             })}
+            <div className="filters__transparent-separator"></div>
         </div>
     )
 }
