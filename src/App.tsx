@@ -5,6 +5,7 @@ import Spinner from "./tools/Spinner";
 import './css/general.scss';
 import { Provider } from "react-redux";
 import { setupStore } from "./store";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const HomePage              = lazy(() => import('./pages/HomePage'));
 const DealsPage             = lazy(() => import('./pages/DealsPage'));
@@ -39,6 +40,7 @@ function App() {
               <Route path="/checkout" element={<CheckoutPage/>} />
               <Route path="/products/:productId" element={<ProductDetailPage/>}></Route>
               <Route path="/orders" element={<UserOrdersPage/>}></Route>
+              <Route path="/regitration" element={<RegistrationPage/>}></Route>
               <Route path="/admin" element={<AdminDashboard/>}></Route>
               <Route path="/admin/deals" element={<AdminDealsPage/>}></Route>
               <Route path="/admin/reustorants" element={<AdminReustorantsPage/>}></Route>

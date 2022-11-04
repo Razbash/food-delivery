@@ -3,7 +3,7 @@ import EyeIcon from "../../assets/icons/EyeIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchUsers } from "../../store/actions/usersActions";
 import Logo from "../Logo/Logo";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
     const dispatch = useAppDispatch();
@@ -72,7 +72,13 @@ const AuthForm = () => {
                 </form>
 
                 <a href="#" className="auth-form__forgot-password">Forgot password</a>
-                <span className="auth-form__sign-up">Don’t have an account? <a href="#" className="auth-form__sign-up-link">Sign up</a></span>
+                <span className="auth-form__sign-up">
+                    Don’t have an account?
+
+                    <Link to="/regitration" className="auth-form__sign-up-link">
+                        Sign up
+                    </Link>
+                </span>
             </div>
         </div>
     )
