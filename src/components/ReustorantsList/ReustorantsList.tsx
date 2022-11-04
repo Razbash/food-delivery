@@ -6,6 +6,8 @@ import { fetchReustorants } from '../../store/actions/reustorantsActions';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import IReaustorant from '../../interfaces/IReustorant';
 import ICategory from '../../interfaces/ICategory';
+import { fetchCategories } from '../../store/actions/categoriesActions';
+import CategoryListItem from '../CategoryListItem/CategoryListItem';
 
 interface IProps {
     showCounter?: boolean,
@@ -14,15 +16,18 @@ interface IProps {
 
 interface IReustorantsListItemProsp {
     data: IReaustorant[],
+    categories: any,
 }
 
 const ReustorantsList = (props: IProps) => {
     const {showCounter, shortList} = props;
     const dispatch = useAppDispatch();
     const {error, loading, reustorants} = useAppSelector(state => state.reustorants);
+    const {categories} = useAppSelector(state => state.categories);
 
     useEffect(() => {
         dispatch(fetchReustorants());
+        dispatch(fetchCategories());
     }, []);
 
     return(
@@ -32,7 +37,7 @@ const ReustorantsList = (props: IProps) => {
             <div className="reustorants-list">
                 {loading ? <SkeletonReustorantsList/> : null}
                 {error ? <ErrorReustorantsList/> : null}
-                {reustorants ? <ReustorantsListItem data={reustorants}/> : null}
+                {reustorants ? <ReustorantsListItem data={reustorants} categories={categories}/> : null}
             </div>
 
             {shortList ? <button className="button reustorants-list__load-more-button">Load more</button> : null}
@@ -44,7 +49,7 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
     return(
         <>
             {props.data.map(element => {
-                const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, categories, featured, image} = element;
+                const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, featured, image} = element;
                 const backgroundImageStyle = {
                     'background': 'url(' + image + ')',
                     'backgroundSize': 'cover',
@@ -69,7 +74,19 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                                 minAmount={minAmount}
                             />
 
-                            (иконка категории)
+                            <div className="reustorants-list__categories">
+                                {props.categories.map((categoryItem: ICategory) => {
+                                    return(
+                                        element.categories.map((reustorantCategory: string) => {
+                                            if (categoryItem.title.toLowerCase() === reustorantCategory) {
+                                                return(
+                                                    <CategoryListItem title={categoryItem.title} icon={categoryItem.icon} />
+                                                )
+                                            }
+                                        })
+                                    )
+                                })}
+                            </div>
                         </div>
 
                         {featured ? <span className="reustorants-list__label">Featured</span> : null}

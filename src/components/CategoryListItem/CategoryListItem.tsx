@@ -3,8 +3,8 @@ import { useState } from "react";
 interface IProps {
     title: string,
     icon: string,
-    setActiveFilters: any,
-    activeFilters: any
+    setActiveFilters?: any,
+    activeFilters?: any
 }
 
 const CategoryListItem = (props: IProps) => {

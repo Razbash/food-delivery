@@ -76,6 +76,35 @@
         animation: .8s infinite loading-blink;
     }
 
+    &__categories {
+        display: flex;
+        margin-top: 14px;
+
+        .categories-list {
+            &__item {
+                pointer-events: none;
+                flex-direction: row;
+                align-items: center;
+                border-radius: 100px;
+                background: $neutral-gray-lightest;
+                padding: 6px 10px;
+                width: auto;
+                margin-right: 8px;
+            }
+
+            &__image {
+                width: 14px;
+                height: 14px;
+                margin: 0 8px 0 0;
+            }
+
+            &__name {
+                @extend %small-secondary;
+                color: $neutral-gray-dark;
+            }
+        }
+    }
+
     .cart-icon {
         width: 20px;
         height: 20px;
