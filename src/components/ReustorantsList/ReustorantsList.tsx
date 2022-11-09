@@ -80,7 +80,7 @@ const ReustorantsListItem = (props: IReustorantsListItemProsp) => {
                                         element.categories.map((reustorantCategory: string) => {
                                             if (categoryItem.title.toLowerCase() === reustorantCategory) {
                                                 return(
-                                                    <CategoryListItem title={categoryItem.title} icon={categoryItem.icon} />
+                                                    <CategoryListItem title={categoryItem.title} icon={categoryItem.icon} key={categoryItem.id} />
                                                 )
                                             }
                                         })
