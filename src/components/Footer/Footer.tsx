@@ -5,7 +5,13 @@ import InstagramIcon from "../../assets/icons/InstagramIcon";
 import YoutubeIcon from "../../assets/icons/YoutubeIcon";
 import LinkedinIcon from "../../assets/icons/LinkedinIcon";
 
+interface Links {
+    string: string[],
+}
+
 const Footer = () => {
+    const socialIcons = [<FacebookIcon/>, <TwitterIcon/>, <InstagramIcon/>, <YoutubeIcon/>, <LinkedinIcon/>];
+
     return(
         <div className="footer">
             <div className="footer__wrapper container">
@@ -13,21 +19,13 @@ const Footer = () => {
                     <Logo color="white"/>
 
                     <div className="social-network">
-                        <div className="social-network__item">
-                            <FacebookIcon/>
-                        </div>
-                        <div className="social-network__item">
-                            <TwitterIcon/>
-                        </div>
-                        <div className="social-network__item">
-                            <InstagramIcon/>
-                        </div>
-                        <div className="social-network__item">
-                            <YoutubeIcon/>
-                        </div>
-                        <div className="social-network__item">
-                            <LinkedinIcon/>
-                        </div>
+                        {socialIcons.map((element, index) => {
+                            return(
+                                <div className="social-network__item" key={index}>
+                                    {element}
+                                </div>
+                            )
+                        })}
                     </div>
 
                     <span className="footer__copyright">&copy; Личный проект Дмитрия Беззубова</span>
@@ -55,6 +53,7 @@ const Footer = () => {
                         <span className="footer__menu-item">Contact us</span>
                     </div>
                 </div>
+                <span className="footer__copyright footer__copyright--mobile">&copy; Личный проект Дмитрия Беззубова</span>
             </div>
         </div>
     )
