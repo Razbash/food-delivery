@@ -2,15 +2,19 @@ import VisaIcon from "../../assets/icons/VisaIcon";
 import MastercardIcon from "../../assets/icons/MastercardIcon";
 import DotsIcon from "../../assets/icons/DotsIcon";
 import PlusIcon from "../../assets/icons/PlusIcon";
+import IUser from "../../interfaces/IUser";
 
 interface IProps {
     title: string,
     cardToAdd?: boolean,
     cardSavingCheckbox?: boolean,
+    userData: IUser,
 }
 
 const Payments = (props: IProps) => {
-    const {title, cardToAdd, cardSavingCheckbox} = props;
+    const {title, cardToAdd, cardSavingCheckbox, userData} = props;
+    const {paymentMethods} = userData;
+
     const cards = [
         {
             number: "**** **** **** 4629",
@@ -29,49 +33,55 @@ const Payments = (props: IProps) => {
     return(
         <>
             <div className="payments">
-                <h6 className="block-title">
-                    {title}
-                </h6>
-                <div className="payments__cards">
-                    {cards.map((element, index) => {
-                        const {number, term, name, icon} = element;
+                {paymentMethods ?
+                    <>
+                        <h6 className="block-title">
+                            {title}
+                        </h6>
+                        <div className="payments__cards">
+                            {paymentMethods.map((element, index) => {
+                                const {id, cardNumber, cardHolder, cvc, expiration} = element;
 
-                        return(
-                            <div className="payments__card-item" key={index}>
-                                <div className="payments__number-and-controls">
-                                    <span className="payments__number">
-                                        {number}
-                                    </span>
-                                    <div className="payments__controls">
-                                        <DotsIcon/>
+                                return(
+                                    <div className="payments__card-item" key={id}>
+                                        <div className="payments__number-and-controls">
+                                            <span className="payments__number">
+                                                {cardNumber}
+                                            </span>
+                                            <div className="payments__controls">
+                                                <DotsIcon/>
+                                            </div>
+                                        </div>
+                                        <span className="payments__terms">
+                                            {expiration}
+                                        </span>
+                                        <div className="payments__cardholder">
+                                            <span className="payments__cardholder-name">
+                                                {cardHolder}
+                                            </span>
+                                            <div className="payments__card-icon">
+                                                {/* Вывести другую иконку */}
+                                                <VisaIcon/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+
+                            {cardToAdd ?
+                                <div className="payments__card-item">
+                                    <div className="payments__add-new-card">
+                                        <div className="payments__add-new-card-icon">
+                                            <PlusIcon/>
+                                        </div>
+                                        <span className="payments__add-new-card-text">New payment methods</span>
                                     </div>
                                 </div>
-                                <span className="payments__terms">
-                                    {term}
-                                </span>
-                                <div className="payments__cardholder">
-                                    <span className="payments__cardholder-name">
-                                        {name}
-                                    </span>
-                                    <div className="payments__card-icon">
-                                        {icon}
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-
-                    {cardToAdd ?
-                        <div className="payments__card-item">
-                            <div className="payments__add-new-card">
-                                <div className="payments__add-new-card-icon">
-                                    <PlusIcon/>
-                                </div>
-                                <span className="payments__add-new-card-text">New payment methods</span>
-                            </div>
+                            : null}
                         </div>
-                    : null}
-                </div>
+                    </>
+                : null}
+
                 <div className="payments__new-card">
                     <h6 className="payments__label">New payment method</h6>
 

@@ -442,9 +442,51 @@
     "users": [
         {
             "id": 0,
-            "name": "Dmitry Bezzubov",
+            "image": "../../assets/images/users/user-1.jpg",
+            "firstName": "Dmitry",
+            "lastName": "Bezzubov",
+            "phone": "+79278036203",
             "email": "bezzubovds@mail.ru",
-            "password": "211989211989"
+            "password": "211989211989",
+            "notifications": ["New deals", "Order statuses", "Special offers", "New reustorants", "Password changes"],
+            "shippingAddresses": [
+                {
+                    "id": 0,
+                    "addressName": "New York",
+                    "country": "USA",
+                    "state": "New York",
+                    "city": "New York",
+                    "addressLine1": "4517 Washington Ave. Manchester, 11004",
+                    "addressLine2": "",
+                    "coordinates": [-33.517315, 164.182682]
+                },
+                {
+                    "id": 1,
+                    "addressName": "New York",
+                    "country": "USA",
+                    "state": "New York",
+                    "city": "New York",
+                    "addressLine1": "4517 Washington Ave. Manchester, 11004",
+                    "addressLine2": "",
+                    "coordinates": [-33.517315, 164.182682]
+                }
+            ],
+            "paymentMethods": [
+                {
+                    "id": 0,
+                    "cardNumber": 4629462946294629,
+                    "expiration": "12/25",
+                    "cvc": 222,
+                    "cardHolder": "Dmitry Bezzubov"
+                },
+                {
+                    "id": 0,
+                    "cardNumber": 4629462946294629,
+                    "expiration": "12/25",
+                    "cvc": 222,
+                    "cardHolder": "Dmitry Bezzubov"
+                }
+            ]
         }
     ]
 }

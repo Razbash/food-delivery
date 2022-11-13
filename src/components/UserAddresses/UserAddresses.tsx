@@ -2,8 +2,15 @@
 
 import { useEffect } from "react";
 import DotsIcon from "../../assets/icons/DotsIcon";
+import IUser from "../../interfaces/IUser";
 
-const UserAddresses = () => {
+interface IProps {
+    userData: IUser,
+}
+
+const UserAddresses = (props: IProps) => {
+    const {shippingAddresses} = props.userData;
+
     const addresses = [
         {
             "city": "New York",
@@ -19,46 +26,49 @@ const UserAddresses = () => {
         }
     ];
 
-    useEffect(() => {
-        addresses.map((element, index) => {
-            ymaps.ready().then(() => {
-                const id = 'user_address_' + index;
-
-                let map =  new ymaps.Map(id, {
-                    center: element.coordinates,
-                    zoom: 8,
-                    controls: ['none']
-                });
-            });
-        });
-    }, []);
-
     return(
         <div className="user-addresses">
             <div className="user-addresses__content user-profile-content">
                 <h6 className="user-addresses__content-title user-profile-block-title">Existing shipping addresses</h6>
-                <div className="user-addresses__chapter user-profile-chapter">
-                    <div className="user-addresses__list">
-                        {addresses.map((element, index) => {
-                            const {city, state, address, coordinates} = element;
-                            const id = 'user_address_' + index;
+                {shippingAddresses ?
+                    <div className="user-addresses__chapter user-profile-chapter">
+                        <div className="user-addresses__list">
+                            {shippingAddresses.map((element, index) => {
+                                const {id, addressName, country, state, city, addressLine1, addressLine2, coordinates} = element;
+                                const mapId = 'user_address_' + id;
 
-                            return(
-                                <div className="user-addresses__list-item" key={index}>
-                                    <div className="user-addresses__map" id={id} style={{"width": "96px", "height": "100%"}}></div>
-                                    <div className="user-addresses__info">
-                                        <div className="user-addresses__item-title">
-                                            <span className="user-addresses__city">{city}</span>
-                                            <DotsIcon/>
+                                if (coordinates) {
+                                    ymaps.ready().then(() => {
+
+                                        let map =  new ymaps.Map(mapId, {
+                                            center: coordinates,
+                                            zoom: 8,
+                                            controls: ['none']
+                                        });
+                                    });
+                                }
+
+                                return(
+                                    <div className="user-addresses__list-item" key={id}>
+                                        <div className="user-addresses__map-wrapper" style={{"width": "100px", "height": "100px"}}>
+                                            {coordinates ? <div className="user-addresses__map" id={mapId} style={{"width": "100px", "height": "100px"}}></div> : null}
                                         </div>
-                                        <span className="user-addresses__state">{state}</span>
-                                        <p className="user-addresses__address">{address}</p>
+
+                                        <div className="user-addresses__info">
+                                            <div className="user-addresses__item-title">
+                                                <span className="user-addresses__city">{addressName}</span>
+                                                <DotsIcon/>
+                                            </div>
+                                            <span className="user-addresses__state">{city}, {state}, {country}</span>
+                                            <p className="user-addresses__address">{addressLine1}</p>
+                                            {addressLine2 ? <p className="user-addresses__address">{addressLine2}</p> : null}
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
+                        </div>
                     </div>
-                </div>
+                : null}
 
                 <h6 className="user-addresses__content-title user-profile-block-title">New shipping address</h6>
                 <div className="user-addresses__chapter user-profile-chapter">

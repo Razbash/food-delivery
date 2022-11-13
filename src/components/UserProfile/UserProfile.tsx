@@ -6,10 +6,26 @@ import UserPersonalInformation from "../UserPersonalInformation/UserPersonalInfo
 import UserAddresses from "../UserAddresses/UserAddresses";
 import Payments from "../Payments/Payments";
 import UserSecurity from "../UserSecurity/UserSecurity";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { useNavigate } from "react-router-dom";
+import { fetchUser } from "../../store/actions/userActions";
 
 const UserProfile = () => {
     const [currentTabId, setCurrentTabId] = useState<Number>(0);
+    const {user, loading, error} = useAppSelector(state => state.user);
+    const dispatch = useAppDispatch();
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
+
+        if (!userId) {
+            navigate('/auth');
+        }
+
+        dispatch(fetchUser({id: Number(userId)}));
+    }, []);
 
     const tabs = [
         {
@@ -70,9 +86,9 @@ const UserProfile = () => {
                 </div>
             </div>
 
-            {currentTabId === 0 ? <UserPersonalInformation/> : null}
-            {currentTabId === 1 ? <UserAddresses/> : null}
-            {currentTabId === 2 ? <Payments title={"Connected payment methods"}/> : null}
+            {currentTabId === 0 ? <UserPersonalInformation userData={user}/> : null}
+            {currentTabId === 1 ? <UserAddresses userData={user}/> : null}
+            {currentTabId === 2 ? <Payments userData={user} title={"Connected payment methods"} /> : null}
             {currentTabId === 3 ? <UserSecurity/> : null}
         </div>
     )

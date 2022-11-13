@@ -1,6 +1,20 @@
-import userImage from "../../assets/images/users/user-1.jpg";
+import IUser from "../../interfaces/IUser";
 
-const UserPersonalInformation = () => {
+interface IProps {
+    userData: IUser,
+}
+
+const UserPersonalInformation = (props: IProps) => {
+    const {image, firstName, lastName, email, phone, notifications} = props.userData;
+    const globalNotifications = [
+        "New deals",
+        "Order statuses",
+        "Special offers",
+        "New reustorants",
+        "Password changes",
+        "Newsletter"
+    ];
+
     return(
         <div className="user-personal-information">
             <div className="user-personal-information__content user-profile-content">
@@ -8,7 +22,7 @@ const UserPersonalInformation = () => {
                 <div className="user-personal-information__chapter user-profile-chapter">
                     <span className="user-personal-information__label">Avatar</span>
                     <div className="user-personal-information__image-controls">
-                        <img src={userImage}
+                        <img src={image}
                             alt="user image"
                             className="user-personal-information__user-image"
                             width={88}
@@ -25,6 +39,7 @@ const UserPersonalInformation = () => {
                                 id="first_name"
                                 className="input"
                                 placeholder="Jane"
+                                value={firstName}
                             />
                         </div>
 
@@ -34,6 +49,7 @@ const UserPersonalInformation = () => {
                                 id="last_name"
                                 className="input"
                                 placeholder="Robetson"
+                                value={lastName}
                             />
                         </div>
 
@@ -43,6 +59,7 @@ const UserPersonalInformation = () => {
                                 id="email"
                                 className="input"
                                 placeholder="name@example.com"
+                                value={email}
                             />
                         </div>
 
@@ -52,6 +69,7 @@ const UserPersonalInformation = () => {
                                 id="phone"
                                 className="input"
                                 placeholder="(217) 555-0113"
+                                value={phone}
                             />
                         </div>
                     </div>
@@ -60,35 +78,14 @@ const UserPersonalInformation = () => {
                 <h6 className="user-personal-information__content-title">Email notifications</h6>
                 <div className="user-personal-information__chapter user-profile-chapter">
                     <div className="user-personal-information__notifications">
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">New deals</span>
-                        </label>
-
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">New reustorants</span>
-                        </label>
-
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">Order statuses</span>
-                        </label>
-
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">Password changes</span>
-                        </label>
-
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">Special offers</span>
-                        </label>
-
-                        <label className="checkbox">
-                            <input type="checkbox" className="checkbox__input"/>
-                            <span className="checkbox__label">Newsletter</span>
-                        </label>
+                        {globalNotifications.map((element, index) => {
+                            return(
+                                <label className="checkbox" key={index}>
+                                    <input type="checkbox" className="checkbox__input" checked={notifications.includes(element)}/>
+                                    <span className="checkbox__label">{element}</span>
+                                </label>
+                            )
+                        })}
                     </div>
 
                     <div className="user-personal-information__controls">

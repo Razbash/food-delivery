@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import EyeIcon from "../../assets/icons/EyeIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchUsers } from "../../store/actions/usersActions";
+import { fetchUser } from "../../store/actions/userActions";
 import Logo from "../Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
+import IUser from "../../interfaces/IUser";
 
 const AuthForm = () => {
     const dispatch = useAppDispatch();
@@ -17,11 +19,12 @@ const AuthForm = () => {
         dispatch(fetchUsers());
     }, []);
 
-    const authHandler = () => {
+    const authHandler = (event: React.ChangeEvent<HTMLFormElement>) => {
+        event.preventDefault();
         // TODO прокачай валидацию и авторизацию
-        users.forEach(element => {
+        users.forEach((element: IUser )=> {
             if (login === element.email && password === element.password) {
-                localStorage.setItem('userData', JSON.stringify(element));
+                localStorage.setItem('userId', String(element.id));
                 navigate('/user');
             } else {
                 alert('Неверный логин или пароль');
