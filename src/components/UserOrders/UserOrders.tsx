@@ -1,22 +1,32 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import IOrder from "../../interfaces/IOrder";
 import { fetchOrders } from "../../store/actions/ordersActions";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
+import { fetchUser } from "../../store/actions/userActions";
+import Spinner from "../../tools/Spinner";
+
+interface IUserOrdersRenderContentProps {
+    orders: IOrder[],
+    userName: string,
+    redirectOnReustorantPage: (reustorantName: string) => void
+}
 
 const UserOrders = () => {
     // Вынести
-    const JSONuserData = localStorage.getItem('userData');
+    const userId = localStorage.getItem('userId');
     const dispatch = useAppDispatch();
     const {error, loading, orders} = useAppSelector(state => state.orders);
     const {reustorants} = useAppSelector(state => state.reustorants);
-    const [userName, setUserName] = useState<string>("");
+    const {user} = useAppSelector(state => state.user);
+    const userName = `${user.firstName} ${user.lastName}`
 
     let navigate = useNavigate();
 
     useEffect(() => {
-        JSONuserData
-            ? setUserName(JSON.parse(JSONuserData).name)
+        userId
+            ? dispatch(fetchUser({id: Number(userId)}))
             : navigate('/auth');
 
         dispatch(fetchOrders());
@@ -31,7 +41,7 @@ const UserOrders = () => {
             }
         });
     }
-
+console.log(orders);
     return(
         <div className="user-orders">
             <div className="user-orders__header">
@@ -43,6 +53,42 @@ const UserOrders = () => {
                 <span className="user-orders__header-item">Total amount</span>
             </div>
 
+            {loading ? <UserOrdersLoading/> : null}
+            {error ? <UserOrdersError/> : null}
+            {orders ? <UserOrdersRenderContent orders={orders}
+                userName={userName}
+                redirectOnReustorantPage={redirectOnReustorantPage}
+            /> : null}
+            {!error && !loading && !orders.filter(element => userName == element.customerName).length
+                ? <UserOrdersEmptyContent/>
+                : null}
+        </div>
+    )
+}
+
+const UserOrdersLoading = () => {
+    return(
+        <div className="user-orders__loading"></div>
+    )
+}
+
+const UserOrdersError = () => {
+    return(
+        <div className="user-orders__error">
+            <span>
+                An error occurred while loading the data! Try
+                <span onClick={() => window.location.reload()} className="user-orders__error-link"> refreshing </span>
+                this page
+            </span>
+        </div>
+    )
+}
+
+const UserOrdersRenderContent = (props:IUserOrdersRenderContentProps) => {
+    const {orders, userName, redirectOnReustorantPage} = props;
+
+    return(
+        <>
             {orders.map(element => {
                 if (userName !== element.customerName) {
                     return
@@ -65,6 +111,14 @@ const UserOrders = () => {
                     </div>
                 )
             })}
+        </>
+    )
+}
+
+const UserOrdersEmptyContent = () => {
+    return(
+        <div className="user-orders__error">
+            <span>This account has no orders! Create your first order</span>
         </div>
     )
 }

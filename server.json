@@ -377,6 +377,17 @@
             "creationTime": "04:01 pm",
             "status": "completed",
             "totalAmount": "162.24"
+        },
+        {
+            "id": 6,
+            "customerName": "Dmitry Bezzubov",
+            "customerImage": "../../assets/images/users/user-1.jpg",
+            "reustorant": "Kobe",
+            "address": "2715 Ash Dr. San Jose",
+            "creationDate": "21 Apr, 2021",
+            "creationTime": "04:01 pm",
+            "status": "completed",
+            "totalAmount": "162.24"
         }
     ],
     "products": [

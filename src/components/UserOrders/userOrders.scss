@@ -104,6 +104,36 @@
             background: $error-default;
         }
     }
+
+    &__error {
+        text-align: center;
+        padding: 40px 24px;
+    }
+
+    &__error-link {
+        cursor: pointer;
+        color: $primary-default;
+        border-bottom: 1px dashed $primary-default;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: $primary-hover;
+            border-color: $primary-hover;
+        }
+
+        &:active {
+            color: $primary-dark;
+            border-color: $primary-dark;
+        }
+    }
+
+    &__loading {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        animation: .8s infinite loading-blink;
+        background: #f6f6f6;
+    }
 }
 
 @media (max-width: $wide-tablet-width) {
