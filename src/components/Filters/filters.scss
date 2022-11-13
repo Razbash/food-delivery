@@ -27,6 +27,7 @@
         z-index: 1;
         width: max-content;
         transition: all 0.4s ease-in-out;
+        z-index: 1;
 
         &--hidden {
             opacity: 0;
@@ -59,10 +60,16 @@
         transition: all 0.2s ease-in-out;
         cursor: pointer;
         white-space: nowrap;
+        z-index: 2;
 
-        &:hover {
+        &:hover,
+        &--active {
             color: $primary-default;
             border-color: $primary-default;
+        }
+
+        &--active {
+            background: $primary-light;
         }
     }
 

@@ -1,10 +1,50 @@
+import { useEffect, useState } from "react";
+
 const Filters = () => {
+    const [amountFilter, setAmountFilter] = useState<boolean>(false);
+    const amountFilterClass = amountFilter ? "filters__item filters__item--active" : "filters__item";
+    const amountFilterDropdownClass = amountFilter ? "filters__dropdown" : "filters__dropdown filters__dropdown--hidden";
+
+    const toggleAmountFilter = () => {
+        setAmountFilter(!amountFilter);
+    }
+
+    const onChangeAmountFilter = (value: boolean) => {
+        setAmountFilter(value);
+    }
+
+    const handlerCloseDropdon = (event: any) => {
+        const filtersBlock = document.querySelector('.filters');
+        let withinBoundaries = false;
+
+        if (filtersBlock) {
+            withinBoundaries = event.composedPath().includes(filtersBlock);
+        }
+
+        if (!withinBoundaries ) {
+            onChangeAmountFilter(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', (event) => handlerCloseDropdon(event));
+
+        return function cleanup() {
+            document.removeEventListener('click', (event) => handlerCloseDropdon(event));
+        }
+
+    },[]);
+
     return(
         <div className="filters">
             <div className="filters__item-wrapper">
-                <span className="filters__item">Minimum delivery amount</span>
+                <span className={amountFilterClass}
+                    onClick={toggleAmountFilter}
+                >
+                    Minimum delivery amount
+                </span>
 
-                <div className="filters__dropdown">
+                <div className={amountFilterDropdownClass}>
                     <span className="filters__dropdown-label">Specify the price range</span>
                     <div className="filters__range-slider-wrapper">
                     </div>
