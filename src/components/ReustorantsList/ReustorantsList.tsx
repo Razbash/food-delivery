@@ -12,6 +12,7 @@ import CategoryListItem from '../CategoryListItem/CategoryListItem';
 interface IProps {
     showCounter?: boolean,
     shortList?: boolean,
+    list? :IReaustorant[],
 }
 
 interface IReustorantsListItemProsp {
@@ -20,13 +21,16 @@ interface IReustorantsListItemProsp {
 }
 
 const ReustorantsList = (props: IProps) => {
-    const {showCounter, shortList} = props;
+    const {showCounter, shortList, list} = props;
     const dispatch = useAppDispatch();
     const {error, loading, reustorants} = useAppSelector(state => state.reustorants);
     const {categories} = useAppSelector(state => state.categories);
 
     useEffect(() => {
-        dispatch(fetchReustorants());
+        if (!list) {
+            dispatch(fetchReustorants());
+        }
+
         dispatch(fetchCategories());
     }, []);
 
@@ -37,7 +41,7 @@ const ReustorantsList = (props: IProps) => {
             <div className="reustorants-list">
                 {loading ? <SkeletonReustorantsList/> : null}
                 {error ? <ErrorReustorantsList/> : null}
-                {reustorants ? <ReustorantsListItem data={reustorants} categories={categories}/> : null}
+                {reustorants ? <ReustorantsListItem data={list ? list : reustorants} categories={categories}/> : null}
             </div>
 
             {shortList ? <button className="button reustorants-list__load-more-button">Load more</button> : null}
