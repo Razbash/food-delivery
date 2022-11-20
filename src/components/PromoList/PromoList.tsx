@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import IPromo from "../../interfaces/IPromo";
 import { fetchPromotions } from "../../store/actions/promotionsActions";
+
+interface DealsListRenderProps {
+    data: IPromo[],
+}
 
 const DeaslsList = () => {
     const dispatch = useAppDispatch();
@@ -11,8 +16,26 @@ const DeaslsList = () => {
     }, []);
 
     return(
+        <>
+            {loading ? <DealsListSkeleton/> : null}
+            {promotions && !error ? <DealsListRender data={promotions}/> : null}
+        </>
+    )
+}
+
+const DealsListSkeleton = () => {
+    return(
         <div className="promotion-list">
-            {promotions.map(element => {
+            <div className="promotion-list__item promotion-list__item--skeleton"></div>
+            <div className="promotion-list__item promotion-list__item--skeleton"></div>
+        </div>
+    )
+}
+
+const DealsListRender = (props:DealsListRenderProps) => {
+    return(
+        <div className="promotion-list">
+            {props.data.map(element => {
                 const {image, name, text, category, background, color} = element;
                 const elementStyle = {"background": background};
                 const titleStyle = {"color": color};
@@ -27,6 +50,7 @@ const DeaslsList = () => {
                                 alt={name}
                                 className="promotion-list__image"
                                 width="200"
+                                height="200"
                             />
                         </div>
 

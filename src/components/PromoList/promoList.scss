@@ -9,6 +9,13 @@
         display: flex;
         overflow: hidden;
         padding: 24px;
+        box-sizing: border-box;
+
+        &--skeleton {
+            height: 196px;
+            background: #f6f6f6;
+            animation: .8s infinite loading-blink;
+        }
 
         & + & {
             margin-left: 20px;
@@ -27,6 +34,7 @@
     &__image {
         position: absolute;
         bottom: -40px;
+        height: auto;
     }
 
     &__info {
@@ -49,5 +57,68 @@
     &__category {
         @extend %body-primary;
         color: $neutral-gray;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .promotion-list {
+        &__item {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            padding-bottom: 0;
+
+            &--skeleton {
+                height: 330px;
+            }
+        }
+
+        &__image {
+            position: static;
+        }
+
+        &__name,
+        &__category {
+            order: 1;
+            width: 50%;
+        }
+
+        &__name {
+            margin-bottom: 0;
+        }
+
+        &__category {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        &__text {
+            order: 2;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        &__info {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__image-wrapper {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .promotion-list {
+        flex-direction: column;
+
+        &__item {
+            margin-bottom: 20px;
+
+            & + & {
+                margin-left: 0;
+            }
+        }
     }
 }
