@@ -499,5 +499,25 @@
                 }
             ]
         }
+    ],
+    "promotions": [
+        {
+            "id": 0,
+            "name": "All deserts",
+            "text": "20% off",
+            "category": "Deserty",
+            "image": "../../assets/images/promotions/desert.png",
+            "background": "#F3F4FF",
+            "color": "#4E60FF"
+        },
+        {
+            "id": 1,
+            "name": "Big burgers",
+            "text": "50% off",
+            "category": "Fooddies",
+            "image": "../../assets/images/promotions/burger.png",
+            "background": "#FFF3ED",
+            "color": "#FD6D22"
+        }
     ]
 }
