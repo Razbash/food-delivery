@@ -7,7 +7,7 @@ const UserOrdersPage = () => {
         <>
             <Header type="user"/>
             <div className="container">
-                <div className="block-title">My orders</div>
+                <h5 className="block-title">My orders</h5>
                 <UserOrders/>
             </div>
             <Footer/>

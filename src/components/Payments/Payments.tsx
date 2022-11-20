@@ -35,9 +35,9 @@ const Payments = (props: IProps) => {
             <div className="payments">
                 {paymentMethods ?
                     <>
-                        <h6 className="block-title">
+                        <h5 className="block-title">
                             {title}
-                        </h6>
+                        </h5>
                         <div className="payments__cards">
                             {paymentMethods.map((element, index) => {
                                 const {id, cardNumber, cardHolder, cvc, expiration} = element;

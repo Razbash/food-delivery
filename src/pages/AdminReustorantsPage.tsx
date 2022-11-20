@@ -7,7 +7,7 @@ const AdminReustorantsPage = () => {
             <Header type="admin"/>
             <div className="container">
                 <div className="block-title-with-button">
-                    <h2 className="block-title">Reustorants list</h2>
+                    <h5 className="block-title">Reustorants list</h5>
                     <button className="button button--contained">Добавить ресторан</button>
                 </div>
                 <AdminReustorantsList/>

@@ -7,7 +7,7 @@ const SearchPage = () => {
         <>
             <Header type="user"/>
             <div className="container">
-                <div className="block-title">Search result</div>
+                <h5 className="block-title">Search result</h5>
                 <SearchResult/>
             </div>
             <Footer/>

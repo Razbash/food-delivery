@@ -6,6 +6,7 @@ import { fetchUser } from "../../store/actions/userActions";
 import Logo from "../Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import IUser from "../../interfaces/IUser";
+import { setUserId } from "../../tools/cookie";
 
 const AuthForm = () => {
     const dispatch = useAppDispatch();
@@ -24,7 +25,7 @@ const AuthForm = () => {
         // TODO прокачай валидацию и авторизацию
         users.forEach((element: IUser )=> {
             if (login === element.email && password === element.password) {
-                localStorage.setItem('userId', String(element.id));
+                setUserId(String(element.id));
                 navigate('/user');
             } else {
                 alert('Неверный логин или пароль');

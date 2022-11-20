@@ -6,7 +6,7 @@ const AdminOrdersPage = () => {
         <>
             <Header type="admin"/>
             <div className="container">
-                <div className="block-title">Reustorant orders</div>
+                <h5 className="block-title">Reustorant orders</h5>
                 <AdminOrders/>
             </div>
         </>

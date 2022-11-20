@@ -9,7 +9,7 @@ const ReustorantsPage = () => {
         <>
             <Header type="user"/>
             <div className="container">
-                <div className="block-title">All reustorants</div>
+                <h5 className="block-title">All reustorants</h5>
                 <CategoryList/>
                 <Filters/>
                 <ReustorantsList showCounter={true}/>

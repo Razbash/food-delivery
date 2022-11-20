@@ -17,7 +17,8 @@ const ReustorantsPage       = lazy(() => import('./pages/ReustorantsPage'));
 const UserOrdersPage        = lazy(() => import('./pages/UserOrdersPage'));
 const RegistrationPage      = lazy(() => import('./pages/RegistrationPage'));
 const Page404               = lazy(() => import('./pages/404Page'));
-const Search                = lazy(() => import('./pages/SearchPage'));
+const SearchPage            = lazy(() => import('./pages/SearchPage'));
+const CartPage              = lazy(() => import('./pages/CartPage'));
 
 const AdminDashboard        = lazy(() => import('./pages/AdminDashboardPage'));
 const AdminDealsPage        = lazy(() => import('./pages/AdminDealsPage'));
@@ -47,7 +48,8 @@ function App() {
               <Route path="/admin/deals" element={<AdminDealsPage/>}></Route>
               <Route path="/admin/reustorants" element={<AdminReustorantsPage/>}></Route>
               <Route path="/admin/orders" element={<AdminOrdersPage/>}></Route>
-              <Route path="/search/:searchParametr" element={<Search/>}></Route>
+              <Route path="/search/:searchParametr" element={<SearchPage/>}></Route>
+              <Route path="/cart" element={<CartPage/>}></Route>
               <Route path="*" element={<Page404/>}></Route>
             </Routes>
           </Suspense>

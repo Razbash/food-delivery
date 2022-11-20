@@ -5,6 +5,7 @@ import IOrder from "../../interfaces/IOrder";
 import { fetchOrders } from "../../store/actions/ordersActions";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
 import { fetchUser } from "../../store/actions/userActions";
+import { getCookie } from "../../tools/cookie";
 import Spinner from "../../tools/Spinner";
 
 interface IUserOrdersRenderContentProps {
@@ -14,8 +15,8 @@ interface IUserOrdersRenderContentProps {
 }
 
 const UserOrders = () => {
-    // Вынести
-    const userId = localStorage.getItem('userId');
+    const userId = getCookie('userId');
+
     const dispatch = useAppDispatch();
     const {error, loading, orders} = useAppSelector(state => state.orders);
     const {reustorants} = useAppSelector(state => state.reustorants);
@@ -41,7 +42,7 @@ const UserOrders = () => {
             }
         });
     }
-console.log(orders);
+
     return(
         <div className="user-orders">
             <div className="user-orders__header">

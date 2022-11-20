@@ -1,7 +1,7 @@
 const UserSecurity = () => {
     return(
         <div className="user-security">
-            <div className="block-title">Change password</div>
+            <h5 className="block-title">Change password</h5>
 
             <div className="user-security__form">
                 <div className="input-wrapper">

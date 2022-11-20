@@ -18,7 +18,8 @@ const UserProfile = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
-        const userId = localStorage.getItem('userId');
+        let userCookie = document.cookie.match(/userId=(.+?);/);
+        const userId = userCookie ? userCookie[1] : null;
 
         if (!userId) {
             navigate('/auth');

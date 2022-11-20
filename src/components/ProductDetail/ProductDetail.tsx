@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchProduct } from "../../store/actions/productAction";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../tools/cookie";
 
 const ProductDetail = () => {
     const [activeImage, setActiveImage] = useState<number>(0);
@@ -66,24 +67,12 @@ const ProductDetail = () => {
     }
 
     const addProductToCart = () => {
-        const JSONuserCartData = localStorage.getItem('userCart');
-
-        if (JSONuserCartData === null) {
-            localStorage.setItem('userCart', JSON.stringify([{
-                productName: name,
-                count: counter
-            }]));
-        } else {
-            const userCartData = JSON.parse(JSONuserCartData);
-            const orderInfo = {
-                productName: name,
-                count: counter
-            }
-
-            userCartData.push(orderInfo);
-
-            localStorage.setItem('userCart', JSON.stringify(userCartData));
+        const order = {
+            productId: Number(productId),
+            count: counter
         }
+
+        addToCart(order);
     }
 
     return(
@@ -121,12 +110,14 @@ const ProductDetail = () => {
                     <p className="product-detail__description">{description}</p>
                     <div className="product-detail__controls">
                         <span className="product-detail__price">$ {(price * counter).toFixed(2)}</span>
+
+                        {/* Вынести в компонент */}
                         <div className="product-detail__quantity">
                             <span className={quantityDecreaseMeta} onClick={() => changeCount('decrease')}>-</span>
                             <span className="product-detail__quantity-value">{counter}</span>
                             <span className="product-detail__quantity-increase" onClick={() => changeCount('increase')}>+</span>
                         </div>
-                        <button className="button button--contained" onClick={addProductToCart}>Add to cart</button>
+                        <button className="button button--contained" onClick={() => addProductToCart()}>Add to cart</button>
                     </div>
                     <div className="product-detail__additional-info">
                         <div className="product-detail__additional-info-item">
