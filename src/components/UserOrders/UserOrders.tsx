@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import IOrder from "../../interfaces/IOrder";
 import { fetchOrders } from "../../store/actions/ordersActions";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
 import { fetchUser } from "../../store/actions/userActions";
 import { getCookie } from "../../tools/cookie";
-import Spinner from "../../tools/Spinner";
+import IOrder from "../../interfaces/IOrder";
 
 interface IUserOrdersRenderContentProps {
     orders: IOrder[],
@@ -21,7 +20,8 @@ const UserOrders = () => {
     const {error, loading, orders} = useAppSelector(state => state.orders);
     const {reustorants} = useAppSelector(state => state.reustorants);
     const {user} = useAppSelector(state => state.user);
-    const userName = `${user.firstName} ${user.lastName}`
+    const userName = `${user.firstName} ${user.lastName}`;
+    const tableHeader = ["Order Id", "Reustorant", "Creation date", "Creation time", "Status", "Total amount"];
 
     let navigate = useNavigate();
 
@@ -34,7 +34,6 @@ const UserOrders = () => {
         dispatch(fetchReustorants());
     }, []);
 
-    // Вынести в общую функцию
     const redirectOnReustorantPage = (reustorantName: string) => {
         reustorants.forEach(element => {
             if (element.name === reustorantName) {
@@ -46,12 +45,11 @@ const UserOrders = () => {
     return(
         <div className="user-orders">
             <div className="user-orders__header">
-                <span className="user-orders__header-item">Order Id</span>
-                <span className="user-orders__header-item">Reustorant</span>
-                <span className="user-orders__header-item">Creation date</span>
-                <span className="user-orders__header-item">Creation time</span>
-                <span className="user-orders__header-item">Status</span>
-                <span className="user-orders__header-item">Total amount</span>
+                {tableHeader.map((element: string) => {
+                    return(
+                        <span className="user-orders__header-item">{element}</span>
+                    )
+                })}
             </div>
 
             {loading ? <UserOrdersLoading/> : null}
