@@ -3,7 +3,7 @@ import TrashIcon from '../../assets/icons/TrashIcon';
 import IProduct from '../../interfaces/IProduct';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchProducts } from '../../store/actions/productsActions';
-import { getCookie } from '../../tools/cookie';
+import { getCookie, removeFromCart } from '../../tools/cookie';
 
 interface ICart {
     productId: number,
@@ -12,7 +12,6 @@ interface ICart {
 
 const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);
-    const [productList, setProductList] = useState([]);
     const dispatch = useAppDispatch();
     const {products} = useAppSelector(state => state.products)
 
@@ -20,6 +19,11 @@ const Cart = () => {
         setUserCart(getCookie('cart'));
         dispatch(fetchProducts());
     },[]);
+
+    const onHandlerRemoveProductFromCart = (index :number) => {
+        removeFromCart(index);
+        setUserCart(getCookie('cart'));
+    }
 
     return(
         <div className="cart">
@@ -32,7 +36,7 @@ const Cart = () => {
                     <div className="cart__list">
                         {products.map((product:IProduct) => {
                             return(
-                                userCart.map((userCartItem:ICart) => {
+                                userCart.map((userCartItem:ICart, index:number) => {
                                     if (product.id === userCartItem.productId) {
                                         const {id, name, description, price, image} = product;
 
@@ -57,7 +61,7 @@ const Cart = () => {
 
                                                     <span className="cart__item-price">${(userCartItem.count * price).toFixed(2)}</span>
 
-                                                    <div className="cart__item-remove">
+                                                    <div className="cart__item-remove" onClick={() => onHandlerRemoveProductFromCart(index)}>
                                                         <TrashIcon/>
                                                     </div>
                                                 </div>

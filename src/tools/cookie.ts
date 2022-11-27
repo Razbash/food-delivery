@@ -3,6 +3,8 @@ interface orderProps {
     count: number
 }
 
+const expiresCookie = new Date(Date.now() + 86400e3).toUTCString();
+
 export function getCookie(name: string) {
     let matches = document.cookie.match(new RegExp(
         "(?:^|; )" + 'cart'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -11,13 +13,10 @@ export function getCookie(name: string) {
 }
 
 export function setUserId(userId: string) {
-    const expiresCookie = new Date(Date.now() + 86400e3).toUTCString();
-
     document.cookie = `userId=${String(userId)}; expires=${expiresCookie}`;
 }
 
 export function addToCart(order: orderProps) {
-    const expiresCookie = new Date(Date.now() + 86400e3).toUTCString();
     let cart = getCookie('cart');
 
     if (cart) {
@@ -39,4 +38,16 @@ export function addToCart(order: orderProps) {
         const JSONorder = JSON.stringify([order]);
         document.cookie = `cart=${JSONorder}; expires=${expiresCookie}; path=/`;
     }
+}
+
+export function removeFromCart(arrPosition: number) {
+    let cart = getCookie('cart');
+
+    const newCart = cart.filter((element:any, index:number) => {
+        if (index !== arrPosition) {
+            return element;
+        }
+    })
+
+    document.cookie = `cart=${JSON.stringify(newCart)}; expires=${expiresCookie}; path=/`;
 }
