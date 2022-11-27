@@ -1,3 +1,5 @@
+import ICart from '../interfaces/ICart';
+
 interface orderProps {
     productId: number,
     count: number
@@ -7,7 +9,7 @@ const expiresCookie = new Date(Date.now() + 86400e3).toUTCString();
 
 export function getCookie(name: string) {
     let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + 'cart'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? JSON.parse(matches[1]) : null;
 }
@@ -43,11 +45,19 @@ export function addToCart(order: orderProps) {
 export function removeFromCart(arrPosition: number) {
     let cart = getCookie('cart');
 
-    const newCart = cart.filter((element:any, index:number) => {
+    const newCart = cart.filter((element:ICart, index:number) => {
         if (index !== arrPosition) {
             return element;
         }
     })
 
     document.cookie = `cart=${JSON.stringify(newCart)}; expires=${expiresCookie}; path=/`;
+}
+
+export function countNumberProductsInCart() {
+    let cart = getCookie('cart');
+
+    return cart
+        ? cart.reduce((previousValue: number, currentItem: ICart) => previousValue + currentItem.count, 0)
+        : 0;
 }

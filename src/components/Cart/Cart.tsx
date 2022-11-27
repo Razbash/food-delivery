@@ -4,11 +4,7 @@ import IProduct from '../../interfaces/IProduct';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchProducts } from '../../store/actions/productsActions';
 import { getCookie, removeFromCart } from '../../tools/cookie';
-
-interface ICart {
-    productId: number,
-    count: number,
-}
+import ICart from '../../interfaces/ICart';
 
 const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);

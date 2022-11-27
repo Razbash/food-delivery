@@ -2,12 +2,16 @@ import { NavLink, Link } from "react-router-dom";
 import CartIcon from "../../assets/icons/CartIcon";
 import BellIcon from "../../assets/icons/BellIcon";
 import userImage from "../../assets/images/users/user-1.jpg";
+import { countNumberProductsInCart } from "../../tools/cookie";
+import { useEffect, useState } from "react";
 
 interface IMenu {
     type: string;
 }
 
 const Menu = (props: IMenu) => {
+    const [countProducts, setCountProducts] = useState(0);
+
     const userMenu = [
         {
             title: "Restaurants",
@@ -46,6 +50,10 @@ const Menu = (props: IMenu) => {
         }
     ];
 
+    useEffect(() => {
+        setCountProducts(countNumberProductsInCart());
+    }, []);
+
     const menu = props.type === "user" ? userMenu : adminMenu;
 
     return(
@@ -65,7 +73,7 @@ const Menu = (props: IMenu) => {
                 <div className="menu__cart-icon">
                     {props.type === "user" ? <Link to="/cart"><CartIcon/></Link> : <BellIcon/>}
                 </div>
-                <span className="menu__cart-counter">4</span>
+                <span className="menu__cart-counter">{countProducts}</span>
             </div>
             <Link to="/user" className="menu__user">
                 <img src={userImage}
