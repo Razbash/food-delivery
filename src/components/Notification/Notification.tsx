@@ -3,25 +3,21 @@ import InfoIcon from "../../assets/icons/InfoIcon";
 import WarningIcon from "../../assets/icons/WarningIcon";
 import NotificationTypes from "../../enums/NotificationTypes";
 import CrossIcon from "../../assets/icons/CrossIcon";
-import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import {stopNotification} from "../../store/actions/notificationActions";
 
-interface INotificationProps {
-    type: NotificationTypes,
-    text: string,
-    open: boolean
-}
+const Notification = () => {
+    const dispatch = useAppDispatch();
+    const {open, notificationData} = useAppSelector(state => state.notification);
 
-const Notification = (props: INotificationProps) => {
-    const [isOpen, setIsOpen] = useState<boolean>(props.open);
-
-    let notificationMeta = "notification notification--" + props.type;
+    let notificationMeta = "notification notification--" + notificationData.type;
     let icon;
 
-    if (isOpen) {
+    if (open) {
         notificationMeta += " notification--open"
     }
 
-    switch (props.type) {
+    switch (notificationData.type) {
         case NotificationTypes.error:
             icon = <InfoIcon/>;
             break;
@@ -36,11 +32,9 @@ const Notification = (props: INotificationProps) => {
             break;
     }
 
-    useEffect(() => {
-        if (isOpen) {
-            setTimeout(() => setIsOpen(false), 5000);
-        }
-    }, [isOpen])
+    const closeNotification = () => {
+        dispatch(stopNotification());
+    }
 
     return(
         <div className={notificationMeta}>
@@ -49,9 +43,9 @@ const Notification = (props: INotificationProps) => {
                     {icon}
                 </div>
                 <span className="notification__text">
-                    {props.text}
+                    {notificationData.text}
                 </span>
-                <div className="notification__close" onClick={() => setIsOpen(false)}>
+                <div className="notification__close" onClick={closeNotification}>
                     <CrossIcon/>
                 </div>
             </div>

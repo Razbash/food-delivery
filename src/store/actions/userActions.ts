@@ -1,6 +1,8 @@
 import { AppDispatch } from "..";
 import axios from "../../axios/index";
 import { userSlice } from "../slices/userSlice";
+import { startNotification } from "./notificationActions";
+import NotificationTypes from "../../enums/NotificationTypes";
 
 interface IFetchUserProps {
     id: number,
@@ -44,8 +46,10 @@ export const sendUserData = (userData: IUserData) => {
             });
 
             dispatch(userSlice.actions.fetchSuccess(response.data));
+            dispatch(startNotification({type: NotificationTypes.sucsses, text: "Profile updated"}));
         } catch (error) {
             dispatch(userSlice.actions.fetchError(error as Error));
+            dispatch(startNotification({type: NotificationTypes.error, text: "An error occurred while updating"}));
         }
     }
 }

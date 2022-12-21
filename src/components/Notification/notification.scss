@@ -1,7 +1,7 @@
 .notification {
     position: fixed;
-    bottom: 24px;
-    left: -100%;
+    top: 24px;
+    right: -100%;
     opacity: 0;
     min-width: 300px;
     max-width: 500px;
@@ -46,7 +46,7 @@
 
     &--open {
         opacity: 1;
-        left: 24px;
+        right: 24px;
     }
 
     .icon {

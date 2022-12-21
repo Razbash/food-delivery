@@ -143,7 +143,7 @@ const UserPersonalInformation = (props: IProps) => {
                 </div>
             </div>
 
-            <Notification type={NotificationTypes.sucsses} text="User data changed" open={true}/>
+            <Notification/>
         </>
     )
 }
