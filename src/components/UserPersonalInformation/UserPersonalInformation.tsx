@@ -5,6 +5,8 @@ import { useAppDispatch } from "../../hooks/redux";
 import { sendUserData } from "../../store/actions/userActions";
 import Notification from "../../components/Notification/Notification";
 import NotificationTypes from "../../enums/NotificationTypes";
+import { setUserId } from "../../tools/cookie";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
     userData: IUser,
@@ -19,6 +21,7 @@ const UserPersonalInformation = (props: IProps) => {
     const [userPhone, setUserPhone] = useState<string>("");
     const dispatch = useAppDispatch();
     let activeImage = "";
+    let navigate = useNavigate();
 
     useEffect(() => {
         setUserFirstName(firstName);
@@ -49,6 +52,11 @@ const UserPersonalInformation = (props: IProps) => {
         }
 
         dispatch(sendUserData(userData));
+    }
+
+    const logOut = () => {
+        setUserId(null);
+        navigate('/auth');
     }
 
     return(
@@ -135,7 +143,7 @@ const UserPersonalInformation = (props: IProps) => {
 
                     <div className="user-personal-information__chapter user-profile-chapter">
                         <div className="user-personal-information__controls">
-                            <button className="button button--outlined-red">Log out</button>
+                            <button className="button button--outlined-red" onClick={logOut}>Log out</button>
                             <button className="button button--outlined-gray">Discard changes</button>
                             <button className="button button--contained" onClick={onSaveChanges}>Save changes</button>
                         </div>

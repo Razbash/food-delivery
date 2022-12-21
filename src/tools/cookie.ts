@@ -14,7 +14,7 @@ export function getCookie(name: string) {
     return matches ? JSON.parse(matches[1]) : null;
 }
 
-export function setUserId(userId: string) {
+export function setUserId(userId: string | null) {
     document.cookie = `userId=${String(userId)}; expires=${expiresCookie}`;
 }
 
@@ -25,7 +25,7 @@ export function addToCart(order: orderProps) {
         let productAlreadyInCart = false;
 
         cart.forEach((element:orderProps, index: number)  => {
-            if (element.productId == order.productId) {
+            if (element.productId === order.productId) {
                 cart[index].count = element.count + order.count;
                 productAlreadyInCart = true;
             }
