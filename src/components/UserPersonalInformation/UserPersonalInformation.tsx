@@ -1,19 +1,53 @@
 import IUser from "../../interfaces/IUser";
+import ImageUploading, {ImageListType} from 'react-images-uploading';
+import { useEffect, useState } from "react";
+import { useAppDispatch } from "../../hooks/redux";
+import { sendUserData } from "../../store/actions/userActions";
 
 interface IProps {
     userData: IUser,
 }
 
 const UserPersonalInformation = (props: IProps) => {
-    const {image, firstName, lastName, email, phone, notifications} = props.userData;
-    const globalNotifications = [
-        "New deals",
-        "Order statuses",
-        "Special offers",
-        "New reustorants",
-        "Password changes",
-        "Newsletter"
-    ];
+    const {id, image, firstName, lastName, email, phone} = props.userData;
+    const [userImage, setUserImage] = useState([]);
+    const [userFirstName, setUserFirstName] = useState<string>("");
+    const [userLastName, setUserLastName] = useState<string>("");
+    const [userEmail, setUserEmail] = useState<string>("");
+    const [userPhone, setUserPhone] = useState<string>("");
+    const dispatch = useAppDispatch();
+    let activeImage = "";
+
+    useEffect(() => {
+        setUserFirstName(firstName);
+        setUserLastName(lastName);
+        setUserEmail(email);
+
+        if (phone) {
+            setUserPhone(phone);
+        }
+    },[props]);
+
+    const onChangeImage = (newImage: ImageListType) => {
+        setUserImage(newImage as never[]);
+    }
+
+    const onSaveChanges = () => {
+        const userData = {
+            id: id,
+            image: image,
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userEmail,
+            phone: userPhone
+        }
+
+        if (userImage.length) {
+            userData.image = userImage[0]['data_url'];
+        }
+
+        dispatch(sendUserData(userData));
+    }
 
     return(
         <div className="user-personal-information">
@@ -21,16 +55,38 @@ const UserPersonalInformation = (props: IProps) => {
                 <h6 className="user-personal-information__content-title user-profile-block-title">Personal information</h6>
                 <div className="user-personal-information__chapter user-profile-chapter">
                     <span className="user-personal-information__label">Avatar</span>
-                    <div className="user-personal-information__image-controls">
-                        <img src={image}
-                            alt="user image"
-                            className="user-personal-information__user-image"
-                            width={88}
-                            height={88}
-                        />
-                        <button className="button button--outlined-blue user-personal-information__cnahge-button">Change</button>
-                        <button className="button button--text-gray">Remove</button>
-                    </div>
+
+                    <ImageUploading
+                        value={userImage}
+                        onChange={onChangeImage}
+                        dataURLKey="data_url"
+                    >
+                        {({
+                            imageList,
+                            onImageUpload,
+                            onImageRemoveAll,
+                            onImageUpdate,
+                            onImageRemove,
+                            isDragging,
+                            dragProps,
+                        }) => (
+                            <div className="user-personal-information__image-controls">
+                                {/* Рефакторинг */}
+                                <div style={{"display": "none"}}>{activeImage = imageList.length ? imageList[0].data_url : image}</div>
+
+                                <div className="user-personal-information__user-image"
+                                    style={{"backgroundImage": "url(" + activeImage + ")"}}
+                                ></div>
+
+                                <button className="button button--outlined-blue user-personal-information__cnahge-button"
+                                    onClick={onImageUpload}
+                                >
+                                    Change
+                                </button>
+                                <button className="button button--text-gray">Remove</button>
+                            </div>
+                        )}
+                    </ImageUploading>
 
                     <div className="user-personal-information__textareas">
                         <div className="input-wrapper">
@@ -39,7 +95,8 @@ const UserPersonalInformation = (props: IProps) => {
                                 id="first_name"
                                 className="input"
                                 placeholder="Jane"
-                                value={firstName}
+                                value={userFirstName}
+                                onChange={(e) => setUserFirstName(e.target.value)}
                             />
                         </div>
 
@@ -49,7 +106,8 @@ const UserPersonalInformation = (props: IProps) => {
                                 id="last_name"
                                 className="input"
                                 placeholder="Robetson"
-                                value={lastName}
+                                value={userLastName}
+                                onChange={(e) => setUserLastName(e.target.value)}
                             />
                         </div>
 
@@ -59,7 +117,8 @@ const UserPersonalInformation = (props: IProps) => {
                                 id="email"
                                 className="input"
                                 placeholder="name@example.com"
-                                value={email}
+                                value={userEmail}
+                                onChange={(e) => setUserEmail(e.target.value)}
                             />
                         </div>
 
@@ -69,29 +128,18 @@ const UserPersonalInformation = (props: IProps) => {
                                 id="phone"
                                 className="input"
                                 placeholder="(217) 555-0113"
-                                value={phone}
+                                value={userPhone}
+                                onChange={(e) => setUserPhone(e.target.value)}
                             />
                         </div>
                     </div>
                 </div>
 
-                <h6 className="user-personal-information__content-title">Email notifications</h6>
                 <div className="user-personal-information__chapter user-profile-chapter">
-                    <div className="user-personal-information__notifications">
-                        {globalNotifications.map((element, index) => {
-                            return(
-                                <label className="checkbox" key={index}>
-                                    <input type="checkbox" className="checkbox__input" checked={notifications.includes(element)}/>
-                                    <span className="checkbox__label">{element}</span>
-                                </label>
-                            )
-                        })}
-                    </div>
-
                     <div className="user-personal-information__controls">
                         <button className="button button--outlined-red">Log out</button>
                         <button className="button button--outlined-gray">Discard changes</button>
-                        <button className="button button--contained">Save changes</button>
+                        <button className="button button--contained" onClick={onSaveChanges}>Save changes</button>
                     </div>
                 </div>
             </div>

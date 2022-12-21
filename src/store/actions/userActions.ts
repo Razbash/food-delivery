@@ -6,11 +6,43 @@ interface IFetchUserProps {
     id: number,
 }
 
+interface IUserData {
+    id: number,
+    firstName: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    image?: string,
+}
+
 export const fetchUser = (props: IFetchUserProps) => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(userSlice.actions.fetching());
             const response = await axios.get(`users/${props.id}`);
+            dispatch(userSlice.actions.fetchSuccess(response.data));
+        } catch (error) {
+            dispatch(userSlice.actions.fetchError(error as Error));
+        }
+    }
+}
+
+export const sendUserData = (userData: IUserData) => {
+    return async (dispatch: AppDispatch) => {
+        try {
+            dispatch(userSlice.actions.fetching());
+            const response = await axios({
+                method: 'PATCH',
+                url: `users/${userData.id}`,
+                data: {
+                    image: userData.image,
+                    firstName: userData.firstName,
+                    lastName: userData.lastName,
+                    email: userData.email,
+                    phone: userData.phone
+                }
+            });
+
             dispatch(userSlice.actions.fetchSuccess(response.data));
         } catch (error) {
             dispatch(userSlice.actions.fetchError(error as Error));

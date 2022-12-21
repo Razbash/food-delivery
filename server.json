@@ -1,523 +1,626 @@
 {
-    "deals": [
+  "deals": [
+    {
+      "id": 0,
+      "title": "20% off on Vegan sandwiches every Saturday this Summer",
+      "status": "active",
+      "image": "../../assets/images/deals/20-for-vegans.png",
+      "date": "10 April, 2021 – 30 August, 2021 (Saturday only)",
+      "reustorant": "Vegfood"
+    },
+    {
+      "id": 1,
+      "title": "5% off on all meals every Wednesday",
+      "status": "active",
+      "image": "../../assets/images/deals/5-for-meals.png",
+      "date": "5 March, 2021 – 20 June, 2021 (Wednesday only)",
+      "reustorant": "Parallax Restaurant"
+    },
+    {
+      "id": 2,
+      "title": "Free Pepsi on orders above $50",
+      "status": "active",
+      "image": "../../assets/images/deals/free-pepsi.png",
+      "date": "22 March, 2021 – 12 June, 2021",
+      "reustorant": "Sur un Arbre Perché"
+    },
+    {
+      "id": 3,
+      "title": "Get extra pizza on orders above $200",
+      "status": "active",
+      "image": "../../assets/images/deals/get-pizza.png",
+      "date": "20 April, 2021 – 28 July, 2021",
+      "reustorant": "Norma's"
+    },
+    {
+      "id": 4,
+      "title": "10% off on all orders above $300",
+      "status": "scheduled",
+      "image": "../../assets/images/deals/above-300.png",
+      "date": "1 June, 2021 – 30 July, 2021",
+      "reustorant": "Ithaa"
+    },
+    {
+      "id": 5,
+      "title": "30% off on non vegan meals every Monday",
+      "status": "scheduled",
+      "image": "../../assets/images/deals/30-for-vegans.png",
+      "date": "20 June, 2021 – 30 August, 2021 (Monday only)",
+      "reustorant": "Ithaa"
+    },
+    {
+      "id": 6,
+      "title": "Free burger and fries on orders above $120",
+      "status": "expired",
+      "image": "../../assets/images/deals/free-burger.png",
+      "date": "12 April, 2021",
+      "reustorant": "Parallax Restaurant"
+    },
+    {
+      "id": 7,
+      "title": "Free sushi roll on orders above $200",
+      "status": "expired",
+      "image": "../../assets/images/deals/free-sushi.png",
+      "date": "30 March, 2021",
+      "reustorant": "Parallax Restaurant"
+    },
+    {
+      "id": 8,
+      "title": "25% off on all deserts(Chef's Birthday)",
+      "status": "expired",
+      "image": "../../assets/images/deals/25-deserts.png",
+      "date": "13 April, 2021",
+      "reustorant": "Parallax Restaurant"
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "title": "Pizza",
+      "icon": "../../assets/images/categories/pizza.png"
+    },
+    {
+      "id": 1,
+      "title": "Burger",
+      "icon": "../../assets/images/categories/burger.png"
+    },
+    {
+      "id": 2,
+      "title": "BBQ",
+      "icon": "../../assets/images/categories/bbq.png"
+    },
+    {
+      "id": 3,
+      "title": "Sushi",
+      "icon": "../../assets/images/categories/sushi.png"
+    },
+    {
+      "id": 4,
+      "title": "Vegan",
+      "icon": "../../assets/images/categories/vegan.png"
+    },
+    {
+      "id": 5,
+      "title": "Dessert",
+      "icon": "../../assets/images/categories/dessert.png"
+    }
+  ],
+  "reustorants": [
+    {
+      "id": 0,
+      "name": "Royal Sushi House",
+      "minDeliveryTime": 30,
+      "maxDeliveryTime": 40,
+      "minAmount": 32,
+      "categories": [
+        "sushi"
+      ],
+      "featured": true,
+      "image": "../../assets/images/reustorants/royal-sushi-house.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 0,
-            "title": "20% off on Vegan sandwiches every Saturday this Summer",
-            "status": "active",
-            "image": "../../assets/images/deals/20-for-vegans.png",
-            "date": "10 April, 2021 – 30 August, 2021 (Saturday only)",
-            "reustorant": "Vegfood"
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "title": "5% off on all meals every Wednesday",
-            "status": "active",
-            "image": "../../assets/images/deals/5-for-meals.png",
-            "date": "5 March, 2021 – 20 June, 2021 (Wednesday only)",
-            "reustorant": "Parallax Restaurant"
-        },
-        {
-            "id": 2,
-            "title": "Free Pepsi on orders above $50",
-            "status": "active",
-            "image": "../../assets/images/deals/free-pepsi.png",
-            "date": "22 March, 2021 – 12 June, 2021",
-            "reustorant": "Sur un Arbre Perché"
-        },
-        {
-            "id": 3,
-            "title": "Get extra pizza on orders above $200",
-            "status": "active",
-            "image": "../../assets/images/deals/get-pizza.png",
-            "date": "20 April, 2021 – 28 July, 2021",
-            "reustorant": "Norma's"
-        },
-        {
-            "id": 4,
-            "title": "10% off on all orders above $300",
-            "status": "scheduled",
-            "image": "../../assets/images/deals/above-300.png",
-            "date": "1 June, 2021 – 30 July, 2021",
-            "reustorant": "Ithaa"
-        },
-        {
-            "id": 5,
-            "title": "30% off on non vegan meals every Monday",
-            "status": "scheduled",
-            "image": "../../assets/images/deals/30-for-vegans.png",
-            "date": "20 June, 2021 – 30 August, 2021 (Monday only)",
-            "reustorant": "Ithaa"
-        },
-        {
-            "id": 6,
-            "title": "Free burger and fries on orders above $120",
-            "status": "expired",
-            "image": "../../assets/images/deals/free-burger.png",
-            "date": "12 April, 2021",
-            "reustorant": "Parallax Restaurant"
-        },
-        {
-            "id": 7,
-            "title": "Free sushi roll on orders above $200",
-            "status": "expired",
-            "image": "../../assets/images/deals/free-sushi.png",
-            "date": "30 March, 2021",
-            "reustorant": "Parallax Restaurant"
-        },
-        {
-            "id": 8,
-            "title": "25% off on all deserts(Chef's Birthday)",
-            "status": "expired",
-            "image": "../../assets/images/deals/25-deserts.png",
-            "date": "13 April, 2021",
-            "reustorant": "Parallax Restaurant"
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ],
-    "categories": [
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Burgers & Pizza",
+      "minDeliveryTime": 40,
+      "maxDeliveryTime": 60,
+      "minAmount": 24,
+      "categories": [
+        "burger",
+        "pizza"
+      ],
+      "featured": true,
+      "image": "../../assets/images/reustorants/burgers-pizza.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 0,
-            "title": "Pizza",
-            "icon": "../../assets/images/categories/pizza.png"
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "title": "Burger",
-            "icon": "../../assets/images/categories/burger.png"
-        },
-        {
-            "id": 2,
-            "title": "BBQ",
-            "icon": "../../assets/images/categories/bbq.png"
-        },
-        {
-            "id": 3,
-            "title": "Sushi",
-            "icon": "../../assets/images/categories/sushi.png"
-        },
-        {
-            "id": 4,
-            "title": "Vegan",
-            "icon": "../../assets/images/categories/vegan.png"
-        },
-        {
-            "id": 5,
-            "title": "Dessert",
-            "icon": "../../assets/images/categories/dessert.png"
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ],
-    "reustorants" : [
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ninja Sushi",
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 40,
+      "minAmount": 40,
+      "categories": [
+        "dessert"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/ninja-sushi.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 0,
-            "name": "Royal Sushi House",
-            "minDeliveryTime": 30,
-            "maxDeliveryTime": 40,
-            "minAmount": 32,
-            "categories": ["sushi"],
-            "featured": true,
-            "image": "../../assets/images/reustorants/royal-sushi-house.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "name": "Burgers & Pizza",
-            "minDeliveryTime": 40,
-            "maxDeliveryTime": 60,
-            "minAmount": 24,
-            "categories": ["burger", "pizza"],
-            "featured": true,
-            "image": "../../assets/images/reustorants/burgers-pizza.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Ninja Sushi",
-            "minDeliveryTime": 20,
-            "maxDeliveryTime": 40,
-            "minAmount": 40,
-            "categories": ["dessert"],
-            "featured": false,
-            "image": "../../assets/images/reustorants/ninja-sushi.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Sushi Master",
-            "minDeliveryTime": 60,
-            "maxDeliveryTime": 70,
-            "minAmount": 49,
-            "categories": ["sushi"],
-            "featured": false,
-            "image": "../../assets/images/reustorants/sushi-master.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Japanese Sushi",
-            "minDeliveryTime": 30,
-            "maxDeliveryTime": 50,
-            "minAmount": 104,
-            "categories": ["sushi"],
-            "featured": false,
-            "image": "../../assets/images/reustorants/japanese-sushi.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Kobe",
-            "minDeliveryTime": 20,
-            "maxDeliveryTime": 30,
-            "minAmount": 57,
-            "categories": ["sushi"],
-            "featured": false,
-            "image": "../../assets/images/reustorants/kobe.png",
-            "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
-            "coordinates": [-33.517315, 164.182682],
-            "reviews": [
-                {
-                    "id": 0,
-                    "userName": "Savannah Miles",
-                    "userImage": "../../assets/images/users/miles.png",
-                    "dateOfPublication": "10 days ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                },
-                {
-                    "id": 1,
-                    "userName": "Jacob Jones",
-                    "userImage": "../../assets/images/users/jacob.png",
-                    "dateOfPublication": "1 day ago",
-                    "estimate": 4,
-                    "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-                    "likes": 14,
-                    "dislikes": 4
-                }
-            ]
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ],
-    "orders": [
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sushi Master",
+      "minDeliveryTime": 60,
+      "maxDeliveryTime": 70,
+      "minAmount": 49,
+      "categories": [
+        "sushi"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/sushi-master.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 0,
-            "customerName": "Leslie Alexander",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Bluepoint Sage Cafe",
-            "address": "8502 Preston Rd. Inglewood",
-            "creationDate": "21 Apr, 2021",
-            "creationTime": "05:51 pm",
-            "status": "in progress",
-            "totalAmount": "149.40"
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "customerName": "Cody Fisher",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Bluepoint Sage Cafe",
-            "address": "3517 W. Gray St. Utica",
-            "creationDate": "20 Apr, 2021",
-            "creationTime": "07:38 am",
-            "status": "in progress",
-            "totalAmount": "351.22"
-        },
-        {
-            "id": 2,
-            "customerName": "Kristin Watson",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Bluepoint Sage Cafe",
-            "address": "6391 Elgin St. Celina",
-            "creationDate": "21 Apr, 2021",
-            "creationTime": "05:49 pm",
-            "status": "completed",
-            "totalAmount": "258.28"
-        },
-        {
-            "id": 3,
-            "customerName": "Annette Black",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Bluepoint Sage Cafe",
-            "address": "1901 Thornridge Cir. Shiloh",
-            "creationDate": "20 Apr, 2021",
-            "creationTime": "04:02 pm",
-            "status": "completed",
-            "totalAmount": "795.86"
-        },
-        {
-            "id": 4,
-            "customerName": "Robert Fox",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Bluepoint Sage Cafe",
-            "address": "2715 Ash Dr. San Jose",
-            "creationDate": "21 Apr, 2021",
-            "creationTime": "04:01 pm",
-            "status": "completed",
-            "totalAmount": "162.24"
-        },
-        {
-            "id": 5,
-            "customerName": "Dmitry Bezzubov",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Kobe",
-            "address": "2715 Ash Dr. San Jose",
-            "creationDate": "21 Apr, 2021",
-            "creationTime": "04:01 pm",
-            "status": "completed",
-            "totalAmount": "162.24"
-        },
-        {
-            "id": 6,
-            "customerName": "Dmitry Bezzubov",
-            "customerImage": "../../assets/images/users/user-1.jpg",
-            "reustorant": "Kobe",
-            "address": "2715 Ash Dr. San Jose",
-            "creationDate": "21 Apr, 2021",
-            "creationTime": "04:01 pm",
-            "status": "completed",
-            "totalAmount": "162.24"
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ],
-    "products": [
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Japanese Sushi",
+      "minDeliveryTime": 30,
+      "maxDeliveryTime": 50,
+      "minAmount": 104,
+      "categories": [
+        "sushi"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/japanese-sushi.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 0,
-            "name": "Nigiri set",
-            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            "price": 16.80,
-            "image": "../../assets/images/menu/nigiriSet.png",
-            "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
-            "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-            "reustorant": "Royal Sushi House",
-            "images": [
-                "../../assets/images/products/1.png",
-                "../../assets/images/products/2.png",
-                "../../assets/images/products/3.png",
-                "../../assets/images/products/4.png"
-            ]
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "name": "Roll set",
-            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            "price": 22.56,
-            "image": "../../assets/images/menu/rollSet.png",
-            "reustorant": "Royal Sushi House",
-            "images": [
-                "../../assets/images/products/1.png",
-                "../../assets/images/products/2.png",
-                "../../assets/images/products/3.png",
-                "../../assets/images/products/4.png"
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Star set",
-            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            "price": 50.56,
-            "image": "../../assets/images/menu/nigiriSet.png",
-            "reustorant": "Royal Sushi House",
-            "images": [
-                "../../assets/images/products/1.png",
-                "../../assets/images/products/2.png",
-                "../../assets/images/products/3.png",
-                "../../assets/images/products/4.png"
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Razbash set",
-            "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
-            "price": 55.00,
-            "image": "../../assets/images/menu/rollSet.png",
-            "reustorant": "Royal Sushi House",
-            "images": [
-                "../../assets/images/products/1.png",
-                "../../assets/images/products/2.png",
-                "../../assets/images/products/3.png",
-                "../../assets/images/products/4.png"
-            ]
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ],
-    "users": [
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Kobe",
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 30,
+      "minAmount": 57,
+      "categories": [
+        "sushi"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/kobe.png",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        -33.517315,
+        164.182682
+      ],
+      "reviews": [
         {
-            "id": 1,
-            "image": "../../assets/images/users/user-1.jpg",
-            "firstName": "Dmitry",
-            "lastName": "Bezzubov",
-            "phone": "+79278036203",
-            "email": "bezzubovds@mail.ru",
-            "password": "211989211989",
-            "notifications": ["New deals", "Order statuses", "Special offers", "New reustorants", "Password changes"],
-            "shippingAddresses": [
-                {
-                    "id": 0,
-                    "addressName": "New York",
-                    "country": "USA",
-                    "state": "New York",
-                    "city": "New York",
-                    "addressLine1": "4517 Washington Ave. Manchester, 11004",
-                    "addressLine2": "",
-                    "coordinates": [-33.517315, 164.182682]
-                },
-                {
-                    "id": 1,
-                    "addressName": "New York",
-                    "country": "USA",
-                    "state": "New York",
-                    "city": "New York",
-                    "addressLine1": "4517 Washington Ave. Manchester, 11004",
-                    "addressLine2": "",
-                    "coordinates": [-33.517315, 164.182682]
-                }
-            ],
-            "paymentMethods": [
-                {
-                    "id": 0,
-                    "cardNumber": 4629462946294629,
-                    "expiration": "12/25",
-                    "cvc": 222,
-                    "cardHolder": "Dmitry Bezzubov"
-                },
-                {
-                    "id": 0,
-                    "cardNumber": 4629462946294629,
-                    "expiration": "12/25",
-                    "cvc": 222,
-                    "cardHolder": "Dmitry Bezzubov"
-                }
-            ]
-        }
-    ],
-    "promotions": [
-        {
-            "id": 0,
-            "name": "All deserts",
-            "text": "20% off",
-            "category": "Deserty",
-            "image": "../../assets/images/promotions/desert.png",
-            "background": "#F3F4FF",
-            "color": "#4E60FF"
+          "id": 0,
+          "userName": "Savannah Miles",
+          "userImage": "../../assets/images/users/miles.png",
+          "dateOfPublication": "10 days ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         },
         {
-            "id": 1,
-            "name": "Big burgers",
-            "text": "50% off",
-            "category": "Fooddies",
-            "image": "../../assets/images/promotions/burger.png",
-            "background": "#FFF3ED",
-            "color": "#FD6D22"
+          "id": 1,
+          "userName": "Jacob Jones",
+          "userImage": "../../assets/images/users/jacob.png",
+          "dateOfPublication": "1 day ago",
+          "estimate": 4,
+          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
+          "likes": 14,
+          "dislikes": 4
         }
-    ]
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 0,
+      "customerName": "Leslie Alexander",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Bluepoint Sage Cafe",
+      "address": "8502 Preston Rd. Inglewood",
+      "creationDate": "21 Apr, 2021",
+      "creationTime": "05:51 pm",
+      "status": "in progress",
+      "totalAmount": "149.40"
+    },
+    {
+      "id": 1,
+      "customerName": "Cody Fisher",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Bluepoint Sage Cafe",
+      "address": "3517 W. Gray St. Utica",
+      "creationDate": "20 Apr, 2021",
+      "creationTime": "07:38 am",
+      "status": "in progress",
+      "totalAmount": "351.22"
+    },
+    {
+      "id": 2,
+      "customerName": "Kristin Watson",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Bluepoint Sage Cafe",
+      "address": "6391 Elgin St. Celina",
+      "creationDate": "21 Apr, 2021",
+      "creationTime": "05:49 pm",
+      "status": "completed",
+      "totalAmount": "258.28"
+    },
+    {
+      "id": 3,
+      "customerName": "Annette Black",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Bluepoint Sage Cafe",
+      "address": "1901 Thornridge Cir. Shiloh",
+      "creationDate": "20 Apr, 2021",
+      "creationTime": "04:02 pm",
+      "status": "completed",
+      "totalAmount": "795.86"
+    },
+    {
+      "id": 4,
+      "customerName": "Robert Fox",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Bluepoint Sage Cafe",
+      "address": "2715 Ash Dr. San Jose",
+      "creationDate": "21 Apr, 2021",
+      "creationTime": "04:01 pm",
+      "status": "completed",
+      "totalAmount": "162.24"
+    },
+    {
+      "id": 5,
+      "customerName": "Dmitry Bezzubov",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Kobe",
+      "address": "2715 Ash Dr. San Jose",
+      "creationDate": "21 Apr, 2021",
+      "creationTime": "04:01 pm",
+      "status": "completed",
+      "totalAmount": "162.24"
+    },
+    {
+      "id": 6,
+      "customerName": "Dmitry Bezzubov",
+      "customerImage": "../../assets/images/users/user-1.jpg",
+      "reustorant": "Kobe",
+      "address": "2715 Ash Dr. San Jose",
+      "creationDate": "21 Apr, 2021",
+      "creationTime": "04:01 pm",
+      "status": "completed",
+      "totalAmount": "162.24"
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "name": "Nigiri set",
+      "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+      "price": 16.8,
+      "image": "../../assets/images/menu/nigiriSet.png",
+      "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
+      "reustorant": "Royal Sushi House",
+      "images": [
+        "../../assets/images/products/1.png",
+        "../../assets/images/products/2.png",
+        "../../assets/images/products/3.png",
+        "../../assets/images/products/4.png"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Roll set",
+      "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+      "price": 22.56,
+      "image": "../../assets/images/menu/rollSet.png",
+      "reustorant": "Royal Sushi House",
+      "images": [
+        "../../assets/images/products/1.png",
+        "../../assets/images/products/2.png",
+        "../../assets/images/products/3.png",
+        "../../assets/images/products/4.png"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Star set",
+      "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+      "price": 50.56,
+      "image": "../../assets/images/menu/nigiriSet.png",
+      "reustorant": "Royal Sushi House",
+      "images": [
+        "../../assets/images/products/1.png",
+        "../../assets/images/products/2.png",
+        "../../assets/images/products/3.png",
+        "../../assets/images/products/4.png"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Razbash set",
+      "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+      "price": 55,
+      "image": "../../assets/images/menu/rollSet.png",
+      "reustorant": "Royal Sushi House",
+      "images": [
+        "../../assets/images/products/1.png",
+        "../../assets/images/products/2.png",
+        "../../assets/images/products/3.png",
+        "../../assets/images/products/4.png"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "image": "data:image/jpeg;base64,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",
+      "firstName": "Dmitry",
+      "lastName": "Bezzubov",
+      "phone": "+79278036203",
+      "email": "bezzubovds@mail.ru",
+      "password": "211989211989",
+      "notifications": [
+        "New deals",
+        "Order statuses",
+        "Special offers",
+        "New reustorants",
+        "Password changes"
+      ],
+      "shippingAddresses": [
+        {
+          "id": 0,
+          "addressName": "New York",
+          "country": "USA",
+          "state": "New York",
+          "city": "New York",
+          "addressLine1": "4517 Washington Ave. Manchester, 11004",
+          "addressLine2": "",
+          "coordinates": [
+            -33.517315,
+            164.182682
+          ]
+        },
+        {
+          "id": 1,
+          "addressName": "New York",
+          "country": "USA",
+          "state": "New York",
+          "city": "New York",
+          "addressLine1": "4517 Washington Ave. Manchester, 11004",
+          "addressLine2": "",
+          "coordinates": [
+            -33.517315,
+            164.182682
+          ]
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 0,
+          "cardNumber": 4629462946294629,
+          "expiration": "12/25",
+          "cvc": 222,
+          "cardHolder": "Dmitry Bezzubov"
+        },
+        {
+          "id": 0,
+          "cardNumber": 4629462946294629,
+          "expiration": "12/25",
+          "cvc": 222,
+          "cardHolder": "Dmitry Bezzubov"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "../../assets/images/users/user-1.jpg",
+      "firstName": "Dmitry",
+      "lastName": "Bezzubov",
+      "phone": "+79278036203",
+      "email": "bezzubovds@mail.ru",
+      "password": "211989211989",
+      "notifications": [
+        "New deals",
+        "Order statuses",
+        "Special offers",
+        "New reustorants",
+        "Password changes"
+      ],
+      "shippingAddresses": [
+        {
+          "id": 0,
+          "addressName": "New York",
+          "country": "USA",
+          "state": "New York",
+          "city": "New York",
+          "addressLine1": "4517 Washington Ave. Manchester, 11004",
+          "addressLine2": "",
+          "coordinates": [
+            -33.517315,
+            164.182682
+          ]
+        },
+        {
+          "id": 1,
+          "addressName": "New York",
+          "country": "USA",
+          "state": "New York",
+          "city": "New York",
+          "addressLine1": "4517 Washington Ave. Manchester, 11004",
+          "addressLine2": "",
+          "coordinates": [
+            -33.517315,
+            164.182682
+          ]
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 0,
+          "cardNumber": 4629462946294629,
+          "expiration": "12/25",
+          "cvc": 222,
+          "cardHolder": "Dmitry Bezzubov"
+        },
+        {
+          "id": 0,
+          "cardNumber": 4629462946294629,
+          "expiration": "12/25",
+          "cvc": 222,
+          "cardHolder": "Dmitry Bezzubov"
+        }
+      ]
+    }
+  ],
+  "promotions": [
+    {
+      "id": 0,
+      "name": "All deserts",
+      "text": "20% off",
+      "category": "Deserty",
+      "image": "../../assets/images/promotions/desert.png",
+      "background": "#F3F4FF",
+      "color": "#4E60FF"
+    },
+    {
+      "id": 1,
+      "name": "Big burgers",
+      "text": "50% off",
+      "category": "Fooddies",
+      "image": "../../assets/images/promotions/burger.png",
+      "background": "#FFF3ED",
+      "color": "#FD6D22"
+    }
+  ]
 }
