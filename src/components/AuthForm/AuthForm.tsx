@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import EyeIcon from "../../assets/icons/EyeIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchUsers } from "../../store/actions/usersActions";
-import { fetchUser } from "../../store/actions/userActions";
 import Logo from "../Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import IUser from "../../interfaces/IUser";

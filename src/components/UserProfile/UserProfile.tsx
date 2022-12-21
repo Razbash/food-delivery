@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { useNavigate } from "react-router-dom";
 import { fetchUser } from "../../store/actions/userActions";
+import { getCookie } from "../../tools/cookie";
 
 const UserProfile = () => {
     const [currentTabId, setCurrentTabId] = useState<Number>(0);
@@ -18,8 +19,7 @@ const UserProfile = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
-        let userCookie = document.cookie.match(/userId=(.+?);/);
-        const userId = userCookie ? userCookie[1] : null;
+        const userId = getCookie('userId');
 
         if (!userId) {
             navigate('/auth');

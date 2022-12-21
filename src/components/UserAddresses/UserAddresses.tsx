@@ -1,6 +1,5 @@
 /// <reference path="../../../ymaps.d.ts" />
 
-import { useEffect } from "react";
 import DotsIcon from "../../assets/icons/DotsIcon";
 import IUser from "../../interfaces/IUser";
 
@@ -10,21 +9,6 @@ interface IProps {
 
 const UserAddresses = (props: IProps) => {
     const {shippingAddresses} = props.userData;
-
-    const addresses = [
-        {
-            "city": "New York",
-            "state": "New York State, USA",
-            "address": "4517 Washington Ave. Manchester, 11004",
-            "coordinates": [50.450100, 30.523400],
-        },
-        {
-            "city": "San Diego",
-            "state": "California State, USA",
-            "address": "3891 Ranchview Dr. Richardson, 62639",
-            "coordinates": [50.450100, 30.523400],
-        }
-    ];
 
     return(
         <div className="user-addresses">

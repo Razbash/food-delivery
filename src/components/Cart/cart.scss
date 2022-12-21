@@ -1,6 +1,12 @@
 .cart {
     margin-bottom: 50px;
 
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 30px;
+    }
+
     &__block-item {
         padding: 16px;
         border: 1px solid $neutral-gray-lightest;
@@ -49,6 +55,7 @@
         @extend %subtitle-primary;
         color: $neutral-black;
         margin-bottom: 4px;
+        text-decoration: none;
     }
 
     &__item-description {
