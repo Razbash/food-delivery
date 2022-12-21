@@ -1,0 +1,57 @@
+.notification {
+    position: fixed;
+    bottom: 24px;
+    left: -100%;
+    opacity: 0;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
+    transition: all 0.5s ease-in-out;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        display: flex;
+        margin-right: 12px;
+    }
+
+    &__text {
+        @extend %button-primary;
+        color: $neutral-white;
+        line-height: 1;
+    }
+
+    &__close {
+        display: flex;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    &--error {
+        background: $error-default;
+    }
+
+    &--warning {
+        background: $secondary-default;
+    }
+
+    &--sucsses {
+        background: $success-default-dark;
+    }
+
+    &--open {
+        opacity: 1;
+        left: 24px;
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+        fill: $neutral-white;
+    }
+}
