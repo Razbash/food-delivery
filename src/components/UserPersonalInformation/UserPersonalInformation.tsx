@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../hooks/redux";
 import { sendUserData } from "../../store/actions/userActions";
 import Notification from "../../components/Notification/Notification";
-import NotificationTypes from "../../enums/NotificationTypes";
 import { setUserId } from "../../tools/cookie";
 import { useNavigate } from "react-router-dom";
 

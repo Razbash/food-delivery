@@ -6,7 +6,7 @@ export const startNotification = (payload: INotificationPayload) => {
     return (dispatch: AppDispatch) => {
         dispatch(notificationSlice.actions.start(payload));
 
-        setTimeout(() => dispatch(notificationSlice.actions.stop()), 500000);
+        setTimeout(() => dispatch(notificationSlice.actions.stop()), 5000);
     }
 }
 

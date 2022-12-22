@@ -1,6 +1,10 @@
 import PlusIcon from '../../assets/icons/PlusIcon';
 import { Link } from 'react-router-dom';
 import IReustorantMenu from '../../interfaces/IReustorantMenu';
+import { addToCart } from '../../tools/cookie';
+import { startNotification } from "../../store/actions/notificationActions";
+import NotificationTypes from "../../enums/NotificationTypes";
+import { useAppDispatch } from '../../hooks/redux';
 
 interface IreustorantMenuProps {
     menu: IReustorantMenu[]
@@ -8,6 +12,19 @@ interface IreustorantMenuProps {
 
 const ReustorantMenu = (props: IreustorantMenuProps) => {
     const {menu} = props;
+    const dispatch = useAppDispatch();
+
+    const addProductToCart = (event: any, productId: number) => {
+        event.preventDefault();
+
+        const order = {
+            productId: Number(productId),
+            count: 1
+        }
+
+        addToCart(order);
+        dispatch(startNotification({type: NotificationTypes.sucsses, text: "The product has been added to the cart"}));
+    }
 
     return(
         <div className="reustorant-menu">
@@ -23,11 +40,11 @@ const ReustorantMenu = (props: IreustorantMenuProps) => {
                     }
 
                     return(
-                        <div className="reustorant-menu__item" key={id}>
+                        <Link to={`/products/${id}`} className="reustorant-menu__item" key={id}>
                             <div className="reustorant-menu__image" style={backgroundImageStyle}></div>
-                            <Link to={`/products/${id}`} className="reustorant-menu__name">
+                            <span className="reustorant-menu__name">
                                 {name}
-                            </Link>
+                            </span>
                             <p className="reustorant-menu__description">
                                 {description}
                             </p>
@@ -35,11 +52,13 @@ const ReustorantMenu = (props: IreustorantMenuProps) => {
                                 <span className="reustorant-menu__price">
                                     $ {price.toFixed(2)}
                                 </span>
-                                <span className="reustorant-menu__icon-wrapper">
+                                <span className="reustorant-menu__icon-wrapper"
+                                    onClick={(event) => addProductToCart(event, id)}
+                                >
                                     <PlusIcon/>
                                 </span>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
