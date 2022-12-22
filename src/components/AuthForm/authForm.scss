@@ -76,6 +76,7 @@
         flex-direction: column;
         justify-content: center;
         height: 100%;
+        padding: 20px 40px;
     }
 
     &__title {
@@ -148,5 +149,16 @@
 
     .checkbox {
         margin-bottom: 40px;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .auth {
+        display: flex;
+        justify-content: center;
+
+        &__background {
+            display: none;
+        }
     }
 }
