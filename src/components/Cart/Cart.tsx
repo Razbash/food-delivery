@@ -6,16 +6,24 @@ import { getCookie, removeFromCart } from '../../tools/cookie';
 import ICart from '../../interfaces/ICart';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
+import { fetchUser } from '../../store/actions/userActions';
+import UserAddresses from '../UserAddresses/UserAddresses';
 
 const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);
     const dispatch = useAppDispatch();
-    const {products} = useAppSelector(state => state.products)
+    const {products} = useAppSelector(state => state.products);
+    const {user} = useAppSelector(state => state.user);
 
     useEffect(() => {
+        const userId = getCookie('userId');
         setUserCart(getCookie('cart'));
         dispatch(fetchProducts());
-    },[]);
+
+        if (userId) {
+            dispatch(fetchUser({id: Number(userId)}));
+        }
+    }, []);
 
     const onHandlerRemoveProductFromCart = (index :number) => {
         removeFromCart(index);
@@ -62,12 +70,16 @@ const Cart = () => {
                                 })}
                             </div>
                         </div>
-                        <div className="cart__block-item">
-                            <div className="cart__block-item-title">
+
+                        {user.shippingAddresses ?
+                            <div className="cart__block-item cart-shipping-address">
                                 <h6 className="cart__block-item-title-text">Select your shipping address</h6>
+                                <UserAddresses userData={user} showOnlyAddresses={true}/>
+                                <Link to="/user" className="button button--contained-light-blue cart-shipping-address__button">Add new shipping address</Link>
                             </div>
-                        </div>
+                        : null}
                     </div>
+
                     <div className="cart__additional-info">
 
                     </div>

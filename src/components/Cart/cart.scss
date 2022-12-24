@@ -161,3 +161,22 @@
         width: max-content;
     }
 }
+
+.cart-shipping-address {
+    .user-addresses {
+        &__list {
+            margin-top: 12px;
+            flex-direction: column;
+        }
+
+        &__list-item {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__button {
+        text-decoration: none;
+        text-align: center;
+    }
+}

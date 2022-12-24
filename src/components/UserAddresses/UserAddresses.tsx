@@ -5,15 +5,20 @@ import IUser from "../../interfaces/IUser";
 
 interface IProps {
     userData: IUser,
+    showOnlyAddresses? : boolean
 }
 
 const UserAddresses = (props: IProps) => {
     const {shippingAddresses} = props.userData;
+    const {showOnlyAddresses} = props;
 
     return(
         <div className="user-addresses">
             <div className="user-addresses__content user-profile-content">
-                <h6 className="user-addresses__content-title user-profile-block-title">Existing shipping addresses</h6>
+                {!showOnlyAddresses
+                ? <h6 className="user-addresses__content-title user-profile-block-title">Existing shipping addresses</h6>
+                : null}
+
                 {shippingAddresses ?
                     <div className="user-addresses__chapter user-profile-chapter">
                         <div className="user-addresses__list">
@@ -54,56 +59,60 @@ const UserAddresses = (props: IProps) => {
                     </div>
                 : null}
 
-                <h6 className="user-addresses__content-title user-profile-block-title">New shipping address</h6>
-                <div className="user-addresses__chapter user-profile-chapter">
-                    <div className="user-addresses__inputs">
-                        <div className="user-addresses__main-address-info">
-                            <div className="input-wrapper">
-                                <label htmlFor="country" className="input-label">Country</label>
-                                <input type="text"
-                                    id="country"
-                                    className="input"
-                                    placeholder="Enter country"
-                                />
+                {!showOnlyAddresses ?
+                    <>
+                        <h6 className="user-addresses__content-title user-profile-block-title">New shipping address</h6>
+                        <div className="user-addresses__chapter user-profile-chapter">
+                            <div className="user-addresses__inputs">
+                                <div className="user-addresses__main-address-info">
+                                    <div className="input-wrapper">
+                                        <label htmlFor="country" className="input-label">Country</label>
+                                        <input type="text"
+                                            id="country"
+                                            className="input"
+                                            placeholder="Enter country"
+                                        />
+                                    </div>
+                                    <div className="input-wrapper">
+                                        <label htmlFor="state" className="input-label">State</label>
+                                        <input type="text"
+                                            id="state"
+                                            className="input"
+                                            placeholder="Enter state"
+                                        />
+                                    </div>
+                                    <div className="input-wrapper">
+                                        <label htmlFor="city" className="input-label">City</label>
+                                        <input type="text"
+                                            id="city"
+                                            className="input"
+                                            placeholder="Enter city"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="user-addresses__additional-address-info">
+                                    <div className="input-wrapper">
+                                        <label htmlFor="address_line_primary" className="input-label">Address line 1</label>
+                                        <input type="text"
+                                            id="address_line_primary"
+                                            className="input"
+                                            placeholder="Enter address"
+                                        />
+                                    </div>
+                                    <div className="input-wrapper">
+                                        <label htmlFor="address_line_secondary" className="input-label">Address line 2</label>
+                                        <input type="text"
+                                            id="address_line_secondary"
+                                            className="input"
+                                            placeholder="Enter address (optional)"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                            <div className="input-wrapper">
-                                <label htmlFor="state" className="input-label">State</label>
-                                <input type="text"
-                                    id="state"
-                                    className="input"
-                                    placeholder="Enter state"
-                                />
-                            </div>
-                            <div className="input-wrapper">
-                                <label htmlFor="city" className="input-label">City</label>
-                                <input type="text"
-                                    id="city"
-                                    className="input"
-                                    placeholder="Enter city"
-                                />
-                            </div>
+                            <button className="button button--contained user-addresses__add-new-address-button">Add new address</button>
                         </div>
-                        <div className="user-addresses__additional-address-info">
-                            <div className="input-wrapper">
-                                <label htmlFor="address_line_primary" className="input-label">Address line 1</label>
-                                <input type="text"
-                                    id="address_line_primary"
-                                    className="input"
-                                    placeholder="Enter address"
-                                />
-                            </div>
-                            <div className="input-wrapper">
-                                <label htmlFor="address_line_secondary" className="input-label">Address line 2</label>
-                                <input type="text"
-                                    id="address_line_secondary"
-                                    className="input"
-                                    placeholder="Enter address (optional)"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <button className="button button--contained user-addresses__add-new-address-button">Add new address</button>
-                </div>
+                    </>
+                : null}
             </div>
         </div>
     )
