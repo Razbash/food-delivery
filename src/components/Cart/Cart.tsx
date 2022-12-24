@@ -9,8 +9,14 @@ import { Link } from 'react-router-dom';
 import { fetchUser } from '../../store/actions/userActions';
 import UserAddresses from '../UserAddresses/UserAddresses';
 
+interface IProductInCart extends IProduct {
+    count: number;
+}
+
 const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);
+    const [totalPrice, setTotalPrice] = useState<number>(0);
+    const [cartList, setCartList] = useState<IProductInCart[] | []>([]);
     const dispatch = useAppDispatch();
     const {loading, products} = useAppSelector(state => state.products);
     const {user} = useAppSelector(state => state.user);
@@ -25,9 +31,30 @@ const Cart = () => {
         }
     }, []);
 
+    useEffect(() => {
+        const userCartList: IProductInCart[] = [];
+        let initTotalPrice: number = 0;
+
+        products.forEach((product:IProduct) => {
+            userCart.forEach((userCartItem:ICart, index: number) => {
+                if (product.id === userCartItem.productId) {
+                    userCartList[index] = {...product, count: userCartItem.count};
+                    initTotalPrice += userCartItem.count * product.price;
+                }
+           });
+       });
+
+       setCartList(userCartList);
+       setTotalPrice(initTotalPrice);
+    }, [products, userCart]);
+
     const onHandlerRemoveProductFromCart = (index :number) => {
         removeFromCart(index);
         setUserCart(getCookie('cart'));
+    }
+
+    const onChangeTotalPrice = (value: number) => {
+        setTotalPrice(value);
     }
 
     return(
@@ -44,45 +71,54 @@ const Cart = () => {
                             </div>
                             <div className="cart__list">
                                 {loading ? <CartLazyLoader/> : null}
-                                {products.map((product:IProduct) => {
-                                    return(
-                                        userCart.map((userCartItem:ICart, index:number) => {
-                                            if (product.id === userCartItem.productId) {
-                                                const {id, name, description, price, image} = product;
-                                                const linkToProduct = `/products/${product.id}`;
-
-                                                return(
-                                                    <CartItem
-                                                        id={id}
-                                                        image={image}
-                                                        linkToProduct={linkToProduct}
-                                                        name={name}
-                                                        description={description}
-                                                        countUserCartItems={userCartItem.count}
-                                                        price={price}
-                                                        index={index}
-                                                        onHandlerRemoveProductFromCart={onHandlerRemoveProductFromCart}
-                                                        key={id}
-                                                    />
-                                                )
-                                            }
-                                        })
-                                    )
+                                {cartList.map((product:IProductInCart, index: number) => {
+                                    const {id, name, description, price, image, count} = product;
+                                    const linkToProduct = `/products/${product.id}`;
+                                        return(
+                                            <CartItem
+                                                id={id}
+                                                image={image}
+                                                linkToProduct={linkToProduct}
+                                                name={name}
+                                                description={description}
+                                                countUserCartItems={count}
+                                                price={price}
+                                                index={index}
+                                                onHandlerRemoveProductFromCart={onHandlerRemoveProductFromCart}
+                                                onChangeTotalPrice={onChangeTotalPrice}
+                                                totalPrice={totalPrice}
+                                                key={id}
+                                                userCart={userCart}
+                                            />
+                                        )
                                 })}
                             </div>
                         </div>
 
-                        {user.shippingAddresses ?
-                            <div className="cart__block-item cart-shipping-address">
-                                <h6 className="cart__block-item-title-text">Select your shipping address</h6>
-                                <UserAddresses userData={user} showOnlyAddresses={true}/>
-                                <Link to="/user" className="button button--contained-light-blue cart-shipping-address__button">Add new shipping address</Link>
+                        <div className="cart__controls">
+                            {user.shippingAddresses ?
+                                <div className="cart__block-item cart-shipping-address">
+                                    <h6 className="cart__block-item-title-text">Select your shipping address</h6>
+                                    <UserAddresses userData={user} showOnlyAddresses={true}/>
+                                    <Link to="/user" className="button button--contained-light-blue cart-shipping-address__button">Add new shipping address</Link>
+                                </div>
+                            : null}
+
+                            <div className="cart__block-item cart-payment-summary">
+                                <h6 className="cart__block-item-title-text">Payment summary</h6>
+                                <div className="cart-payment-summary__features">
+                                    <div className="cart-payment-summary__features-item">
+                                        <span className="cart-payment-summary__features-item-label">Subtotal</span>
+                                        <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
+                                    </div>
+                                    <div className="cart-payment-summary__features-item cart-payment-summary__features-item--strong">
+                                        <span className="cart-payment-summary__features-item-label">Total (tax incl.)</span>
+                                        <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
+                                    </div>
+                                </div>
+                                <button className="cart-payment-summary__submit button button--contained">Proceed to checkout</button>
                             </div>
-                        : null}
-                    </div>
-
-                    <div className="cart__additional-info">
-
+                        </div>
                     </div>
                 </div>
             : <CartIsEmpty/>}

@@ -156,6 +156,45 @@
     }
 }
 
+.cart-payment-summary {
+    margin-top: 30px;
+
+    &__features {
+        margin-top: 20px;
+    }
+
+    &__features-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    &__features-item-label {
+        @extend %body-secondary;
+        color: $neutral-gray-dark;
+    }
+
+    &__features-item-value {
+        @extend %subtitle-secondary;
+        color: $neutral-black;
+    }
+
+    &__features-item--strong &__features-item-label {
+        @extend %body-primary;
+        color: $neutral-black;
+    }
+
+    &__features-item--strong &__features-item-value {
+        @extend %subtitle-primary;
+        color: $primary-default;
+    }
+
+    &__submit {
+        width: 100%;
+    }
+}
+
 .cart-is-empty {
     margin-bottom: 50px;
 

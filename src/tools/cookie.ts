@@ -51,7 +51,11 @@ export function removeFromCart(arrPosition: number) {
         }
     })
 
-    document.cookie = `cart=${JSON.stringify(newCart)}; expires=${expiresCookie}; path=/`;
+    setCart(newCart);
+}
+
+export function setCart(cart: ICart[]) {
+    document.cookie = `cart=${JSON.stringify(cart)}; expires=${expiresCookie}; path=/`;
 }
 
 export function countNumberProductsInCart() {

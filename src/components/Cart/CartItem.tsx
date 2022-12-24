@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import TrashIcon from "../../assets/icons/TrashIcon";
+import ICart from "../../interfaces/ICart";
+import { setCart } from "../../tools/cookie";
 
 interface ICartItemProps {
     id: number,
@@ -11,6 +14,14 @@ interface ICartItemProps {
     price: number,
     index: number,
     onHandlerRemoveProductFromCart: (index: number) => void,
+    onChangeTotalPrice: (value: number) => void,
+    totalPrice: number,
+    userCart: ICart[] | [],
+}
+
+enum CartControlsMode {
+    INCREASE,
+    DESCRESE
 }
 
 const CartItem = (props :ICartItemProps) => {
@@ -22,8 +33,38 @@ const CartItem = (props :ICartItemProps) => {
         countUserCartItems,
         price,
         index,
-        onHandlerRemoveProductFromCart
+        onHandlerRemoveProductFromCart,
+        onChangeTotalPrice,
+        totalPrice,
+        userCart,
     } = props;
+
+    const [subtotal, setSubTotal] = useState<number>(countUserCartItems * price);
+    const [count, setCount] = useState<number>(countUserCartItems);
+
+    const onChangeCart = (mode: CartControlsMode) => {
+        if (mode === CartControlsMode.INCREASE) {
+            setCount(count => count + 1);
+            setSubTotal(subtotal => subtotal + price);
+            onChangeTotalPrice(totalPrice + price);
+        } else if(count !== 1) {
+            setCount(count => count - 1);
+            setSubTotal(subtotal => subtotal - price);
+            onChangeTotalPrice(totalPrice - price);
+        }
+
+        const newCart = userCart.map(element => {
+            if (element.productId === id) {
+                mode === CartControlsMode.INCREASE
+                    ? element.count += 1
+                    : element.count -= 1;
+            }
+
+            return element;
+        });
+
+        setCart(newCart);
+    }
 
     return(
         <div className="cart__list-item" key={id}>
@@ -43,12 +84,12 @@ const CartItem = (props :ICartItemProps) => {
             <div className="cart__item-controls">
                 {/* Вынеси в комнонент */}
                 <div className="quantity">
-                    <span className="quantity__decrease">-</span>
-                    <span className="quantity__value">{countUserCartItems}</span>
-                    <span className="quantity__increase">+</span>
+                    <span className="quantity__decrease" onClick={() => onChangeCart(CartControlsMode.DESCRESE)}>-</span>
+                    <span className="quantity__value">{count}</span>
+                    <span className="quantity__increase" onClick={() => onChangeCart(CartControlsMode.INCREASE)}>+</span>
                 </div>
 
-                <span className="cart__item-price">${(countUserCartItems * price).toFixed(2)}</span>
+                <span className="cart__item-price">${(subtotal).toFixed(2)}</span>
 
                 <div className="cart__item-remove" onClick={() => onHandlerRemoveProductFromCart(index)}>
                     <TrashIcon/>
