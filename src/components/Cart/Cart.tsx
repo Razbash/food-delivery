@@ -12,7 +12,7 @@ import UserAddresses from '../UserAddresses/UserAddresses';
 const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);
     const dispatch = useAppDispatch();
-    const {products} = useAppSelector(state => state.products);
+    const {loading, products} = useAppSelector(state => state.products);
     const {user} = useAppSelector(state => state.user);
 
     useEffect(() => {
@@ -43,6 +43,7 @@ const Cart = () => {
                                 <span className="cart__block-item-title-counter">0 meals</span>
                             </div>
                             <div className="cart__list">
+                                {loading ? <CartLazyLoader/> : null}
                                 {products.map((product:IProduct) => {
                                     return(
                                         userCart.map((userCartItem:ICart, index:number) => {
@@ -96,6 +97,16 @@ const CartIsEmpty = () => {
             <p className="cart-is-empty__text">Take a look at the main page to select products or find what you need in the search</p>
             <Link to="/" className="cart-is-empty__link button">Go to the main page</Link>
         </div>
+    )
+}
+
+const CartLazyLoader = () => {
+    return(
+        <>
+            <div className="cart__list-item cart__list-item--loading"></div>
+            <div className="cart__list-item cart__list-item--loading"></div>
+            <div className="cart__list-item cart__list-item--loading"></div>
+        </>
     )
 }
 
