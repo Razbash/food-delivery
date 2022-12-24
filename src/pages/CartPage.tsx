@@ -7,7 +7,6 @@ const CartPage = () => {
         <>
             <Header type="user"/>
                 <div className="container">
-                    <h5 className="block-title">My cart</h5>
                     <Cart/>
                 </div>
             <Footer/>
