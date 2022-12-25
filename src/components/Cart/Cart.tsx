@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import IProduct from '../../interfaces/IProduct';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchProducts } from '../../store/actions/productsActions';
-import { getCookie, removeFromCart } from '../../tools/cookie';
+import { countNumberProductsInCart, getCookie, removeFromCart } from '../../tools/cookie';
 import ICart from '../../interfaces/ICart';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
@@ -17,6 +17,7 @@ const Cart = () => {
     const [userCart, setUserCart] = useState<ICart[] | []>([]);
     const [totalPrice, setTotalPrice] = useState<number>(0);
     const [cartList, setCartList] = useState<IProductInCart[] | []>([]);
+    const [countProductsInCart, setCountProductsInCart] = useState<number>(0);
     const dispatch = useAppDispatch();
     const {loading, products} = useAppSelector(state => state.products);
     const {user} = useAppSelector(state => state.user);
@@ -46,7 +47,12 @@ const Cart = () => {
 
        setCartList(userCartList);
        setTotalPrice(initTotalPrice);
+       calculateCountProductsInCart();
     }, [products, userCart]);
+
+    const calculateCountProductsInCart = () => {
+        setCountProductsInCart(countNumberProductsInCart());
+    }
 
     const onHandlerRemoveProductFromCart = (index :number) => {
         removeFromCart(index);
@@ -67,7 +73,7 @@ const Cart = () => {
                         <div className="cart__block-item">
                             <div className="cart__block-item-title">
                                 <h6 className="cart__block-item-title-text">Menu</h6>
-                                <span className="cart__block-item-title-counter">0 meals</span>
+                                <span className="cart__block-item-title-counter">{countProductsInCart} meals</span>
                             </div>
                             <div className="cart__list">
                                 {loading ? <CartLazyLoader/> : null}
@@ -86,6 +92,7 @@ const Cart = () => {
                                                 index={index}
                                                 onHandlerRemoveProductFromCart={onHandlerRemoveProductFromCart}
                                                 onChangeTotalPrice={onChangeTotalPrice}
+                                                calculateCountProductsInCart={calculateCountProductsInCart}
                                                 totalPrice={totalPrice}
                                                 key={id}
                                                 userCart={userCart}

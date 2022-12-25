@@ -15,6 +15,7 @@ interface ICartItemProps {
     index: number,
     onHandlerRemoveProductFromCart: (index: number) => void,
     onChangeTotalPrice: (value: number) => void,
+    calculateCountProductsInCart: () => void,
     totalPrice: number,
     userCart: ICart[] | [],
 }
@@ -35,6 +36,7 @@ const CartItem = (props :ICartItemProps) => {
         index,
         onHandlerRemoveProductFromCart,
         onChangeTotalPrice,
+        calculateCountProductsInCart,
         totalPrice,
         userCart,
     } = props;
@@ -64,6 +66,7 @@ const CartItem = (props :ICartItemProps) => {
         });
 
         setCart(newCart);
+        calculateCountProductsInCart();
     }
 
     return(
