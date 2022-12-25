@@ -102,7 +102,6 @@ const ReustorantInfoRender = (props: IReustorantProps) => {
             </div>
             <div className="reustorant-detail-page__content container">
                 {reustorantMenu ? <ReustorantMenu menu={reustorantMenu}/> : null}
-                {reviews ? <ReustorantReviews reviews={reviews}/> : null}
             </div>
         </div>
     )

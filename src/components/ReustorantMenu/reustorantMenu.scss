@@ -7,7 +7,7 @@
 
     &__wrapper {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
 
@@ -78,6 +78,14 @@
         width: 12px;
         height: 12px;
         fill: $primary-default;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
