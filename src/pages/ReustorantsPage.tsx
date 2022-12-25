@@ -11,7 +11,7 @@ const ReustorantsPage = () => {
             <div className="container">
                 <h5 className="block-title">All reustorants</h5>
                 <CategoryList/>
-                <Filters/>
+                {/* <Filters/> */}
                 <ReustorantsList showCounter={true}/>
             </div>
             <Footer/>

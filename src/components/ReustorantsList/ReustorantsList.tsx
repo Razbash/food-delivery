@@ -36,7 +36,7 @@ const ReustorantsList = (props: IProps) => {
 
     return(
         <>
-            {showCounter ? <span className="reustorants-list-counter">Found 12 restaurants</span> : null}
+            {showCounter ? <span className="reustorants-list-counter">Found {list ? list.length : reustorants.length} restaurants</span> : null}
 
             <div className="reustorants-list">
                 {loading ? <SkeletonReustorantsList/> : null}
