@@ -85,7 +85,7 @@ const ProductDetail = () => {
             <div className="product-detail__wrapper">
                 <div className="product-detail__images-gallery">
                     <div className="product-detail__images">
-                        {images.map((element, index) => {
+                        {images ? images.map((element, index) => {
                             const imageStyle = {
                                 'backgroundImage': 'url(' + element + ')'
                             };
@@ -101,7 +101,7 @@ const ProductDetail = () => {
                                     onMouseEnter={() => switchImage(index)}
                                 ></div>
                             )
-                        })}
+                        }): null}
                     </div>
                     <div className="product-detail__main-image" style={mainImageStyle}></div>
                 </div>
@@ -120,14 +120,20 @@ const ProductDetail = () => {
                         <button className="button button--contained" onClick={() => addProductToCart()}>Add to cart</button>
                     </div>
                     <div className="product-detail__additional-info">
-                        <div className="product-detail__additional-info-item">
-                            <span className="product-detail__additional-info-title">Ingredients</span>
-                            <p className="product-detail__additional-info-value">{ingredients}</p>
-                        </div>
-                        <div className="product-detail__additional-info-item">
-                            <span className="product-detail__additional-info-title">Nutritional value</span>
-                            <p className="product-detail__additional-info-value">{nutritionalValue}</p>
-                        </div>
+                        {ingredients
+                            ? <div className="product-detail__additional-info-item">
+                                <span className="product-detail__additional-info-title">Ingredients</span>
+                                <p className="product-detail__additional-info-value">{ingredients}</p>
+                            </div>
+                            : null
+                        }
+                        {nutritionalValue
+                            ? <div className="product-detail__additional-info-item">
+                                <span className="product-detail__additional-info-title">Nutritional value</span>
+                                <p className="product-detail__additional-info-value">{nutritionalValue}</p>
+                            </div>
+                            : null
+                        }
                     </div>
                 </div>
             </div>

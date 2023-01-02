@@ -192,7 +192,7 @@
       "maxDeliveryTime": 40,
       "minAmount": 40,
       "categories": [
-        "dessert"
+        "sushi"
       ],
       "featured": false,
       "image": "../../assets/images/reustorants/ninja-sushi.png",
@@ -340,6 +340,40 @@
           "dislikes": 4
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "Menza",
+      "minDeliveryTime": 40,
+      "maxDeliveryTime": 50,
+      "minAmount": 70,
+      "categories": [
+        "vegan"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/6c1ac63c227048d4b52603671af88083-1100x825.jpg",
+      "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
+      "coordinates": [
+        55.765422,
+        37.611042
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Tyrolean Pies",
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 30,
+      "minAmount": 80,
+      "categories": [
+        "dessert"
+      ],
+      "featured": false,
+      "image": "../../assets/images/reustorants/6d295666991344c64dfcabd600311b45-1100x825.jpeg",
+      "description": "Tyrolean Pies® is a trademark of baked goods created in 2004 using a unique technology and recipe by the Krug confectionery factory. The original presentation of a creamy dessert with natural berries and fruits in a special pie mold has become the trademark of the brand.",
+      "coordinates": [
+        55.732580,
+        37.663728
+      ]
     }
   ],
   "orders": [
@@ -479,6 +513,190 @@
         "../../assets/images/products/3.png",
         "../../assets/images/products/4.png"
       ]
+    },
+    {
+      "id": 4,
+      "name": "Burger BBQ",
+      "description": "Burger with homemade bun, juicy cutlet, stretching cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of sauces gives piquancy to the taste: ketchup, barbecue and 1000 islands",
+      "price": 5.64,
+      "image": "../../assets/images/menu/burgerBBQ.jpeg",
+      "reustorant": "Burgers & Pizza",
+      "images": [
+        "../../assets/images/menu/burgerBBQ.jpeg",
+        "../../assets/images/products/bbq-burger-black-star.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "BBQ Halal Double Burger",
+      "description": "You haven't tried such a delicious BBQ yet! Burger with homemade bun, two juicy cutlets, stretching Cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of barbecue ketchup sauces and 1000 islands gives piquancy to the taste",
+      "price": 10.58,
+      "image": "../../assets/images/products/burgerBBQHalal.jpeg",
+      "images": [
+        "../../assets/images/products/burgerBBQHalal.jpeg"
+      ],
+      "reustorant": "Burgers & Pizza",
+      "ingredients": "2 halal cutlets, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese",
+      "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
+    },
+    {
+      "id": 6,
+      "name": "Burger Classic Halal double",
+      "description": "A classic that will appeal to everyone. A signature burger with a homemade bun, two juicy cutlets with slices of cheddar cheese, which perfectly complement fresh lettuce leaves, tomatoes, pickles and red onions",
+      "price": 11.13,
+      "image": "../../assets/images/products/burgerHalalClassic.jpeg",
+      "images": [
+        "../../assets/images/products/burgerHalalClassic.jpeg",
+        "../../assets/images/products/7c68fe97aac9a7277f9501204f273564.jpg"
+      ],
+      "reustorant": "Burgers & Pizza",
+      "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
+    },
+    {
+      "id": 7,
+      "name": "Burger Classic Black Angus double",
+      "description": "A classic that will appeal to everyone. A signature burger with a homemade bun, two juicy marbled beef patties with slices of cheddar cheese, which perfectly complement fresh lettuce leaves, tomatoes, pickles and red onions",
+      "price": 11.13,
+      "image": "../../assets/images/products/b59b1d6bcd337f28c1b7d9f254f1c9b6-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/b59b1d6bcd337f28c1b7d9f254f1c9b6-216x188.jpeg"
+      ],
+      "reustorant": "Burgers & Pizza",
+      "ingredients": "Marbled beef, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese"
+    },
+    {
+      "id": 8,
+      "name": "BBQ Black Angus Double Burger",
+      "description": "You haven't tried such a delicious BBQ yet! Burger with homemade bun, two juicy marbled beef patties, stretching Cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of barbecue ketchup sauces and 1000 islands gives piquancy to the taste",
+      "price": 10.58,
+      "image": "../../assets/images/products/9132fafe232f03146a984f725ccf14bd-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/9132fafe232f03146a984f725ccf14bd-216x188.jpeg",
+        "../../assets/images/products/restaurantbbq.png"
+      ],
+      "reustorant": "Burgers & Pizza"
+    },
+    {
+      "id": 9,
+      "name": "Sashimi shrimp",
+      "description": "Daikon, tosaka seaweed, lime, shrimp",
+      "price": 8.83,
+      "image": "../../assets/images/products/креветка-1.jpg",
+      "images": [
+        "../../assets/images/products/креветка-1.jpg",
+        "../../assets/images/products/c7ffa93fc10cb15a94fff2de7a7e8a94-216x188.jpeg",
+        "../../assets/images/products/sashimkrevetka.jpeg"
+      ],
+      "reustorant": "Ninja Sushi",
+      "ingredients": "Daikon, tosaka seaweed, lime, shrimp"
+    },
+    {
+      "id": 10,
+      "name": "Imperial oysters 6 pcs",
+      "description": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots",
+      "price": 37.80,
+      "image": "../../assets/images/products/dfb91655c247e5b3067120dce3c64b02-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/dfb91655c247e5b3067120dce3c64b02-216x188.jpeg"
+      ],
+      "reustorant": "Sushi Master",
+      "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots",
+      "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
+    },
+    {
+      "id": 11,
+      "name": "Arigato roll with salmon tartare",
+      "description": "Salmon, tiger prawns, fresh cucumber, rice, nori, Tomago omelet, cream cheese, hot pepper, tempura, mayonnaise, Unagi sauce, Tobiko caviar",
+      "price": 9.21,
+      "image": "../../assets/images/products/4c3adbf5264b40c040e78be2658efbad-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/4c3adbf5264b40c040e78be2658efbad-216x188.jpeg"
+      ],
+      "reustorant": "Japanese Sushi",
+      "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots"
+    },
+    {
+      "id": 12,
+      "name": "Sushi Tuna ieloufin okami",
+      "description": "Tuna, rice, wasabi",
+      "price": 3.57,
+      "image": "../../assets/images/products/f15429d22f432d0a74905a15c5a99b34-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/f15429d22f432d0a74905a15c5a99b34-216x188.jpeg"
+      ],
+      "reustorant": "Kobe"
+    },
+    {
+      "id": 13,
+      "name": "Chuka",
+      "description": "Chuka, rice, nori, sesame",
+      "price": 1.92,
+      "image": "../../assets/images/products/8d0bf3da79412aff55edc4ab4a923074-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/8d0bf3da79412aff55edc4ab4a923074-216x188.jpeg",
+        "../../assets/images/products/131-1300.jpg",
+        "../../assets/images/products/600x600.jpg",
+        "../../assets/images/products/chuka-sushi-200-B.jpg"
+      ],
+      "reustorant": "Kobe"
+    },
+    {
+      "id": 14,
+      "name": "Ikura",
+      "description": "Trout caviar, rice, nori, cucumber",
+      "price": 3.02,
+      "image": "../../assets/images/products/d9676b49fd4ee8e23963f94c607a935f-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/d9676b49fd4ee8e23963f94c607a935f-216x188.jpeg"
+      ],
+      "reustorant": "Kobe",
+      "ingredients": "Trout caviar, rice, nori, cucumber"
+    },
+    {
+      "id": 15,
+      "name": "Steamed rice",
+      "description": "Rice, white sesame, cilantro",
+      "price": 1.56,
+      "image": "../../assets/images/products/6d1a6df695b61815cb9a49ab1f72d392-216x188.png",
+      "images": [
+        "../../assets/images/products/6d1a6df695b61815cb9a49ab1f72d392-216x188.png"
+      ],
+      "reustorant": "Menza",
+      "ingredients": "rice, white sesame, cilantro"
+    },
+    {
+      "id": 16,
+      "name": "Grilled vegetables",
+      "description": "Zucchini, bell pepper, champignons (fried on teppan).",
+      "price": 4.69,
+      "image": "../../assets/images/products/b1cb8f0205be39f8fbfcd07fe8568af7-216x188.png",
+      "images": [
+        "../../assets/images/products/b1cb8f0205be39f8fbfcd07fe8568af7-216x188.png"
+      ],
+      "reustorant": "Menza"
+    },
+    {
+      "id": 17,
+      "name": "Three Chocolates",
+      "description": "Dessert based on dark, milk and white chocolate, with a delicate sponge cake and butter cream",
+      "price": 2.72,
+      "image": "../../assets/images/products/db7f99aca91dd488302c8ff379aa0a11-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/db7f99aca91dd488302c8ff379aa0a11-216x188.jpeg"
+      ],
+      "reustorant": "Tyrolean Pies",
+      "ingredients": "Dark chocolate, milk, sponge cake, butter cream"
+    },
+    {
+      "id": 18,
+      "name": "Apple Cake",
+      "description": "Sugar, wheat flour, baked apples",
+      "price": 9.12,
+      "image": "../../assets/images/products/a66fc22b6078408fbc6ee2e90d90b247-216x188.jpeg",
+      "images": [
+        "../../assets/images/products/a66fc22b6078408fbc6ee2e90d90b247-216x188.jpeg"
+      ],
+      "reustorant": "Tyrolean Pies"
     }
   ],
   "users": [
