@@ -114,12 +114,8 @@ const Cart = () => {
                             <div className="cart__block-item cart-payment-summary">
                                 <h6 className="cart__block-item-title-text">Payment summary</h6>
                                 <div className="cart-payment-summary__features">
-                                    <div className="cart-payment-summary__features-item">
-                                        <span className="cart-payment-summary__features-item-label">Subtotal</span>
-                                        <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
-                                    </div>
                                     <div className="cart-payment-summary__features-item cart-payment-summary__features-item--strong">
-                                        <span className="cart-payment-summary__features-item-label">Total (tax incl.)</span>
+                                        <span className="cart-payment-summary__features-item-label">Total</span>
                                         <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
                                     </div>
                                 </div>

@@ -1,3 +1,5 @@
+// remove shoppingAddresses
+
 interface IUser {
     id: number,
     image?: string,

@@ -42,6 +42,15 @@
         @extend %body-secondary;
         color: $neutral-gray;
         margin: 0 0 12px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        box-orient: vertical;
+        height: calc(3 * 13px * 1.4);
     }
 
     &__price {

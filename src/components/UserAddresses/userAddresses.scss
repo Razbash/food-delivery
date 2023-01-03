@@ -45,18 +45,10 @@
         width: 100%;
     }
 
-    &__main-address-info,
-    &__additional-address-info {
+    &__inputs {
         display: grid;
         grid-gap: 16px;
-    }
-
-    &__main-address-info {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    &__additional-address-info {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     &__add-new-address-button {

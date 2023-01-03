@@ -15,21 +15,6 @@ const Payments = (props: IProps) => {
     const {title, cardToAdd, cardSavingCheckbox, userData} = props;
     const {paymentMethods} = userData;
 
-    const cards = [
-        {
-            number: "**** **** **** 4629",
-            term: "12/25",
-            name: "Jane Robertson",
-            icon: <VisaIcon/>
-        },
-        {
-            number: "**** **** **** 9372",
-            term: "10/23",
-            name: "Jane Robertson",
-            icon: <MastercardIcon/>
-        },
-    ];
-
     return(
         <>
             <div className="payments">
