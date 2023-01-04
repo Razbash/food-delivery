@@ -1,6 +1,6 @@
 .user-profile {
     display: grid;
-    grid-template-columns: 350px auto;
+    grid-template-columns: 350px calc(100% - (350px + 30px));
     grid-gap: 30px;
     margin-bottom: 24px;
 

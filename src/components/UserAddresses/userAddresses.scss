@@ -1,16 +1,19 @@
 .user-addresses {
     &__list {
         display: flex;
+        overflow-x: auto;
+        padding-bottom: 12px;
     }
 
     &__list-item {
         display: flex;
         align-items: flex-start;
+        flex-shrink: 0;
         padding: 12px;
         border-radius: 8px;
         border: 1px solid $neutral-gray-light;
         margin-right: 16px;
-        width: 340px;
+        width: 335px;
         box-sizing: border-box;
     }
 
