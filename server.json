@@ -697,6 +697,18 @@
         "../../assets/images/products/a66fc22b6078408fbc6ee2e90d90b247-216x188.jpeg"
       ],
       "reustorant": "Tyrolean Pies"
+    },
+    {
+      "id": 19,
+      "name": "Pie Yagodnaya polyana",
+      "description": "Airy sponge cake with summer berries and creamy custard",
+      "price": 6.90,
+      "image": "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png",
+      "images": [
+        "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png"
+      ],
+      "reustorant": "Tyrolean Pies",
+      "ingredients": "Airy sponge cake with summer berries and creamy custard"
     }
   ],
   "users": [
