@@ -1,50 +1,29 @@
-const Summary = () => {
+interface ISummaryProps {
+    totalPrice: number,
+    onSubmit: () => void,
+    buttonText: string,
+
+}
+
+const Summary = (props: ISummaryProps) => {
+    const {totalPrice, onSubmit, buttonText} = props;
+
     return(
-        <div className="summary">
-            <div className="summary__inputs">
-                <div className="input-wrapper">
-                    <label htmlFor="coupon_code" className="input-label">Coupon code</label>
-                    <input type="text"
-                        id="coupon_code"
-                        className="input"
-                        required
-                        placeholder="Enter coupon code"
-                    />
-                </div>
-                <div className="input-wrapper">
-                    <label htmlFor="tips" className="input-label">Tips</label>
-                    <input type="text"
-                        id="tips"
-                        className="input"
-                        required
-                    />
+        <div className="cart-payment-summary">
+            <h6 className="cart__block-item-title-text">Payment summary</h6>
+            <div className="cart-payment-summary__features">
+                <div className="cart-payment-summary__features-item cart-payment-summary__features-item--strong">
+                    <span className="cart-payment-summary__features-item-label">Total</span>
+                    <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
                 </div>
             </div>
 
-            <div className="summary__total">
-                <div className="summary__item">
-                    <span className="summary__label">Subtotal</span>
-                    <span className="summary__value">$129.40</span>
-                </div>
-                <div className="summary__item">
-                    <span className="summary__label">Shipping</span>
-                    <span className="summary__value">$20.00</span>
-                </div>
-                <div className="summary__item">
-                    <span className="summary__label">Tips</span>
-                    <span className="summary__value">$5.00</span>
-                </div>
-                <div className="summary__item">
-                    <span className="summary__label">Discpunt (coupon)</span>
-                    <span className="summary__value">$0.00</span>
-                </div>
-                <div className="summary__item summary__item">
-                    <span className="summary__label summary__label--bold">Total (Tax incl.)</span>
-                    <span className="summary__value summary__value--bold">$154.40</span>
-                </div>
-            </div>
-
-            <button className="button button--contained">Submit order</button>
+            <button type="button"
+                className="button button--contained"
+                onClick={onSubmit}
+            >
+                {buttonText}
+            </button>
         </div>
     )
 }

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import IOrder from "../../interfaces/IOrder";
 import { sendOrder } from "../../store/actions/ordersActions";
 import { fetchUser } from "../../store/actions/userActions";
 import { getCookie } from "../../tools/cookie";
@@ -14,6 +13,7 @@ const Checkout = () => {
 
     const dispatch = useAppDispatch();
     const {user} = useAppSelector(state => state.user);
+    const orderData = getCookie('orderData');
 
     useEffect(() => {
         const userId = getCookie('userId');
@@ -35,8 +35,6 @@ const Checkout = () => {
             hour: "numeric",
             minute: "numeric",
         });
-
-        const orderData = getCookie('orderData');
 
         const order = {
             creationDate: currentDate,
@@ -62,7 +60,6 @@ const Checkout = () => {
 
             <div className="checkout__wrapper">
                 <div className="checkout__item">
-                    {/* Получить данные от пользователя */}
                     <Payments title={"Select payment method"}
                         cardToAdd={true}
                         cardSavingCheckbox={true}
@@ -72,9 +69,10 @@ const Checkout = () => {
                     />
                 </div>
                 <div className="checkout__item">
-                    <h6 className="checkout__label">Payment summary</h6>
-                    <Summary/>
-                    <button type="button" onClick={onSubmitOrder}>Отправить ордер (тест)</button>
+                    <Summary totalPrice={orderData.totalAmount}
+                        buttonText="Submit order"
+                        onSubmit={onSubmitOrder}
+                    />
                 </div>
             </div>
         </div>

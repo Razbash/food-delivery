@@ -12,6 +12,7 @@ import { IShippingAddress, IShippingAddressWithId } from '../../interfaces/IShip
 import { startNotification } from '../../store/actions/notificationActions';
 import NotificationTypes from "../../enums/NotificationTypes";
 import Notification from '../Notification/Notification';
+import Summary from '../Summary/Summary';
 
 interface IProductInCart extends IProduct {
     count: number;
@@ -147,20 +148,10 @@ const Cart = () => {
                                 </div>
                             : null}
 
-                            <div className="cart__block-item cart-payment-summary">
-                                <h6 className="cart__block-item-title-text">Payment summary</h6>
-                                <div className="cart-payment-summary__features">
-                                    <div className="cart-payment-summary__features-item cart-payment-summary__features-item--strong">
-                                        <span className="cart-payment-summary__features-item-label">Total</span>
-                                        <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
-                                    </div>
-                                </div>
-
-                                <button
-                                    className="cart-payment-summary__submit button button--contained"
-                                    onClick={saveOrderData}
-                                >Proceed to checkout</button>
-                            </div>
+                            <Summary totalPrice={totalPrice}
+                                buttonText="Proceed to checkout"
+                                onSubmit={saveOrderData}
+                            />
                         </div>
                     </div>
                 </div>
