@@ -18,15 +18,34 @@ const DealsList = (props:IDealList) => {
     return(
         <div className="deals-list">
             <div className="deals-list__wrapper">
-                {deals.map(element => {
+                {loading ?
+                    <DealsListSkeleton/>
+                : null}
+                {deals ? deals.map(element => {
                     if (props.display === "all" || props.display === element.status) {
                         return(
                             <DealsListItem key={element.id} {...element} />
                         )
                     }
-                })}
+                }) : null}
             </div>
         </div>
+    )
+}
+
+const DealsListSkeleton = () => {
+    return(
+        <>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+            <div className="deals-list-item deals-list-item--skeleton"></div>
+        </>
     )
 }
 

@@ -77,6 +77,13 @@
         color: $neutral-black;
     }
 
+    &--skeleton {
+        box-sizing: border-box;
+        height: 273px;
+        background: #f6f6f6;
+        animation: .8s infinite loading-blink;
+    }
+
     .calendar-icon,
     .geo-icon {
         width: 12px;
