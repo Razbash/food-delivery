@@ -6,6 +6,9 @@ import Logo from "../Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import IUser from "../../interfaces/IUser";
 import { setUserId } from "../../tools/cookie";
+import NotificationTypes from "../../enums/NotificationTypes";
+import {startNotification} from "../../store/actions/notificationActions";
+import Notification from "../Notification/Notification";
 
 const AuthForm = () => {
     const dispatch = useAppDispatch();
@@ -21,13 +24,19 @@ const AuthForm = () => {
 
     const authHandler = (event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
+        let findUser = false;
+
         // TODO прокачай валидацию и авторизацию
         users.forEach((element: IUser )=> {
             if (login === element.email && password === element.password) {
                 setUserId(String(element.id));
+                findUser = true;
+                dispatch(startNotification({type: NotificationTypes.sucsses, text: `Welcome, ${element.firstName}`}));
                 navigate('/user');
-            } else {
-                alert('Неверный логин или пароль');
+            }
+
+            if (!findUser) {
+                dispatch(startNotification({type: NotificationTypes.error, text: "Invalid username or password"}));
             }
         })
     }
@@ -83,6 +92,8 @@ const AuthForm = () => {
                     </Link>
                 </span>
             </div>
+
+            <Notification/>
         </div>
     )
 }
