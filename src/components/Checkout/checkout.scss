@@ -38,3 +38,16 @@
         margin-bottom: 16px;
     }
 }
+
+@media (max-width: $tablet-width) {
+    .checkout {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .cart-payment-summary {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

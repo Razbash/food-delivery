@@ -4,7 +4,9 @@
     border: 1px solid $neutral-gray-lightest;
 
     &__cards {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 16px;
         margin-bottom: 48px;
     }
 
@@ -12,8 +14,6 @@
         padding: 12px;
         border-radius: 8px;
         border: 1px solid $neutral-gray-light;
-        margin-right: 16px;
-        min-width: 222px;
         transition: all 0.2s ease-in-out;
         cursor: pointer;
 
@@ -120,5 +120,13 @@
     .plus-icon {
         width: 12px;
         height: 12px;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .payments {
+        &__cards {
+            grid-template-columns: 1fr;
+        }
     }
 }

@@ -62,7 +62,6 @@ const Checkout = () => {
                 <div className="checkout__item">
                     <Payments title={"Select payment method"}
                         cardToAdd={true}
-                        cardSavingCheckbox={true}
                         userData={user}
                         onSelectPayment={onSelectPayment}
                         selectedPayment={selectedPayment}

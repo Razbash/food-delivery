@@ -7,14 +7,13 @@ import IUser from "../../interfaces/IUser";
 interface IProps {
     title: string,
     cardToAdd?: boolean,
-    cardSavingCheckbox?: boolean,
     userData: IUser,
     onSelectPayment?: (payment: any) => void,
     selectedPayment?: any,
 }
 
 const Payments = (props: IProps) => {
-    const {title, cardToAdd, cardSavingCheckbox, userData, selectedPayment, onSelectPayment } = props;
+    const {title, cardToAdd, userData, selectedPayment, onSelectPayment } = props;
     const {paymentMethods} = userData;
 
     const selectPayment = (payment: any) => {
@@ -121,13 +120,6 @@ const Payments = (props: IProps) => {
                             </div>
                         </div>
                         <div className="payments__new-card-controls">
-                            {cardSavingCheckbox ?
-                                <label className="checkbox">
-                                    <input type="checkbox" id="save_method" className="checkbox__input"/>
-                                    <span className="checkbox__label">Save this payment method</span>
-                                </label>
-                            : null}
-
                             <div className="button button--contained-light-blue">Add new payment method</div>
                         </div>
                     </form>
