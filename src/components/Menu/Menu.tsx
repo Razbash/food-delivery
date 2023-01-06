@@ -69,12 +69,12 @@ const Menu = (props: IMenu) => {
                     )
                 })}
             </ul>
-            <div className="menu__cart">
+            <Link to="/cart" className="menu__cart">
                 <div className="menu__cart-icon">
-                    {props.type === "user" ? <Link to="/cart"><CartIcon/></Link> : <BellIcon/>}
+                    <CartIcon/>
                 </div>
                 <span className="menu__cart-counter">{countProducts}</span>
-            </div>
+            </Link>
             <Link to="/user" className="menu__user">
                 <img src={userImage}
                     alt="User image"
