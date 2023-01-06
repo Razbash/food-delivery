@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 import IProduct from '../../interfaces/IProduct';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchProducts } from '../../store/actions/productsActions';
-import { countNumberProductsInCart, getCookie, removeFromCart } from '../../tools/cookie';
+import { countNumberProductsInCart, getCookie, removeFromCart, setOrderData } from '../../tools/cookie';
 import ICart from '../../interfaces/ICart';
 import CartItem from './CartItem';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { fetchUser } from '../../store/actions/userActions';
 import UserAddresses from '../UserAddresses/UserAddresses';
+import { IShippingAddress, IShippingAddressWithId } from '../../interfaces/IShippingAddresses';
+import { startNotification } from '../../store/actions/notificationActions';
+import NotificationTypes from "../../enums/NotificationTypes";
+import Notification from '../Notification/Notification';
 
 interface IProductInCart extends IProduct {
     count: number;
@@ -18,12 +22,15 @@ const Cart = () => {
     const [totalPrice, setTotalPrice] = useState<number>(0);
     const [cartList, setCartList] = useState<IProductInCart[] | []>([]);
     const [countProductsInCart, setCountProductsInCart] = useState<number>(0);
+    const [selectedAddress, setSelectedAddress] = useState<IShippingAddressWithId>();
+
     const dispatch = useAppDispatch();
     const {loading, products} = useAppSelector(state => state.products);
     const {user} = useAppSelector(state => state.user);
+    const userId = getCookie('userId');
+    let navigate = useNavigate();
 
     useEffect(() => {
-        const userId = getCookie('userId');
         setUserCart(getCookie('cart'));
         dispatch(fetchProducts());
 
@@ -61,6 +68,30 @@ const Cart = () => {
 
     const onChangeTotalPrice = (value: number) => {
         setTotalPrice(value);
+    }
+
+    const choseShippingAddress = (address:IShippingAddressWithId) => {
+        setSelectedAddress(address);
+    }
+
+    const saveOrderData = () => {
+        if (!userId) {
+            dispatch(startNotification({type: NotificationTypes.warning, text: "To place an order, you need to log in"}));
+            navigate('/auth');
+        }
+
+        if (selectedAddress) {
+            const orderData = {
+                address: selectedAddress,
+                products: cartList,
+                totalAmount: totalPrice,
+            }
+
+            setOrderData(orderData);
+            navigate('/checkout');
+        } else {
+            dispatch(startNotification({type: NotificationTypes.warning, text: "To place an order, select your address"}));
+        }
     }
 
     return(
@@ -106,7 +137,12 @@ const Cart = () => {
                             {user.shippingAddresses ?
                                 <div className="cart__block-item cart-shipping-address">
                                     <h6 className="cart__block-item-title-text">Select your shipping address</h6>
-                                    <UserAddresses userData={user} showOnlyAddresses={true}/>
+                                    <UserAddresses
+                                        userData={user}
+                                        showOnlyAddresses={true}
+                                        choseShippingAddress={choseShippingAddress}
+                                        selectedAddress={selectedAddress}
+                                    />
                                     <Link to="/user" className="button button--contained-light-blue cart-shipping-address__button">Add new shipping address</Link>
                                 </div>
                             : null}
@@ -119,12 +155,17 @@ const Cart = () => {
                                         <span className="cart-payment-summary__features-item-value">${totalPrice.toFixed(2)}</span>
                                     </div>
                                 </div>
-                                <button className="cart-payment-summary__submit button button--contained">Proceed to checkout</button>
+
+                                <button
+                                    className="cart-payment-summary__submit button button--contained"
+                                    onClick={saveOrderData}
+                                >Proceed to checkout</button>
                             </div>
                         </div>
                     </div>
                 </div>
             : <CartIsEmpty/>}
+            <Notification/>
         </>
     )
 }

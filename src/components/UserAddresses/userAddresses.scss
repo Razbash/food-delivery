@@ -15,6 +15,16 @@
         margin-right: 16px;
         width: 335px;
         box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &--selected {
+            border-color: $primary-default;
+        }
+
+        &:hover {
+            border-color: $primary-hover;
+        }
     }
 
     &__map-wrapper {

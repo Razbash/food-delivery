@@ -2,6 +2,7 @@ import AuthForm from "../components/AuthForm/AuthForm";
 import AuthImage1 from "../assets/images/backgrounds/auth-page-image.png";
 import AuthImage2 from "../assets/images/backgrounds/auth-page-image-2.png";
 import AuthImage3 from "../assets/images/backgrounds/auth-page-image-3.png";
+import Notification from '../components/Notification/Notification';
 
 const AuthPage = () => {
     return(
@@ -31,6 +32,8 @@ const AuthPage = () => {
                     </div>
                 </div>
             </div>
+
+            <Notification/>
         </div>
     )
 }

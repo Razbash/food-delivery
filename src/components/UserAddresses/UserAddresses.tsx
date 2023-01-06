@@ -3,18 +3,21 @@
 import { useEffect, useState } from "react";
 import DotsIcon from "../../assets/icons/DotsIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { IShippingAddressWithId } from "../../interfaces/IShippingAddresses";
 import IUser from "../../interfaces/IUser";
 import { fetchShippingAddresses, sendShippingAddresses } from "../../store/actions/shippingAddressesActions";
 import Notification from "../Notification/Notification";
 
 interface IProps {
     userData: IUser,
-    showOnlyAddresses? : boolean
+    showOnlyAddresses? : boolean,
+    choseShippingAddress?: (address: IShippingAddressWithId) => void,
+    selectedAddress?: IShippingAddressWithId,
 }
 
 const UserAddresses = (props: IProps) => {
     const {id} = props.userData;
-    const {showOnlyAddresses} = props;
+    const {showOnlyAddresses, choseShippingAddress, selectedAddress} = props;
     const {error, loading, shippingAddresses} = useAppSelector(state => state.shippingAddresses);
 
     const dispatch = useAppDispatch();
@@ -29,6 +32,12 @@ const UserAddresses = (props: IProps) => {
     useEffect(() => {
         dispatch(fetchShippingAddresses(id));
     }, []);
+
+    const onChoseShippingAddress = (address:IShippingAddressWithId) => {
+        if (choseShippingAddress) {
+            choseShippingAddress(address);
+        }
+    }
 
     const newAddressSubmit = (e:any) => {
         e.preventDefault();
@@ -61,6 +70,7 @@ const UserAddresses = (props: IProps) => {
                             {shippingAddresses.map((element, index) => {
                                 const {id, addressName, country, state, city, addressLine1, addressLine2, coordinates} = element;
                                 const mapId = 'user_address_' + id;
+                                const itemMeta = (selectedAddress && id === selectedAddress.id) ? "user-addresses__list-item user-addresses__list-item--selected" : "user-addresses__list-item";
 
                                 if (coordinates) {
                                     ymaps.ready().then(() => {
@@ -74,7 +84,7 @@ const UserAddresses = (props: IProps) => {
                                 }
 
                                 return(
-                                    <div className="user-addresses__list-item" key={id}>
+                                    <div className={itemMeta} key={id} onClick={() => onChoseShippingAddress(element)}>
                                         <div className="user-addresses__map-wrapper" style={{"width": "100px", "height": "100px"}}>
                                             {coordinates ? <div className="user-addresses__map" id={mapId} style={{"width": "100px", "height": "100px"}}></div> : null}
                                         </div>

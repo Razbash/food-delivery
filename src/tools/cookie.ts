@@ -58,6 +58,10 @@ export function setCart(cart: ICart[]) {
     document.cookie = `cart=${JSON.stringify(cart)}; expires=${expiresCookie}; path=/`;
 }
 
+export function setOrderData(orderData: any) {
+    document.cookie = `orderData=${JSON.stringify(orderData)}; expires=${expiresCookie}; path=/`;
+}
+
 export function countNumberProductsInCart() {
     let cart = getCookie('cart');
 

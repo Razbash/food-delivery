@@ -9,11 +9,19 @@ interface IProps {
     cardToAdd?: boolean,
     cardSavingCheckbox?: boolean,
     userData: IUser,
+    onSelectPayment?: (payment: any) => void,
+    selectedPayment?: any,
 }
 
 const Payments = (props: IProps) => {
-    const {title, cardToAdd, cardSavingCheckbox, userData} = props;
+    const {title, cardToAdd, cardSavingCheckbox, userData, selectedPayment, onSelectPayment } = props;
     const {paymentMethods} = userData;
+
+    const selectPayment = (payment: any) => {
+        if (onSelectPayment) {
+            onSelectPayment(payment);
+        }
+    }
 
     return(
         <>
@@ -25,10 +33,11 @@ const Payments = (props: IProps) => {
                         </h5>
                         <div className="payments__cards">
                             {paymentMethods.map((element, index) => {
-                                const {id, cardNumber, cardHolder, cvc, expiration} = element;
+                                const {id, cardNumber, cardHolder, expiration} = element;
+                                const itemMeta = (selectedPayment && id === selectedPayment.id) ? "payments__card-item payments__card-item--selected" : "payments__card-item";
 
                                 return(
-                                    <div className="payments__card-item" key={id}>
+                                    <div className={itemMeta} key={id} onClick={() => selectPayment(element)}>
                                         <div className="payments__number-and-controls">
                                             <span className="payments__number">
                                                 {cardNumber}
