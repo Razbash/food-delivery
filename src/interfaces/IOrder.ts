@@ -1,13 +1,20 @@
+import IProduct from "./IProduct";
+import { IShippingAddressWithId } from "./IShippingAddresses";
+
+// Fix payments
 interface IOrder {
-    id: number,
-    customerName: string,
-    customerImage: string,
-    reustorant: string,
-    address: string,
     creationDate: string,
     creationTime: string,
+    address: IShippingAddressWithId,
+    payment: any,
+    products: IProduct[],
+    totalAmount: number,
+    customerId: number,
     status: string,
-    totalAmount: number
+}
+
+export interface IOrderWithId extends IOrder {
+    id: number
 }
 
 export default IOrder;

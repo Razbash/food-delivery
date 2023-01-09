@@ -25,11 +25,11 @@ const AdminOrders = () => {
                 <span className="user-orders__header-item">Total amount</span>
             </div>
 
-            {orders.map(element => {
-                return(
-                    <AdminOrdersItem key={element.id} {...element}/>
-                )
-            })}
+            {/* {orders.map(element => {
+                return( */}
+                    {/* <AdminOrdersItem key={element.id} {...element}/> */}
+                {/* ) */}
+            {/* })} */}
         </div>
     )
 }

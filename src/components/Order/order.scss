@@ -1,0 +1,101 @@
+.order-detail__item {
+    border-radius: $border-radius;
+    padding: 16px;
+    border: 1px solid $neutral-gray-lightest;
+}
+
+.order-delivery-info {
+    &__title {
+        display: flex;
+        margin-bottom: 12px;
+        align-items: center;
+    }
+
+    &__title-text {
+        @extend %h6;
+        color: $neutral-black;
+        margin-right: 8px;
+    }
+
+    &__id {
+        @extend %small-secondary;
+        color: $neutral-gray;
+    }
+
+    &__status-and-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__status {
+        @extend %subtitle-secondary;
+        color: $neutral-black;
+    }
+
+    &__date {
+        @extend %small-secondary;
+        color: $neutral-gray;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            fill: $neutral-gray;
+            margin-left: 8px;
+        }
+    }
+
+    &__progress {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            fill: $neutral-white;
+        }
+    }
+
+    &__progress-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $primary-default;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 12px;
+        margin: auto;
+
+        &--check {
+            background: $success-default;
+        }
+    }
+
+    &__status-number {
+        @extend %subtitle-primary;
+        color: $neutral-white;
+        line-height: 1;
+    }
+
+    &__status-text {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+    }
+
+    &__progress-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__separator {
+        height: 1px;
+        background: $neutral-gray-light;
+        width: 100%;
+        margin: auto 24px;
+    }
+}

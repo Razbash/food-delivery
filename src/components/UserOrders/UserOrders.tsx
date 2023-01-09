@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchOrders } from "../../store/actions/ordersActions";
 import { fetchReustorants } from "../../store/actions/reustorantsActions";
 import { fetchUser } from "../../store/actions/userActions";
 import { getCookie } from "../../tools/cookie";
-import IOrder from "../../interfaces/IOrder";
+import { IOrderWithId } from "../../interfaces/IOrder";
 
 interface IUserOrdersRenderContentProps {
-    orders: IOrder[],
+    orders: IOrderWithId[],
     userName: string,
     redirectOnReustorantPage: (reustorantName: string) => void
 }
@@ -54,13 +54,16 @@ const UserOrders = () => {
 
             {loading ? <UserOrdersLoading/> : null}
             {error ? <UserOrdersError/> : null}
-            {orders ? <UserOrdersRenderContent orders={orders}
+            {/* Fix it */}
+            {/* {orders ? <UserOrdersRenderContent orders={orders}
                 userName={userName}
                 redirectOnReustorantPage={redirectOnReustorantPage}
-            /> : null}
-            {!error && !loading && !orders.filter(element => userName == element.customerName).length
+            /> : null} */}
+
+            {/* FIX it */}
+            {/* {!error && !loading && !orders.filter(element => userName == element.customerName).length
                 ? <UserOrdersEmptyContent/>
-                : null}
+                : null} */}
         </div>
     )
 }
@@ -89,17 +92,19 @@ const UserOrdersRenderContent = (props:IUserOrdersRenderContentProps) => {
     return(
         <>
             {orders.map(element => {
-                if (userName !== element.customerName) {
-                    return
-                }
+                // Fix it
+                // if (userName !== element.customerName) {
+                //     return
+                // }
 
-                const {id, reustorant, creationDate, creationTime, status, totalAmount} = element;
+                const {id, creationDate, creationTime, status, totalAmount} = element;
                 const statusMeta = 'user-orders__status user-orders__status--' + status;
 
                 return(
-                    <div className="user-orders__table" key={id}>
+                    <Link to={`/order/${id}`} className="user-orders__table" key={id}>
                         <span className="user-orders__table-item">{id}</span>
-                        <span className="user-orders__table-item user-orders__table-item--link" onClick={() => redirectOnReustorantPage(reustorant)}>{reustorant}</span>
+                        {/* FIx it */}
+                        {/* <span className="user-orders__table-item user-orders__table-item--link" onClick={() => redirectOnReustorantPage(reustorant)}>{reustorant}</span> */}
                         <span className="user-orders__table-item">{creationDate}</span>
                         <span className="user-orders__table-item">{creationTime}</span>
                         <span className="user-orders__table-item user-orders__table-item--status">
@@ -107,7 +112,7 @@ const UserOrdersRenderContent = (props:IUserOrdersRenderContentProps) => {
                             {status}
                         </span>
                         <span className="user-orders__table-item user-orders__table-item--total-amount">${totalAmount}</span>
-                    </div>
+                    </Link>
                 )
             })}
         </>

@@ -453,6 +453,69 @@
       "creationTime": "04:01 pm",
       "status": "completed",
       "totalAmount": "162.24"
+    },
+    {
+      "creationDate": "January 6, 2023",
+      "creationTime": "2:42 PM",
+      "address": {
+        "id": 0,
+        "userId": 1,
+        "addressName": "New York",
+        "country": "USA",
+        "state": "New York",
+        "city": "New York",
+        "addressLine1": "4517 Washington Ave. Manchester, 11004",
+        "addressLine2": "",
+        "coordinates": [
+          -33.517315,
+          164.182682
+        ]
+      },
+      "payment": {
+        "id": 1,
+        "cardNumber": 4629462946294629,
+        "expiration": "12/25",
+        "cvc": 222,
+        "cardHolder": "Dmitry Bezzubov"
+      },
+      "products": [
+        {
+          "id": 0,
+          "name": "Nigiri set",
+          "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+          "price": 16.8,
+          "image": "../../assets/images/menu/nigiriSet.png",
+          "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+          "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
+          "reustorant": "Royal Sushi House",
+          "images": [
+            "../../assets/images/products/1.png",
+            "../../assets/images/products/2.png",
+            "../../assets/images/products/3.png",
+            "../../assets/images/products/4.png"
+          ],
+          "count": 2
+        },
+        {
+          "id": 1,
+          "name": "Roll set",
+          "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
+          "price": 22.56,
+          "image": "../../assets/images/menu/rollSet.png",
+          "reustorant": "Royal Sushi House",
+          "images": [
+            "../../assets/images/products/1.png",
+            "../../assets/images/products/2.png",
+            "../../assets/images/products/3.png",
+            "../../assets/images/products/4.png"
+          ],
+          "count": 1
+        }
+      ],
+      "totalAmount": 56.16,
+      "customerId": 1,
+      "status": "Order placed",
+      "id": 7
     }
   ],
   "products": [
@@ -702,7 +765,7 @@
       "id": 19,
       "name": "Pie Yagodnaya polyana",
       "description": "Airy sponge cake with summer berries and creamy custard",
-      "price": 6.90,
+      "price": 6.9,
       "image": "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png",
       "images": [
         "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png"

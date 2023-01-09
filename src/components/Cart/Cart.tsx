@@ -112,24 +112,25 @@ const Cart = () => {
                                 {cartList.map((product:IProductInCart, index: number) => {
                                     const {id, name, description, price, image, count} = product;
                                     const linkToProduct = `/products/${product.id}`;
-                                        return(
-                                            <CartItem
-                                                id={id}
-                                                image={image}
-                                                linkToProduct={linkToProduct}
-                                                name={name}
-                                                description={description}
-                                                countUserCartItems={count}
-                                                price={price}
-                                                index={index}
-                                                onHandlerRemoveProductFromCart={onHandlerRemoveProductFromCart}
-                                                onChangeTotalPrice={onChangeTotalPrice}
-                                                calculateCountProductsInCart={calculateCountProductsInCart}
-                                                totalPrice={totalPrice}
-                                                key={id}
-                                                userCart={userCart}
-                                            />
-                                        )
+
+                                    return(
+                                        <CartItem
+                                            id={id}
+                                            image={image}
+                                            linkToProduct={linkToProduct}
+                                            name={name}
+                                            description={description}
+                                            countUserCartItems={count}
+                                            price={price}
+                                            index={index}
+                                            onHandlerRemoveProductFromCart={onHandlerRemoveProductFromCart}
+                                            onChangeTotalPrice={onChangeTotalPrice}
+                                            calculateCountProductsInCart={calculateCountProductsInCart}
+                                            totalPrice={totalPrice}
+                                            key={id}
+                                            userCart={userCart}
+                                        />
+                                    )
                                 })}
                             </div>
                         </div>

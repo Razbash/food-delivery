@@ -11,6 +11,7 @@ import userReducer from './slices/userSlice';
 import promotionsReducer from './slices/promotionsSlice';
 import notificationReducer from './slices/notificationSlice';
 import shippingAddressesReducer from "./slices/shippingAddressesSlice";
+import orderReducer from './slices/orderSlice';
 
 const rootReducer = combineReducers({
     deals: dealsReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
     promotions: promotionsReducer,
     notification: notificationReducer,
     shippingAddresses: shippingAddressesReducer,
+    order: orderReducer,
 });
 
 export function setupStore() {

@@ -3,7 +3,7 @@ import DotsIcon from '../../assets/icons/DotsIcon';
 import OptionsPanel from '../OptionsPanel/OptionsPanel';
 import { useState } from "react";
 
-const AdminOrdersItem = (props: IOrder) => {
+const AdminOrdersItem = (props: any) => {
     const [isOpenOptions, setIsOpenOptions] = useState<boolean>(false);
     const {id, customerName, customerImage, address, creationDate, creationTime, status, totalAmount} = props;
     const statusMeta = 'user-orders__status user-orders__status--' + status;
