@@ -112,37 +112,13 @@
       "minDeliveryTime": 30,
       "maxDeliveryTime": 40,
       "minAmount": 32,
-      "categories": [
-        "sushi"
-      ],
+      "categoriesId": [3],
       "featured": true,
       "image": "../../assets/images/reustorants/royal-sushi-house.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -151,38 +127,13 @@
       "minDeliveryTime": 40,
       "maxDeliveryTime": 60,
       "minAmount": 24,
-      "categories": [
-        "burger",
-        "pizza"
-      ],
+      "categoriesId": [0, 1],
       "featured": true,
       "image": "../../assets/images/reustorants/burgers-pizza.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -191,37 +142,13 @@
       "minDeliveryTime": 20,
       "maxDeliveryTime": 40,
       "minAmount": 40,
-      "categories": [
-        "sushi"
-      ],
+      "categoriesId": [3],
       "featured": false,
       "image": "../../assets/images/reustorants/ninja-sushi.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -230,37 +157,13 @@
       "minDeliveryTime": 60,
       "maxDeliveryTime": 70,
       "minAmount": 49,
-      "categories": [
-        "sushi"
-      ],
+      "categoriesId": [3],
       "featured": false,
       "image": "../../assets/images/reustorants/sushi-master.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -269,37 +172,13 @@
       "minDeliveryTime": 30,
       "maxDeliveryTime": 50,
       "minAmount": 104,
-      "categories": [
-        "sushi"
-      ],
+      "categoriesId": [3],
       "featured": false,
       "image": "../../assets/images/reustorants/japanese-sushi.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -308,37 +187,13 @@
       "minDeliveryTime": 20,
       "maxDeliveryTime": 30,
       "minAmount": 57,
-      "categories": [
-        "sushi"
-      ],
+      "categoriesId": [3],
       "featured": false,
       "image": "../../assets/images/reustorants/kobe.png",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
       "coordinates": [
         -33.517315,
         164.182682
-      ],
-      "reviews": [
-        {
-          "id": 0,
-          "userName": "Savannah Miles",
-          "userImage": "../../assets/images/users/miles.png",
-          "dateOfPublication": "10 days ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        },
-        {
-          "id": 1,
-          "userName": "Jacob Jones",
-          "userImage": "../../assets/images/users/jacob.png",
-          "dateOfPublication": "1 day ago",
-          "estimate": 4,
-          "feedback": "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.",
-          "likes": 14,
-          "dislikes": 4
-        }
       ]
     },
     {
@@ -347,9 +202,7 @@
       "minDeliveryTime": 40,
       "maxDeliveryTime": 50,
       "minAmount": 70,
-      "categories": [
-        "vegan"
-      ],
+      "categoriesId": [4],
       "featured": false,
       "image": "../../assets/images/reustorants/6c1ac63c227048d4b52603671af88083-1100x825.jpg",
       "description": "Veri lobortis contentiones sed ad, duo eu clita dissentiet. Nam primis eligendi salutandi eu, an deseruisse ullamcorper vis.",
@@ -364,9 +217,7 @@
       "minDeliveryTime": 20,
       "maxDeliveryTime": 30,
       "minAmount": 80,
-      "categories": [
-        "dessert"
-      ],
+      "categoriesId": [5],
       "featured": false,
       "image": "../../assets/images/reustorants/6d295666991344c64dfcabd600311b45-1100x825.jpeg",
       "description": "Tyrolean Pies® is a trademark of baked goods created in 2004 using a unique technology and recipe by the Krug confectionery factory. The original presentation of a creamy dessert with natural berries and fruits in a special pie mold has become the trademark of the brand.",
