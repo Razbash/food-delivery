@@ -9,6 +9,7 @@ import RestaurantsListItem from './RestaurantsListItem';
 import RestaurantsListSkeleton from './RestaurantsListSkeleton';
 
 import '../reustorants.scss';
+import { Notification, startNotification, NotificationTypes } from '../../../components/Notification';
 
 const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
     const [restaurantsList, setRestaurantsList] = useState<IRestaurant[]>([]);
@@ -46,6 +47,17 @@ const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
         // eslint-disable-next-line
     }, [selectedFilters]);
 
+    useEffect(() => {
+        if (error) {
+            dispatch(startNotification({
+                type: NotificationTypes.error,
+                text: `An error occurred while loading the list of restaurants. (${error})`
+            }));
+        }
+
+        // eslint-disable-next-line
+    }, [error]);
+console.log('render');
 
     return(
         <>
@@ -62,6 +74,8 @@ const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
                     })
                 : null}
             </div>
+
+            <Notification/>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./css/index.scss";
+
 const HomePage = lazy(() => import('./screens/Home/HomePage'));
 
 function App() {

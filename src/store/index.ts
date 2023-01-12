@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import restaurantsReducer from "../screens/Reustorants/store/restaurantsSlice";
 import categoriesReducer from "./Categories/caregoriesSlice";
 import filtersReducer from "./Filters/filtersSlice";
+import notificationReducer from "../store/Notification/notificationSlice";
 
 const rootReducer = combineReducers({
     restaurants: restaurantsReducer,
     categories: categoriesReducer,
     selectedFilters: filtersReducer,
+    notification: notificationReducer,
 });
 
 export function setupStore() {

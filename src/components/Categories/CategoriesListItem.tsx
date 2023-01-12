@@ -5,7 +5,7 @@ const CategoriesListItem = ({id, title, icon, onSetFilters}: ICategoriesListItem
     const {selectedFilters} = useAppSelector(state => state.selectedFilters);
     let itemMeta = "categories-list__item";
 
-    if (selectedFilters.indexOf(id) !== -1) {
+    if (selectedFilters.indexOf(id) !== -1 && onSetFilters) {
         itemMeta += " categories-list__item--selected";
     }
 
