@@ -1,3 +1,4 @@
+import Footer from './components/Footer/Footer';
 import './layoutPage.scss';
 
 const LayoutPage = ({children}:any) => {
@@ -7,7 +8,7 @@ const LayoutPage = ({children}:any) => {
             <div className="container">
                 {children}
             </div>
-            <div className="">Тут будет футер</div>
+            <Footer/>
         </>
     )
 }
