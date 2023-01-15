@@ -29,14 +29,14 @@ const RestaurantDetailPage = () => {
         if (restaurantError) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while loading the list of restaurants. (${restaurantError})`
+                text: `An error occurred while uploading restaurant data. (${restaurantError})`
             }));
         }
 
         if (productsError) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while loading the list of restaurants. (${productsError})`
+                text: `An error occurred while loading the restaurant menu. (${productsError})`
             }));
         }
 

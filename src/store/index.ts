@@ -5,6 +5,7 @@ import filtersReducer from "./Filters/filtersSlice";
 import notificationReducer from "../store/Notification/notificationSlice";
 import restaurantReducer from "../screens/RestaurantDetail/store/restaurantSlice";
 import productReducer from "../screens/RestaurantDetail/store/productsSlice";
+import promotionsReducer from "../screens/Home/store/promotionsSlice";
 
 const rootReducer = combineReducers({
     restaurants: restaurantsReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     notification: notificationReducer,
     restaurant: restaurantReducer,
     products: productReducer,
+    promotions: promotionsReducer
 });
 
 export function setupStore() {
