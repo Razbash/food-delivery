@@ -25,7 +25,6 @@ export const categoriesSlice = createSlice({
             state.categories = action.payload;
         },
         fetchError(state, action: PayloadAction<Error>) {
-            state.loading = false;
             state.error = action.payload.message;
         }
     }

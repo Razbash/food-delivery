@@ -1,4 +1,4 @@
-import { FacebookIcon, TwitterIcon, InstagramIcon, YoutubeIcon, LinkedinIcon } from "../../../../assets/icons";
+import { FacebookIcon, TwitterIcon, InstagramIcon, YoutubeIcon, LinkedinIcon } from "../../../../ui/icons";
 
 const SocialLinks = () => {
     const socialIcons = [<FacebookIcon/>, <TwitterIcon/>, <InstagramIcon/>, <YoutubeIcon/>, <LinkedinIcon/>];

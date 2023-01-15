@@ -1,4 +1,4 @@
-interface IRestaurant {
+export default interface IRestaurant {
     id: number,
     name: string,
     minDeliveryTime: number,
@@ -10,5 +10,3 @@ interface IRestaurant {
     description: string,
     coordinates?: number[],
 }
-
-export default IRestaurant;

@@ -1,5 +1,5 @@
 import IRestaurantDeliveryInfo from "./interfaces/IRestaurantDeliveryInfo";
-import { ClockIcon } from "../../assets/icons";
+import { ClockIcon } from "../../ui/icons";
 
 import "./restaurantsDeliveryInfo.scss";
 

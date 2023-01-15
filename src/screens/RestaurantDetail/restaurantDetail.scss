@@ -1,0 +1,224 @@
+@import '../../css/index.scss';
+
+.reustorant-detail-page {
+    margin-bottom: 24px;
+    margin-top: -24px;
+
+    &__header {
+        background: $neutral-background;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+    }
+
+    &__image-and-info {
+        display: flex;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 24px 0;
+    }
+
+    &__image {
+        border-radius: $border-radius;
+        margin-right: 30px;
+        width: 160px;
+        height: 160px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    &__name {
+        @extend %h2;
+        color: $neutral-black;
+        margin-bottom: 4px;
+    }
+
+    &__description {
+        @extend %body-primary;
+        color: $neutral-black;
+        margin-right: 120px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    &__map {
+        overflow: hidden;
+    }
+
+    ymaps {
+        border-radius: 12px;
+    }
+}
+
+.reustorant-menu {
+    &__label {
+        @extend %h5;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+
+    &__item {
+        border: 1px solid $neutral-gray-lightest;
+        border-radius: $border-radius;
+        padding: 16px;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        box-sizing: border-box;
+
+        &:hover {
+            box-shadow: 0px 7px 20px -8px rgb(157 157 163 / 10%);
+            transform: translateY(-12px);
+        }
+
+        &--skeleton {
+            background: $lazy-loader-color;
+            animation: .8s infinite loading-blink;
+            border-radius: $border-radius;
+            height: 350px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 180px;
+        border-radius: $border-radius;
+        margin-bottom: 12px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__name {
+        @extend %h6;
+        color: $neutral-black;
+        margin-bottom: 4px;
+        text-decoration: none
+    }
+
+    &__description {
+        @extend %body-secondary;
+        color: $neutral-gray;
+        margin: 0 0 12px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        box-orient: vertical;
+        height: calc(3 * 13px * 1.4);
+    }
+
+    &__price {
+        @extend %h4;
+        color: $neutral-black;
+    }
+
+    &__control {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon-wrapper {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        background: $primary-light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover {
+            background: $primary-thirty;
+        }
+
+        &:active {
+            background: $primary-hover;
+        }
+    }
+
+    .plus-icon {
+        width: 12px;
+        height: 12px;
+        fill: $primary-default;
+    }
+}
+
+.reustorant-detail-page__header--skeleton {
+    .reustorant-detail-page {
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 3fr 2fr;
+            grid-gap: 30px;
+        }
+
+        &__header-item {
+            background: darken($lazy-loader-color, 5%);
+            animation: .8s infinite loading-blink;
+            border-radius: $border-radius;
+            height: 160px;
+        }
+    }
+}
+
+@media (max-width: $wide-tablet-width) {
+    .reustorant-detail-page {
+        &__wrapper {
+            flex-wrap: wrap;
+            padding: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        &__map-wrapper {
+            margin-top: 32px;
+        }
+
+        &__description {
+            margin-right: 0;
+        }
+
+        &__map {
+            width: calc(100vw - 80px) !important;
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

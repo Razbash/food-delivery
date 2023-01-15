@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../store/redux";
-import { InfoIcon, SucssesIcon, WarningIcon, CrossIcon } from "../../assets/icons";
+import { InfoIcon, SucssesIcon, WarningIcon, CrossIcon } from "../../ui/icons";
 import { stopNotification, NotificationTypes } from ".";
 
 import "./notification.scss";

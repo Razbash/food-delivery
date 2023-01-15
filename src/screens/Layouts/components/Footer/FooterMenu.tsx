@@ -7,13 +7,13 @@ const FooterMenu = () => {
 
     return(
         <div className="footer__right">
-            {menu.map(chapter => {
+            {menu.map((chapter, index) => {
                 return(
-                    <div className="footer__column">
+                    <div className="footer__column" key={index}>
                         <span className="footer__menu-item footer__menu-item--title">{chapter.title}</span>
-                        {chapter.elements.map(link => {
+                        {chapter.elements.map((link, index) => {
                             return(
-                                <span className="footer__menu-item">{link}</span>
+                                <span className="footer__menu-item" key={index}>{link}</span>
                             )
                         })}
                     </div>

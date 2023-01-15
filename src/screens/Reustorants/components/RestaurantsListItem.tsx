@@ -11,7 +11,7 @@ const RestaurantsListItem = ({categories, restaurant}:IRestaurantsListItemProps)
     }
 
     return(
-        <Link to={`/reustorant/${id}`} className="reustorants-list__item">
+        <Link to={`/restaurant/${id}`} className="reustorants-list__item">
             <div className="reustorants-list__image" style={backgroundImageStyle}></div>
             <div className="reustorants-list__info">
                 <div className="reustorants-list__title">

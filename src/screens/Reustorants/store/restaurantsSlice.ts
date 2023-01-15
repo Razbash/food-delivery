@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import IRestaurant from '../interfaces/IRestaurant';
+import IRestaurant from '../../../interfaces/IRestaurant';
 
 interface RestaurantsState {
     loading: boolean,
@@ -25,7 +25,6 @@ export const restaurantsSlice = createSlice({
             state.restaurants = action.payload;
         },
         fetchError(state, action: PayloadAction<Error>) {
-            state.loading = false;
             state.error = action.payload.message;
         }
     }

@@ -105,7 +105,7 @@
       "icon": "../../assets/images/categories/dessert.png"
     }
   ],
-  "reustorants": [
+  "restaurants": [
     {
       "id": 0,
       "name": "Royal Sushi House",
@@ -338,7 +338,7 @@
           "image": "../../assets/images/menu/nigiriSet.png",
           "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
           "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-          "reustorant": "Royal Sushi House",
+          "restaurantId": 0,
           "images": [
             "../../assets/images/products/1.png",
             "../../assets/images/products/2.png",
@@ -353,7 +353,7 @@
           "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
           "price": 22.56,
           "image": "../../assets/images/menu/rollSet.png",
-          "reustorant": "Royal Sushi House",
+          "restaurantId": 0,
           "images": [
             "../../assets/images/products/1.png",
             "../../assets/images/products/2.png",
@@ -375,10 +375,9 @@
       "name": "Nigiri set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 16.8,
-      "image": "../../assets/images/menu/nigiriSet.png",
       "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-      "reustorant": "Royal Sushi House",
+      "restaurantId": 0,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -391,8 +390,7 @@
       "name": "Roll set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 22.56,
-      "image": "../../assets/images/menu/rollSet.png",
-      "reustorant": "Royal Sushi House",
+      "restaurantId": 0,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -405,8 +403,7 @@
       "name": "Star set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 50.56,
-      "image": "../../assets/images/menu/nigiriSet.png",
-      "reustorant": "Royal Sushi House",
+      "restaurantId": 0,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -419,8 +416,7 @@
       "name": "Razbash set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 55,
-      "image": "../../assets/images/menu/rollSet.png",
-      "reustorant": "Royal Sushi House",
+      "restaurantId": 0,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -433,8 +429,7 @@
       "name": "Burger BBQ",
       "description": "Burger with homemade bun, juicy cutlet, stretching cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of sauces gives piquancy to the taste: ketchup, barbecue and 1000 islands",
       "price": 5.64,
-      "image": "../../assets/images/menu/burgerBBQ.jpeg",
-      "reustorant": "Burgers & Pizza",
+      "restaurantId": 1,
       "images": [
         "../../assets/images/menu/burgerBBQ.jpeg",
         "../../assets/images/products/bbq-burger-black-star.jpg"
@@ -445,11 +440,10 @@
       "name": "BBQ Halal Double Burger",
       "description": "You haven't tried such a delicious BBQ yet! Burger with homemade bun, two juicy cutlets, stretching Cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of barbecue ketchup sauces and 1000 islands gives piquancy to the taste",
       "price": 10.58,
-      "image": "../../assets/images/products/burgerBBQHalal.jpeg",
       "images": [
         "../../assets/images/products/burgerBBQHalal.jpeg"
       ],
-      "reustorant": "Burgers & Pizza",
+      "restaurantId": 1,
       "ingredients": "2 halal cutlets, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
@@ -458,12 +452,11 @@
       "name": "Burger Classic Halal double",
       "description": "A classic that will appeal to everyone. A signature burger with a homemade bun, two juicy cutlets with slices of cheddar cheese, which perfectly complement fresh lettuce leaves, tomatoes, pickles and red onions",
       "price": 11.13,
-      "image": "../../assets/images/products/burgerHalalClassic.jpeg",
       "images": [
         "../../assets/images/products/burgerHalalClassic.jpeg",
         "../../assets/images/products/7c68fe97aac9a7277f9501204f273564.jpg"
       ],
-      "reustorant": "Burgers & Pizza",
+      "restaurantId": 1,
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
     {
@@ -471,11 +464,10 @@
       "name": "Burger Classic Black Angus double",
       "description": "A classic that will appeal to everyone. A signature burger with a homemade bun, two juicy marbled beef patties with slices of cheddar cheese, which perfectly complement fresh lettuce leaves, tomatoes, pickles and red onions",
       "price": 11.13,
-      "image": "../../assets/images/products/b59b1d6bcd337f28c1b7d9f254f1c9b6-216x188.jpeg",
       "images": [
         "../../assets/images/products/b59b1d6bcd337f28c1b7d9f254f1c9b6-216x188.jpeg"
       ],
-      "reustorant": "Burgers & Pizza",
+      "restaurantId": 1,
       "ingredients": "Marbled beef, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese"
     },
     {
@@ -483,25 +475,23 @@
       "name": "BBQ Black Angus Double Burger",
       "description": "You haven't tried such a delicious BBQ yet! Burger with homemade bun, two juicy marbled beef patties, stretching Cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of barbecue ketchup sauces and 1000 islands gives piquancy to the taste",
       "price": 10.58,
-      "image": "../../assets/images/products/9132fafe232f03146a984f725ccf14bd-216x188.jpeg",
       "images": [
         "../../assets/images/products/9132fafe232f03146a984f725ccf14bd-216x188.jpeg",
         "../../assets/images/products/restaurantbbq.png"
       ],
-      "reustorant": "Burgers & Pizza"
+      "restaurantId": 1
     },
     {
       "id": 9,
       "name": "Sashimi shrimp",
       "description": "Daikon, tosaka seaweed, lime, shrimp",
       "price": 8.83,
-      "image": "../../assets/images/products/креветка-1.jpg",
       "images": [
         "../../assets/images/products/креветка-1.jpg",
         "../../assets/images/products/c7ffa93fc10cb15a94fff2de7a7e8a94-216x188.jpeg",
         "../../assets/images/products/sashimkrevetka.jpeg"
       ],
-      "reustorant": "Ninja Sushi",
+      "restaurantId": 2,
       "ingredients": "Daikon, tosaka seaweed, lime, shrimp"
     },
     {
@@ -509,11 +499,10 @@
       "name": "Imperial oysters 6 pcs",
       "description": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots",
       "price": 37.8,
-      "image": "../../assets/images/products/dfb91655c247e5b3067120dce3c64b02-216x188.jpeg",
       "images": [
         "../../assets/images/products/dfb91655c247e5b3067120dce3c64b02-216x188.jpeg"
       ],
-      "reustorant": "Sushi Master",
+      "restaurantId": 3,
       "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
@@ -522,11 +511,10 @@
       "name": "Arigato roll with salmon tartare",
       "description": "Salmon, tiger prawns, fresh cucumber, rice, nori, Tomago omelet, cream cheese, hot pepper, tempura, mayonnaise, Unagi sauce, Tobiko caviar",
       "price": 9.21,
-      "image": "../../assets/images/products/4c3adbf5264b40c040e78be2658efbad-216x188.jpeg",
       "images": [
         "../../assets/images/products/4c3adbf5264b40c040e78be2658efbad-216x188.jpeg"
       ],
-      "reustorant": "Japanese Sushi",
+      "restaurantId": 4,
       "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots"
     },
     {
@@ -534,36 +522,33 @@
       "name": "Sushi Tuna ieloufin okami",
       "description": "Tuna, rice, wasabi",
       "price": 3.57,
-      "image": "../../assets/images/products/f15429d22f432d0a74905a15c5a99b34-216x188.jpeg",
       "images": [
         "../../assets/images/products/f15429d22f432d0a74905a15c5a99b34-216x188.jpeg"
       ],
-      "reustorant": "Kobe"
+      "restaurantId": 5
     },
     {
       "id": 13,
       "name": "Chuka",
       "description": "Chuka, rice, nori, sesame",
       "price": 1.92,
-      "image": "../../assets/images/products/8d0bf3da79412aff55edc4ab4a923074-216x188.jpeg",
       "images": [
         "../../assets/images/products/8d0bf3da79412aff55edc4ab4a923074-216x188.jpeg",
         "../../assets/images/products/131-1300.jpg",
         "../../assets/images/products/600x600.jpg",
         "../../assets/images/products/chuka-sushi-200-B.jpg"
       ],
-      "reustorant": "Kobe"
+      "restaurantId": 5
     },
     {
       "id": 14,
       "name": "Ikura",
       "description": "Trout caviar, rice, nori, cucumber",
       "price": 3.02,
-      "image": "../../assets/images/products/d9676b49fd4ee8e23963f94c607a935f-216x188.jpeg",
       "images": [
         "../../assets/images/products/d9676b49fd4ee8e23963f94c607a935f-216x188.jpeg"
       ],
-      "reustorant": "Kobe",
+      "restaurantId": 5,
       "ingredients": "Trout caviar, rice, nori, cucumber"
     },
     {
@@ -571,11 +556,10 @@
       "name": "Steamed rice",
       "description": "Rice, white sesame, cilantro",
       "price": 1.56,
-      "image": "../../assets/images/products/6d1a6df695b61815cb9a49ab1f72d392-216x188.png",
       "images": [
         "../../assets/images/products/6d1a6df695b61815cb9a49ab1f72d392-216x188.png"
       ],
-      "reustorant": "Menza",
+      "restaurantId": 6,
       "ingredients": "rice, white sesame, cilantro"
     },
     {
@@ -587,7 +571,7 @@
       "images": [
         "../../assets/images/products/b1cb8f0205be39f8fbfcd07fe8568af7-216x188.png"
       ],
-      "reustorant": "Menza"
+      "restaurantId": 6
     },
     {
       "id": 17,
@@ -598,7 +582,7 @@
       "images": [
         "../../assets/images/products/db7f99aca91dd488302c8ff379aa0a11-216x188.jpeg"
       ],
-      "reustorant": "Tyrolean Pies",
+      "restaurantId": 7,
       "ingredients": "Dark chocolate, milk, sponge cake, butter cream"
     },
     {
@@ -610,7 +594,7 @@
       "images": [
         "../../assets/images/products/a66fc22b6078408fbc6ee2e90d90b247-216x188.jpeg"
       ],
-      "reustorant": "Tyrolean Pies"
+      "restaurantId": 7
     },
     {
       "id": 19,
@@ -621,7 +605,7 @@
       "images": [
         "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png"
       ],
-      "reustorant": "Tyrolean Pies",
+      "restaurantId": 7,
       "ingredients": "Airy sponge cake with summer berries and creamy custard"
     }
   ],

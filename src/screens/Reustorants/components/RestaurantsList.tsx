@@ -3,7 +3,7 @@ import { fetchRestaurants } from '../store/restaurantsActions';
 import { fetchCategories } from '../../../store/Categories/categoriesActions';
 import { useAppDispatch, useAppSelector } from '../../../store/redux';
 
-import IRestaurant from '../interfaces/IRestaurant';
+import IRestaurant from '../../../interfaces/IRestaurant';
 import IRestaurantsListProps from '../interfaces/IRestaurantsListProps';
 import RestaurantsListItem from './RestaurantsListItem';
 import RestaurantsListSkeleton from './RestaurantsListSkeleton';
@@ -33,7 +33,7 @@ const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
         let renderRestaurants:IRestaurant[] = [];
 
         restaurants.map((restaurant) => {
-            return restaurant.categoriesId.forEach(category => {
+            return restaurant.categoriesId.forEach((category: number) => {
                 if (selectedFilters.includes(category) && !renderRestaurants.includes(restaurant)) {
                     renderRestaurants.push(restaurant);
                 }
@@ -57,7 +57,6 @@ const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
 
         // eslint-disable-next-line
     }, [error]);
-console.log('render');
 
     return(
         <>
