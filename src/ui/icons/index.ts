@@ -9,6 +9,7 @@ import InstagramIcon from "./InstagramIcon";
 import YoutubeIcon from "./YoutubeIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import PlusIcon from "./PlusIcon";
+import ArrowIcon from "./ArrowIcon";
 
 export {
     ClockIcon,
@@ -21,5 +22,6 @@ export {
     InstagramIcon,
     YoutubeIcon,
     LinkedinIcon,
-    PlusIcon
+    PlusIcon,
+    ArrowIcon
 }

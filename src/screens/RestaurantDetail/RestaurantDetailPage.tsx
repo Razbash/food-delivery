@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/redux";
 
 import { fetchProducts } from "./store/productsActions";
-import { fetchReustorant } from "./store/restaurantActions";
+import { fetchRestaurant } from "./store/restaurantActions";
 import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
 
 import {RestaurantHeader, RestaurantHeaderSkeleton} from "./index";
@@ -19,7 +19,7 @@ const RestaurantDetailPage = () => {
     const {restaurantId} = useParams();
 
     useEffect(() => {
-        dispatch(fetchReustorant(Number(restaurantId)));
+        dispatch(fetchRestaurant(Number(restaurantId)));
         dispatch(fetchProducts(Number(restaurantId)));
 
         // eslint-disable-next-line

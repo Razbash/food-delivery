@@ -1,20 +1,22 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import restaurantsReducer from "../screens/Reustorants/store/restaurantsSlice";
-import categoriesReducer from "./Categories/caregoriesSlice";
-import filtersReducer from "./Filters/filtersSlice";
-import notificationReducer from "../store/Notification/notificationSlice";
-import restaurantReducer from "../screens/RestaurantDetail/store/restaurantSlice";
-import productReducer from "../screens/RestaurantDetail/store/productsSlice";
-import promotionsReducer from "../screens/Home/store/promotionsSlice";
+import restaurantsReducer   from "../screens/Reustorants/store/restaurantsSlice";
+import categoriesReducer    from "./Categories/caregoriesSlice";
+import filtersReducer       from "./Filters/filtersSlice";
+import notificationReducer  from "../store/Notification/notificationSlice";
+import restaurantReducer    from "../screens/RestaurantDetail/store/restaurantSlice";
+import productsReducer      from "../screens/RestaurantDetail/store/productsSlice";
+import promotionsReducer    from "../screens/Home/store/promotionsSlice";
+import productReducer       from "../screens/ProductDetail/store/productSlice";
 
 const rootReducer = combineReducers({
-    restaurants: restaurantsReducer,
-    categories: categoriesReducer,
+    restaurants:     restaurantsReducer,
+    categories:      categoriesReducer,
     selectedFilters: filtersReducer,
-    notification: notificationReducer,
-    restaurant: restaurantReducer,
-    products: productReducer,
-    promotions: promotionsReducer
+    notification:    notificationReducer,
+    restaurant:      restaurantReducer,
+    products:        productsReducer,
+    promotions:      promotionsReducer,
+    product:         productReducer,
 });
 
 export function setupStore() {

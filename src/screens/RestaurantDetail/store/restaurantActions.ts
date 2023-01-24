@@ -2,7 +2,7 @@ import axios from "../../../utils/axios";
 import { AppDispatch } from "../../../store";
 import { restaurantSlice } from "./restaurantSlice";
 
-export const fetchReustorant = (id: number) => {
+export const fetchRestaurant = (id: number) => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(restaurantSlice.actions.fetching());

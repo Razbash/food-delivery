@@ -107,7 +107,7 @@
   ],
   "restaurants": [
     {
-      "id": 0,
+      "id": 1,
       "name": "Royal Sushi House",
       "minDeliveryTime": 30,
       "maxDeliveryTime": 40,
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Burgers & Pizza",
       "minDeliveryTime": 40,
       "maxDeliveryTime": 60,
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Ninja Sushi",
       "minDeliveryTime": 20,
       "maxDeliveryTime": 40,
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Sushi Master",
       "minDeliveryTime": 60,
       "maxDeliveryTime": 70,
@@ -167,7 +167,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Japanese Sushi",
       "minDeliveryTime": 30,
       "maxDeliveryTime": 50,
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Kobe",
       "minDeliveryTime": 20,
       "maxDeliveryTime": 30,
@@ -197,7 +197,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Menza",
       "minDeliveryTime": 40,
       "maxDeliveryTime": 50,
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Tyrolean Pies",
       "minDeliveryTime": 20,
       "maxDeliveryTime": 30,
@@ -331,14 +331,14 @@
       },
       "products": [
         {
-          "id": 0,
+          "id": 454,
           "name": "Nigiri set",
           "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
           "price": 16.8,
           "image": "../../assets/images/menu/nigiriSet.png",
           "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
           "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-          "restaurantId": 0,
+          "restaurantId": 1,
           "images": [
             "../../assets/images/products/1.png",
             "../../assets/images/products/2.png",
@@ -353,7 +353,7 @@
           "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
           "price": 22.56,
           "image": "../../assets/images/menu/rollSet.png",
-          "restaurantId": 0,
+          "restaurantId": 1,
           "images": [
             "../../assets/images/products/1.png",
             "../../assets/images/products/2.png",
@@ -377,7 +377,7 @@
       "price": 16.8,
       "ingredients": "Lorem ipsum dolor sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)",
-      "restaurantId": 0,
+      "restaurantId": 1,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -390,7 +390,7 @@
       "name": "Roll set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 22.56,
-      "restaurantId": 0,
+      "restaurantId": 1,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -403,7 +403,7 @@
       "name": "Star set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 50.56,
-      "restaurantId": 0,
+      "restaurantId": 1,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -416,7 +416,7 @@
       "name": "Razbash set",
       "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe.",
       "price": 55,
-      "restaurantId": 0,
+      "restaurantId": 1,
       "images": [
         "../../assets/images/products/1.png",
         "../../assets/images/products/2.png",
@@ -429,7 +429,7 @@
       "name": "Burger BBQ",
       "description": "Burger with homemade bun, juicy cutlet, stretching cheddar cheese, fried onions, pickled cucumbers and lettuce leaves. A harmonious combination of sauces gives piquancy to the taste: ketchup, barbecue and 1000 islands",
       "price": 5.64,
-      "restaurantId": 1,
+      "restaurantId": 2,
       "images": [
         "../../assets/images/menu/burgerBBQ.jpeg",
         "../../assets/images/products/bbq-burger-black-star.jpg"
@@ -443,7 +443,7 @@
       "images": [
         "../../assets/images/products/burgerBBQHalal.jpeg"
       ],
-      "restaurantId": 1,
+      "restaurantId": 2,
       "ingredients": "2 halal cutlets, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
@@ -456,7 +456,7 @@
         "../../assets/images/products/burgerHalalClassic.jpeg",
         "../../assets/images/products/7c68fe97aac9a7277f9501204f273564.jpg"
       ],
-      "restaurantId": 1,
+      "restaurantId": 2,
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
     {
@@ -467,7 +467,7 @@
       "images": [
         "../../assets/images/products/b59b1d6bcd337f28c1b7d9f254f1c9b6-216x188.jpeg"
       ],
-      "restaurantId": 1,
+      "restaurantId": 2,
       "ingredients": "Marbled beef, truffle oil, lettuce leaves, pickled cucumbers, cheddar cheese, jalapeno, fresh tomatoes, mozzarella cheese"
     },
     {
@@ -479,7 +479,7 @@
         "../../assets/images/products/9132fafe232f03146a984f725ccf14bd-216x188.jpeg",
         "../../assets/images/products/restaurantbbq.png"
       ],
-      "restaurantId": 1
+      "restaurantId": 2
     },
     {
       "id": 9,
@@ -491,7 +491,7 @@
         "../../assets/images/products/c7ffa93fc10cb15a94fff2de7a7e8a94-216x188.jpeg",
         "../../assets/images/products/sashimkrevetka.jpeg"
       ],
-      "restaurantId": 2,
+      "restaurantId": 3,
       "ingredients": "Daikon, tosaka seaweed, lime, shrimp"
     },
     {
@@ -502,7 +502,7 @@
       "images": [
         "../../assets/images/products/dfb91655c247e5b3067120dce3c64b02-216x188.jpeg"
       ],
-      "restaurantId": 3,
+      "restaurantId": 4,
       "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots",
       "nutritionalValue": "Proteins - 7.11, Fats - 5.17, Carbohydrates - 18.40, 146 kkal. (for 100 g.)"
     },
@@ -514,7 +514,7 @@
       "images": [
         "../../assets/images/products/4c3adbf5264b40c040e78be2658efbad-216x188.jpeg"
       ],
-      "restaurantId": 4,
+      "restaurantId": 5,
       "ingredients": "Imperial oysters, lemon, croutons, butter, ponzu sauce, red wine vinegar, shallots"
     },
     {
@@ -525,7 +525,7 @@
       "images": [
         "../../assets/images/products/f15429d22f432d0a74905a15c5a99b34-216x188.jpeg"
       ],
-      "restaurantId": 5
+      "restaurantId": 6
     },
     {
       "id": 13,
@@ -538,7 +538,7 @@
         "../../assets/images/products/600x600.jpg",
         "../../assets/images/products/chuka-sushi-200-B.jpg"
       ],
-      "restaurantId": 5
+      "restaurantId": 6
     },
     {
       "id": 14,
@@ -548,7 +548,7 @@
       "images": [
         "../../assets/images/products/d9676b49fd4ee8e23963f94c607a935f-216x188.jpeg"
       ],
-      "restaurantId": 5,
+      "restaurantId": 6,
       "ingredients": "Trout caviar, rice, nori, cucumber"
     },
     {
@@ -559,7 +559,7 @@
       "images": [
         "../../assets/images/products/6d1a6df695b61815cb9a49ab1f72d392-216x188.png"
       ],
-      "restaurantId": 6,
+      "restaurantId": 7,
       "ingredients": "rice, white sesame, cilantro"
     },
     {
@@ -571,7 +571,7 @@
       "images": [
         "../../assets/images/products/b1cb8f0205be39f8fbfcd07fe8568af7-216x188.png"
       ],
-      "restaurantId": 6
+      "restaurantId": 7
     },
     {
       "id": 17,
@@ -582,7 +582,7 @@
       "images": [
         "../../assets/images/products/db7f99aca91dd488302c8ff379aa0a11-216x188.jpeg"
       ],
-      "restaurantId": 7,
+      "restaurantId": 8,
       "ingredients": "Dark chocolate, milk, sponge cake, butter cream"
     },
     {
@@ -594,7 +594,7 @@
       "images": [
         "../../assets/images/products/a66fc22b6078408fbc6ee2e90d90b247-216x188.jpeg"
       ],
-      "restaurantId": 7
+      "restaurantId": 8
     },
     {
       "id": 19,
@@ -605,7 +605,7 @@
       "images": [
         "../../assets/images/products/e62ce3fee5ce1ba138cf5aa121a6e367-216x188.png"
       ],
-      "restaurantId": 7,
+      "restaurantId": 8,
       "ingredients": "Airy sponge cake with summer berries and creamy custard"
     }
   ],

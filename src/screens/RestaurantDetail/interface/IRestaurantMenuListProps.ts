@@ -1,4 +1,4 @@
-import IProduct from "./IProduct";
+import IProduct from "../../../interfaces/IProduct";
 
 export default interface IRestaurantMenuListProps {
     products: IProduct[],

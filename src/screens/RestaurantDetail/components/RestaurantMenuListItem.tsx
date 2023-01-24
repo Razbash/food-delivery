@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { PlusIcon } from "../../../ui/icons";
-import IProduct from "../interface/IProduct";
+import IProduct from "../../../interfaces/IProduct";
 
 const RestaurantMenuListItem = ({id, name, description, price, images}: IProduct) => {
     const backgroundImageStyle = {

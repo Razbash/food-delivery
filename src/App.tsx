@@ -6,6 +6,7 @@ import SuspenseSpinner from "./ui/SuspenseSpinner/SuspenseSpinner";
 
 const HomePage              = lazy(() => import('./screens/Home/HomePage'));
 const RestaurantDetailPage  = lazy(() => import('./screens/RestaurantDetail/RestaurantDetailPage'));
+const ProductDetailPage     = lazy(() => import('./screens/ProductDetail/ProductDetailPage'));
 
 const store = setupStore();
 
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage/>}></Route>
               <Route path="/restaurant/:restaurantId" element={<RestaurantDetailPage/>}></Route>
+              <Route path="/products/:productId" element={<ProductDetailPage/>}></Route>
             </Routes>
           </Suspense>
         </div>
