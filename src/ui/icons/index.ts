@@ -10,6 +10,8 @@ import YoutubeIcon from "./YoutubeIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import PlusIcon from "./PlusIcon";
 import ArrowIcon from "./ArrowIcon";
+import CalendarIcon from "./CalendarIcon";
+import GeoIcon from "./GeoIcon";
 
 export {
     ClockIcon,
@@ -23,5 +25,7 @@ export {
     YoutubeIcon,
     LinkedinIcon,
     PlusIcon,
-    ArrowIcon
+    ArrowIcon,
+    CalendarIcon,
+    GeoIcon,
 }

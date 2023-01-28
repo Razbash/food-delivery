@@ -6,7 +6,7 @@
       "status": "active",
       "image": "../../assets/images/deals/20-for-vegans.png",
       "date": "10 April, 2021 – 30 August, 2021 (Saturday only)",
-      "reustorant": "Vegfood"
+      "restaurant": "Vegfood"
     },
     {
       "id": 1,
@@ -14,7 +14,7 @@
       "status": "active",
       "image": "../../assets/images/deals/5-for-meals.png",
       "date": "5 March, 2021 – 20 June, 2021 (Wednesday only)",
-      "reustorant": "Parallax Restaurant"
+      "restaurant": "Parallax Restaurant"
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "status": "active",
       "image": "../../assets/images/deals/free-pepsi.png",
       "date": "22 March, 2021 – 12 June, 2021",
-      "reustorant": "Sur un Arbre Perché"
+      "restaurant": "Sur un Arbre Perché"
     },
     {
       "id": 3,
@@ -30,7 +30,7 @@
       "status": "active",
       "image": "../../assets/images/deals/get-pizza.png",
       "date": "20 April, 2021 – 28 July, 2021",
-      "reustorant": "Norma's"
+      "restaurant": "Norma's"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "status": "scheduled",
       "image": "../../assets/images/deals/above-300.png",
       "date": "1 June, 2021 – 30 July, 2021",
-      "reustorant": "Ithaa"
+      "restaurant": "Ithaa"
     },
     {
       "id": 5,
@@ -46,7 +46,7 @@
       "status": "scheduled",
       "image": "../../assets/images/deals/30-for-vegans.png",
       "date": "20 June, 2021 – 30 August, 2021 (Monday only)",
-      "reustorant": "Ithaa"
+      "restaurant": "Ithaa"
     },
     {
       "id": 6,
@@ -54,7 +54,7 @@
       "status": "expired",
       "image": "../../assets/images/deals/free-burger.png",
       "date": "12 April, 2021",
-      "reustorant": "Parallax Restaurant"
+      "restaurant": "Parallax Restaurant"
     },
     {
       "id": 7,
@@ -62,7 +62,7 @@
       "status": "expired",
       "image": "../../assets/images/deals/free-sushi.png",
       "date": "30 March, 2021",
-      "reustorant": "Parallax Restaurant"
+      "restaurant": "Parallax Restaurant"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "status": "expired",
       "image": "../../assets/images/deals/25-deserts.png",
       "date": "13 April, 2021",
-      "reustorant": "Parallax Restaurant"
+      "restaurant": "Parallax Restaurant"
     }
   ],
   "categories": [
