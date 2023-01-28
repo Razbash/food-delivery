@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/redux";
 import { fetchDeals } from "./store/dealsActions";
-import LayoutPage from "../Layouts/LayoutPage";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
 import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
 
-import './deals.scss';
+import LayoutPage from "../Layouts/LayoutPage";
+import BlockTitle from "../../components/BlockTitle/BlockTitle";
 import DealsListSkeleton from "./components/DealsListSkeleton";
 import DealsListItem from "./components/DealsListItem";
+
+import './deals.scss';
 
 const DealsPage = () => {
     const dispatch = useAppDispatch();
