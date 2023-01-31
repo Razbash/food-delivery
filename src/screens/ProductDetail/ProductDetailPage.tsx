@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/redux";
 import { fetchRestaurant } from "../RestaurantDetail/store/restaurantActions";
 import { fetchProduct } from "./store/productActions";
 import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
+import { addToCart } from "../../utils/cart/cart";
 
 import LayoutPage from "../Layouts/LayoutPage";
 import Product from "./components/Product";
@@ -13,6 +14,8 @@ const ProductDetailPage = () => {
     const {productId} = useParams();
     const {error, loading, product} = useAppSelector(state => state.product);
     const {restaurant} = useAppSelector(state => state.restaurant);
+
+    const [counter, setCounter] = useState<number>(1);
 
     const dispatch = useAppDispatch();
 
@@ -41,6 +44,24 @@ const ProductDetailPage = () => {
         // eslint-disable-next-line
     }, [error]);
 
+    const onChangeCounter = (count: number) => {
+        setCounter(count);
+    }
+
+    const addProductToCart = () => {
+        const order = {
+            productId: Number(productId),
+            count: counter
+        }
+
+        addToCart(order);
+
+        dispatch(startNotification({
+            type: NotificationTypes.sucsses,
+            text: 'The product has been added to the cart'
+        }));
+    }
+
     return(
         <LayoutPage>
             {loading ? <ProductSkeleton/> : null}
@@ -49,6 +70,9 @@ const ProductDetailPage = () => {
                 ? <Product product={product}
                     restaurantId={restaurant.id}
                     restaurantName={restaurant.name}
+                    counter={counter}
+                    onChangeCounter={onChangeCounter}
+                    addProductToCart={addProductToCart}
                 />
             : null}
 

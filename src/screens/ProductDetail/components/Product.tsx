@@ -5,15 +5,10 @@ import IProductProps from "../interfaces/IProductProps";
 
 import "../productDetail.scss";
 
-const Product = ({product, restaurantId, restaurantName}: IProductProps) => {
+const Product = ({product, restaurantId, restaurantName, counter, onChangeCounter, addProductToCart}: IProductProps) => {
     const [activeImage, setActiveImage] = useState<number>(0);
-    const [counter, setCounter] = useState<number>(1);
 
     const {images, name, description, nutritionalValue, ingredients, price} = product;
-
-    const onChangeCounter = (count: number) => {
-        setCounter(count);
-    }
 
     return(
         <div className="product-detail">
@@ -51,7 +46,9 @@ const Product = ({product, restaurantId, restaurantName}: IProductProps) => {
                     <div className="product-detail__controls">
                         <span className="product-detail__price">$ {price.toFixed(2)}</span>
                         <Quantity counter={counter} onChangeCounter={onChangeCounter}/>
-                        <button className="button button--contained">Add to cart</button>
+                        <button className="button button--contained"
+                            onClick={() => addProductToCart()}
+                        >Add to cart</button>
                     </div>
                     <div className="product-detail__additional-info">
                         {ingredients
