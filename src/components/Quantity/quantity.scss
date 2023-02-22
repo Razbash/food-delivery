@@ -11,6 +11,7 @@
     &__increase {
         @extend %subtitle-primary;
         color: $neutral-black;
+        user-select: none;
     }
 
     &__decrease,

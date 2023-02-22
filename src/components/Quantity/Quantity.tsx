@@ -1,4 +1,5 @@
 import IQuantity from "./interfaces/IQuantity";
+import EnumCartControlsMode from "./interfaces/EnumCartControlsMode";
 import "./quantity.scss";
 
 const Quantity = ({counter, onChangeCounter}: IQuantity) => {
@@ -10,10 +11,10 @@ const Quantity = ({counter, onChangeCounter}: IQuantity) => {
 
     const onChangeCount = (mode: string) => {
         switch(mode) {
-            case 'increase':
+            case EnumCartControlsMode.INCREASE:
                 onChangeCounter(counter + 1);
                 break;
-            case 'decrease':
+            case EnumCartControlsMode.DESCRESE:
                 onChangeCounter(counter - 1);
                 break;
         }
@@ -21,9 +22,9 @@ const Quantity = ({counter, onChangeCounter}: IQuantity) => {
 
     return(
         <div className="quantity">
-            <span className={quantityDecreaseMeta} onClick={() => onChangeCount('decrease')}>-</span>
+            <span className={quantityDecreaseMeta} onClick={() => onChangeCount(EnumCartControlsMode.DESCRESE)}>-</span>
             <span className="quantity__value">{counter}</span>
-            <span className="quantity__increase" onClick={() => onChangeCount('increase')}>+</span>
+            <span className="quantity__increase" onClick={() => onChangeCount(EnumCartControlsMode.INCREASE)}>+</span>
         </div>
     )
 }

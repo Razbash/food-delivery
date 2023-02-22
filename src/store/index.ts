@@ -4,7 +4,7 @@ import categoriesReducer    from "./Categories/caregoriesSlice";
 import filtersReducer       from "./Filters/filtersSlice";
 import notificationReducer  from "../store/Notification/notificationSlice";
 import restaurantReducer    from "../screens/RestaurantDetail/store/restaurantSlice";
-import productsReducer      from "../screens/RestaurantDetail/store/productsSlice";
+import productsReducer      from "./Products/productsSlice";
 import promotionsReducer    from "../screens/Home/store/promotionsSlice";
 import productReducer       from "../screens/ProductDetail/store/productSlice";
 import dealsReducer from "../screens/Deals/store/dealsSlice";

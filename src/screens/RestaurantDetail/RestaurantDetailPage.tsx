@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/redux";
 
-import { fetchProducts } from "./store/productsActions";
+import { fetchProducts } from "../../store/Products/productsActions";
 import { fetchRestaurant } from "./store/restaurantActions";
 import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
 
