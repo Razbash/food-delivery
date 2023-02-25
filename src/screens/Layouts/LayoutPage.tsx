@@ -1,10 +1,11 @@
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import './layoutPage.scss';
 
 const LayoutPage = ({children}:any) => {
     return(
         <>
-            <div className="">Тут будет шапка</div>
+            <Header/>
             <div className="container">
                 {children}
             </div>

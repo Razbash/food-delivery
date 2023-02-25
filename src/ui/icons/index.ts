@@ -12,6 +12,9 @@ import PlusIcon from "./PlusIcon";
 import ArrowIcon from "./ArrowIcon";
 import CalendarIcon from "./CalendarIcon";
 import GeoIcon from "./GeoIcon";
+import SearchIcon from "./SearchIcon";
+import CartIcon from "./CartIcon";
+import HamburgerIcon from "./HamburgerIcon";
 
 export {
     ClockIcon,
@@ -28,4 +31,7 @@ export {
     ArrowIcon,
     CalendarIcon,
     GeoIcon,
+    SearchIcon,
+    CartIcon,
+    HamburgerIcon,
 }
