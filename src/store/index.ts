@@ -7,7 +7,8 @@ import restaurantReducer    from "../screens/RestaurantDetail/store/restaurantSl
 import productsReducer      from "./Products/productsSlice";
 import promotionsReducer    from "../screens/Home/store/promotionsSlice";
 import productReducer       from "../screens/ProductDetail/store/productSlice";
-import dealsReducer from "../screens/Deals/store/dealsSlice";
+import dealsReducer         from "../screens/Deals/store/dealsSlice";
+import userReducer          from "../store/User/userSlice";
 
 const rootReducer = combineReducers({
     restaurants:     restaurantsReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
     promotions:      promotionsReducer,
     product:         productReducer,
     deals:           dealsReducer,
+    user:            userReducer,
 });
 
 export function setupStore() {

@@ -15,6 +15,7 @@ import GeoIcon from "./GeoIcon";
 import SearchIcon from "./SearchIcon";
 import CartIcon from "./CartIcon";
 import HamburgerIcon from "./HamburgerIcon";
+import EyeIcon from "./EyeIcon";
 
 export {
     ClockIcon,
@@ -34,4 +35,5 @@ export {
     SearchIcon,
     CartIcon,
     HamburgerIcon,
+    EyeIcon
 }

@@ -48,7 +48,7 @@ const Menu = () => {
                 </span>
             </Link>
 
-            <Link to="/user" className="menu__user">
+            <Link to="/auth" className="menu__user">
                 <img src={''}
                     alt="User"
                     className="menu__user-image"
