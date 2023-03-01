@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../../../store/redux";
+import { fetchUser } from "../../../../store/User/userActions";
 import { CartIcon } from "../../../../ui/icons";
 import { countNumberProductsInCart } from "../../../../utils/cart/cart";
+import { getCookie } from "../../../../utils/cookie/cookie";
 
 const Menu = () => {
     const [countProducts, setCountProducts] = useState(0);
+    const [userImage, setUserImage] = useState("../../assets/images/users/user.png");
+    const dispatch = useAppDispatch();
+    const {user} = useAppSelector(state => state.user);
 
     const userMenu = [
         {
@@ -23,7 +29,18 @@ const Menu = () => {
 
     useEffect(() => {
         setCountProducts(countNumberProductsInCart());
+        const userId = getCookie('userId');
+
+        if (userId) {
+            dispatch(fetchUser('', userId));
+        }
     }, []);
+
+    useEffect(() => {
+        if (user && user[0].image) {
+            setUserImage(user[0].image);
+        }
+    }, [user]);
 
     return(
         <div className="menu">
@@ -49,7 +66,7 @@ const Menu = () => {
             </Link>
 
             <Link to="/auth" className="menu__user">
-                <img src={''}
+                <img src={userImage}
                     alt="User"
                     className="menu__user-image"
                     width="48"

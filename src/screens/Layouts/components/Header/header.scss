@@ -149,10 +149,16 @@
         border-radius: 8px;
     }
 
+    &__user {
+        width: 48px;
+        height: 48px;
+    }
+
     &__user-image {
         cursor: pointer;
         border-radius: $border-radius;
         border: 2px solid $neutral-gray-lightest;
+        box-sizing: border-box;
         transition: border-color 0.2s ease-in-out;
 
         &:hover {
