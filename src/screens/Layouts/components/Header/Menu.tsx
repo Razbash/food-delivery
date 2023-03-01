@@ -16,7 +16,7 @@ const Menu = () => {
     const userMenu = [
         {
             title: "Restaurants",
-            link: "/reustorants",
+            link: "/restaurants",
         },
         {
             title: "Deals",

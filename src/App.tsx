@@ -10,6 +10,7 @@ const ProductDetailPage     = lazy(() => import('./screens/ProductDetail/Product
 const DealsPage             = lazy(() => import('./screens/Deals/DealsPage'));
 const CartPage              = lazy(() => import('./screens/Cart/CartPage'));
 const AuthPage              = lazy(() => import('./screens/Auth/AuthPage'));
+const ReustorantsPage       = lazy(() => import('./screens/RestaurantsPage/RestaurantsPage'));
 
 const store = setupStore();
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/deals" element={<DealsPage/>}></Route>
               <Route path="/cart" element={<CartPage/>}></Route>
               <Route path="/auth" element={<AuthPage/>}></Route>
+              <Route path="/restaurants" element={<ReustorantsPage/>}></Route>
             </Routes>
           </Suspense>
         </div>
