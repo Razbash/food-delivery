@@ -9,6 +9,7 @@ import { getCookie } from "../../../../utils/cookie/cookie";
 const Menu = () => {
     const [countProducts, setCountProducts] = useState(0);
     const [userImage, setUserImage] = useState("../../assets/images/users/user.png");
+    const [userLink, setUserLink] = useState('auth');
     const dispatch = useAppDispatch();
     const {user} = useAppSelector(state => state.user);
 
@@ -34,11 +35,16 @@ const Menu = () => {
         if (userId) {
             dispatch(fetchUser('', userId));
         }
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
-        if (user && user[0].image) {
-            setUserImage(user[0].image);
+        if (user && user[0]) {
+            setUserLink('account');
+
+            if (user[0].image) {
+                setUserImage(user[0].image);
+            }
         }
     }, [user]);
 
@@ -65,7 +71,7 @@ const Menu = () => {
                 </span>
             </Link>
 
-            <Link to="/auth" className="menu__user">
+            <Link to={`/${userLink}`} className="menu__user">
                 <img src={userImage}
                     alt="User"
                     className="menu__user-image"
