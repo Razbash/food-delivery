@@ -12,6 +12,7 @@ const CartPage              = lazy(() => import('./screens/Cart/CartPage'));
 const AuthPage              = lazy(() => import('./screens/Auth/AuthPage'));
 const ReustorantsPage       = lazy(() => import('./screens/RestaurantsPage/RestaurantsPage'));
 const RegistrationPage      = lazy(() => import('./screens/Registration/RegistrationPage'));
+const SearchPage            = lazy(() => import('./screens/Search/SearchPage'));
 
 const store = setupStore();
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/auth" element={<AuthPage/>}></Route>
               <Route path="/restaurants" element={<ReustorantsPage/>}></Route>
               <Route path="/registration" element={<RegistrationPage/>}></Route>
+              <Route path="/search/:searchParametr" element={<SearchPage/>}></Route>
             </Routes>
           </Suspense>
         </div>

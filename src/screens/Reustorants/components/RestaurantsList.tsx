@@ -11,7 +11,7 @@ import RestaurantsListSkeleton from './RestaurantsListSkeleton';
 import '../reustorants.scss';
 import { Notification, startNotification, NotificationTypes } from '../../../components/Notification';
 
-const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
+const ReustorantsList = ({showCounter, list}: IRestaurantsListProps) => {
     const [restaurantsList, setRestaurantsList] = useState<IRestaurant[]>([]);
     const dispatch = useAppDispatch();
     const {error, loading, restaurants} = useAppSelector(state => state.restaurants);
@@ -19,15 +19,20 @@ const ReustorantsList = ({showCounter}: IRestaurantsListProps) => {
     const {categories} = useAppSelector(state => state.categories);
 
     useEffect(() => {
-        dispatch(fetchRestaurants());
+        if (!list) {
+            dispatch(fetchRestaurants());
+        }
+
         dispatch(fetchCategories());
 
         // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
-        setRestaurantsList(restaurants);
-    }, [restaurants]);
+        const finalRestaurantsList = list ? list : restaurants;
+
+        setRestaurantsList(finalRestaurantsList);
+    }, [restaurants, list]);
 
     useEffect(() => {
         let renderRestaurants:IRestaurant[] = [];
