@@ -16,12 +16,17 @@
             color: $neutral-black;
         }
 
-        &--white {
+        &--white,
+        &--light {
             color: $neutral-white;
         }
     }
 
     &__secondary {
         color: $primary-default;
+
+        &--light {
+            color: $primary-light;
+        }
     }
 }

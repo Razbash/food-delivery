@@ -1,6 +1,7 @@
 enum CompanyLogoColors {
     black = "black",
-    white = "white"
+    white = "white",
+    light = "light",
 }
 
 export default CompanyLogoColors;

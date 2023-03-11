@@ -1,6 +1,7 @@
 import { AppDispatch } from "..";
-import axios from "../../utils/axios";
 import { userSlice } from "./userSlice";
+import axios from "../../utils/axios";
+import IUser from "../../screens/Auth/interfaces/IUser";
 
 export const fetchUser = (email: string, id?: number) => {
     return async (dispatch: AppDispatch) => {
@@ -20,6 +21,22 @@ export const fetchUser = (email: string, id?: number) => {
             } catch (error) {
                 dispatch(userSlice.actions.fetchError(error as Error));
             }
+        }
+    }
+}
+
+export const sendUser = (user: IUser) => {
+    return async (dispatch: AppDispatch) => {
+        try {
+            await axios({
+                method: 'POST',
+                url: 'users',
+                data: {
+                    ...user
+                }
+            });
+        } catch (error) {
+            dispatch(userSlice.actions.fetchError(error as Error));
         }
     }
 }

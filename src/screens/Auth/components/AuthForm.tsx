@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Notification, NotificationTypes, startNotification } from "../../../components/Notification";
 import { useAppDispatch, useAppSelector } from "../../../store/redux";
 import { fetchUser } from "../../../store/User/userActions";
 import { Checkbox, Input } from "../../../ui/Form";
-import EyeIcon from "../../../ui/icons/EyeIcon";
 import { setCookie } from "../../../utils/cookie/cookie";
 import { CompanyLogo, CompanyLogoColors } from "../../Layouts/components/CompanyLogo";
+import EyeIcon from "../../../ui/icons/EyeIcon";
 
 const AuthForm = () => {
     const [loginInput, setLoginInput] = useState<string>("");
@@ -92,14 +92,13 @@ const AuthForm = () => {
                     <button className="button button--contained"  type="submit">Login</button>
                 </form>
 
-                {/* <a href="#" className="auth-form__forgot-password">Forgot password</a> */}
-                {/* <span className="auth-form__sign-up">
-                    Don’t have an account?
+                <span className="auth-form__sign-up">
+                    Don’t have an account?&nbsp;
 
-                    <Link to="/regitration" className="auth-form__sign-up-link">
+                    <Link to="/registration" className="auth-form__sign-up-link">
                         Sign up
                     </Link>
-                </span> */}
+                </span>
             </div>
 
             <Notification/>
