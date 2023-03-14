@@ -6,6 +6,7 @@ import { Input } from "../../../ui/Form";
 import { Notification, NotificationTypes, startNotification } from "../../../components/Notification";
 import { setCookie } from "../../../utils/cookie/cookie";
 import axios from "../../../utils/axios";
+import EnumSendUserTypes from "../../Account/interfaces/EnumSendUserTypes";
 
 
 const RegistrationForm = () => {
@@ -51,7 +52,7 @@ const RegistrationForm = () => {
                 password: password,
             }
 
-            dispatch(sendUser(newUser));
+            dispatch(sendUser(newUser, EnumSendUserTypes.CREATE));
 
             dispatch(startNotification({
                 type: NotificationTypes.sucsses,

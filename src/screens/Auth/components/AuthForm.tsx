@@ -25,10 +25,10 @@ const AuthForm = () => {
     useEffect(() => {
         const yearInMilliseconds = new Date(Date.now() + (86400e3 * 365)).toUTCString();
 
-        if (user && user[0] && user[0].password === passwordInput) {
+        if (user.password === passwordInput) {
             keppLogin
-                ? setCookie('userId', user[0].id, yearInMilliseconds)
-                : setCookie('userId', user[0].id);
+                ? setCookie('userId', user.id, yearInMilliseconds)
+                : setCookie('userId', user.id);
 
             dispatch(startNotification({
                 type: NotificationTypes.sucsses,

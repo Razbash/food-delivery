@@ -39,11 +39,11 @@ const Menu = () => {
     }, []);
 
     useEffect(() => {
-        if (user && user[0]) {
+        if (user) {
             setUserLink('account');
 
-            if (user[0].image) {
-                setUserImage(user[0].image);
+            if (user.image) {
+                setUserImage(user.image);
             }
         }
     }, [user]);

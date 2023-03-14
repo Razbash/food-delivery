@@ -16,6 +16,9 @@ import SearchIcon from "./SearchIcon";
 import CartIcon from "./CartIcon";
 import HamburgerIcon from "./HamburgerIcon";
 import EyeIcon from "./EyeIcon";
+import CardIcon from "./CardIcon";
+import ShieldIcon from "./ShieldIcon";
+import UserIcon from "./UserIcon";
 
 export {
     ClockIcon,
@@ -35,5 +38,8 @@ export {
     SearchIcon,
     CartIcon,
     HamburgerIcon,
-    EyeIcon
+    EyeIcon,
+    CardIcon,
+    ShieldIcon,
+    UserIcon
 }
