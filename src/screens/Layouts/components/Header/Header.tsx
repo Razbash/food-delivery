@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { CrossIcon, HamburgerIcon } from "../../../../ui/icons";
-import { CompanyLogo, CompanyLogoColors } from "../CompanyLogo";
+import { useState } from 'react';
 
-import Menu from "./Menu";
-import Search from "./Search";
+import { CrossIcon, HamburgerIcon } from '../../../../ui/icons';
+import { CompanyLogo, CompanyLogoColors } from '../CompanyLogo';
+
+import Menu from './Menu';
+import Search from './Search';
 
 import './header.scss';
 
@@ -12,11 +13,11 @@ const Header = () => {
 
     const openMobileMenu = () => {
         setIsOpenMobileMenu(true);
-    }
+    };
 
     const closeMobileMenu = () => {
         setIsOpenMobileMenu(false);
-    }
+    };
 
     return(
         <>
@@ -46,9 +47,9 @@ const Header = () => {
                         <Search/>
                     </div>
                 </div>
-             : null}
+                : null}
         </>
-    )
-}
+    );
+};
 
 export default Header;

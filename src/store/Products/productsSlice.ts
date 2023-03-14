@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import IProduct from '../../interfaces/IProduct';
 
 interface ProductsState {
@@ -11,7 +12,7 @@ const initialState:ProductsState = {
     productsLoading: false,
     productsError: '',
     products: [],
-}
+};
 
 export const productsSlice = createSlice({
     name: 'products',
@@ -26,8 +27,8 @@ export const productsSlice = createSlice({
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.productsError = action.payload.message;
-        }
-    }
-})
+        },
+    },
+});
 
 export default productsSlice.reducer;

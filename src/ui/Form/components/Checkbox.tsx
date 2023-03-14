@@ -1,10 +1,10 @@
-import ICheckbox from "../interfaces/ICheckbox"
-import "../form.scss";
+import ICheckbox from '../interfaces/ICheckbox';
+import '../form.scss';
 
 const Checkbox = ({id, label, value, setValue}: ICheckbox) => {
     const onSetValue = () => {
         setValue(!value);
-    }
+    };
 
     return(
         <label className="checkbox">
@@ -17,7 +17,7 @@ const Checkbox = ({id, label, value, setValue}: ICheckbox) => {
 
             <span className="checkbox__label">{label}</span>
         </label>
-    )
-}
+    );
+};
 
 export default Checkbox;

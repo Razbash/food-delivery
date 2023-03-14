@@ -11,7 +11,7 @@ const DealsListSkeleton = () => {
             <div className="deals-list-item deals-list-item--skeleton"></div>
             <div className="deals-list-item deals-list-item--skeleton"></div>
         </>
-    )
-}
+    );
+};
 
 export default DealsListSkeleton;

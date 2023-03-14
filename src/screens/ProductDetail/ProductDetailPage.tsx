@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
-import { fetchRestaurant } from "../RestaurantDetail/store/restaurantActions";
-import { fetchProduct } from "./store/productActions";
-import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
-import { addToCart } from "../../utils/cart/cart";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import LayoutPage from "../Layouts/LayoutPage";
-import Product from "./components/Product";
-import ProductSkeleton from "./components/ProductSkeleton";
+import { useAppDispatch, useAppSelector } from '../../store/redux';
+import { fetchRestaurant } from '../RestaurantDetail/store/restaurantActions';
+
+import { Notification, NotificationTypes, startNotification } from '../../components/Notification';
+import { addToCart } from '../../utils/cart/cart';
+
+import LayoutPage from '../Layouts/LayoutPage';
+
+import { fetchProduct } from './store/productActions';
+import Product from './components/Product';
+import ProductSkeleton from './components/ProductSkeleton';
 
 const ProductDetailPage = () => {
     const {productId} = useParams();
@@ -37,7 +40,7 @@ const ProductDetailPage = () => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while loading the product info. (${error})`
+                text: `An error occurred while loading the product info. (${error})`,
             }));
         }
 
@@ -46,21 +49,21 @@ const ProductDetailPage = () => {
 
     const onChangeCounter = (count: number) => {
         setCounter(count);
-    }
+    };
 
     const addProductToCart = () => {
         const order = {
             productId: Number(productId),
-            count: counter
-        }
+            count: counter,
+        };
 
         addToCart(order);
 
         dispatch(startNotification({
             type: NotificationTypes.sucsses,
-            text: 'The product has been added to the cart'
+            text: 'The product has been added to the cart',
         }));
-    }
+    };
 
     return(
         <LayoutPage>
@@ -74,11 +77,11 @@ const ProductDetailPage = () => {
                     onChangeCounter={onChangeCounter}
                     addProductToCart={addProductToCart}
                 />
-            : null}
+                : null}
 
             <Notification/>
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default ProductDetailPage;

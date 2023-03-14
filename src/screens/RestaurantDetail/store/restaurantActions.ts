@@ -1,6 +1,7 @@
-import axios from "../../../utils/axios";
-import { AppDispatch } from "../../../store";
-import { restaurantSlice } from "./restaurantSlice";
+import axios from '../../../utils/axios';
+import { AppDispatch } from '../../../store';
+
+import { restaurantSlice } from './restaurantSlice';
 
 export const fetchRestaurant = (id: number) => {
     return async (dispatch: AppDispatch) => {
@@ -11,5 +12,5 @@ export const fetchRestaurant = (id: number) => {
         } catch (error) {
             dispatch(restaurantSlice.actions.fetchError(error as Error));
         }
-    }
-}
+    };
+};

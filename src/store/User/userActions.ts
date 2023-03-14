@@ -1,9 +1,11 @@
-import { AppDispatch } from "..";
-import { userSlice } from "./userSlice";
-import axios from "../../utils/axios";
-import IUser from "../../screens/Auth/interfaces/IUser";
-import EnumSendUserTypes from "../../screens/Account/interfaces/EnumSendUserTypes";
-import { NotificationTypes, startNotification } from "../../components/Notification";
+import { AppDispatch } from '..';
+
+import axios from '../../utils/axios';
+import IUser from '../../screens/Auth/interfaces/IUser';
+import EnumSendUserTypes from '../../screens/Account/interfaces/EnumSendUserTypes';
+import { NotificationTypes, startNotification } from '../../components/Notification';
+
+import { userSlice } from './userSlice';
 
 export const fetchUser = (email: string, id?: number) => {
     return async (dispatch: AppDispatch) => {
@@ -24,8 +26,8 @@ export const fetchUser = (email: string, id?: number) => {
                 dispatch(userSlice.actions.fetchError(error as Error));
             }
         }
-    }
-}
+    };
+};
 
 export const sendUser = (user: IUser, type: EnumSendUserTypes) => {
     let method: string;
@@ -45,20 +47,20 @@ export const sendUser = (user: IUser, type: EnumSendUserTypes) => {
                 method: method,
                 url: url,
                 data: {
-                    ...user
-                }
+                    ...user,
+                },
             });
 
             dispatch(startNotification({
                 type: NotificationTypes.sucsses,
-                text: `Data saved successfully`
+                text: 'Data saved successfully',
             }));
         } catch (error) {
             dispatch(userSlice.actions.fetchError(error as Error));
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `Error when saving data ${error}`
+                text: `Error when saving data ${error}`,
             }));
         }
-    }
-}
+    };
+};

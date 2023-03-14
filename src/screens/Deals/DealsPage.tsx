@@ -1,12 +1,15 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
-import { fetchDeals } from "./store/dealsActions";
-import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
+import { useEffect } from 'react';
 
-import LayoutPage from "../Layouts/LayoutPage";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import DealsListSkeleton from "./components/DealsListSkeleton";
-import DealsListItem from "./components/DealsListItem";
+import { useAppDispatch, useAppSelector } from '../../store/redux';
+
+import { Notification, NotificationTypes, startNotification } from '../../components/Notification';
+
+import LayoutPage from '../Layouts/LayoutPage';
+import BlockTitle from '../../components/BlockTitle/BlockTitle';
+
+import { fetchDeals } from './store/dealsActions';
+import DealsListSkeleton from './components/DealsListSkeleton';
+import DealsListItem from './components/DealsListItem';
 
 import './deals.scss';
 
@@ -24,7 +27,7 @@ const DealsPage = () => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred when uploading deals. (${error})`
+                text: `An error occurred when uploading deals. (${error})`,
             }));
         }
 
@@ -44,7 +47,7 @@ const DealsPage = () => {
 
             <Notification/>
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default DealsPage;

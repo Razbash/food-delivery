@@ -1,4 +1,6 @@
-export default interface INavigation {
+interface INavigation {
     link: string,
     text: string,
 }
+
+export default INavigation;

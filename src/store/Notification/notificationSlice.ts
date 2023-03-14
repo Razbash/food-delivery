@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import INotificationPayload from '../../components/Notification/interfaces/INotificationPayload';
 
 const initialState = {
     open: false,
     notificationData: {
-        type: "",
-        text: "",
-    }
-}
+        type: '',
+        text: '',
+    },
+};
 
 export const notificationSlice = createSlice({
     name: 'notification',
@@ -20,7 +21,7 @@ export const notificationSlice = createSlice({
         stop(state) {
             state.open = false;
         },
-    }
-})
+    },
+});
 
 export default notificationSlice.reducer;

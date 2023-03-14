@@ -7,7 +7,7 @@ const RestaurantHeaderSkeleton = () => {
                 <div className="reustorant-detail-page__header-item"></div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RestaurantHeaderSkeleton;

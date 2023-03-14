@@ -1,5 +1,7 @@
-import IProduct from "../../../interfaces/IProduct";
+import IProduct from '../../../interfaces/IProduct';
 
-export default interface IProductInCart extends IProduct {
+interface IProductInCart extends IProduct {
     count: number;
 }
+
+export default IProductInCart;

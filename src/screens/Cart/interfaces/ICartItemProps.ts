@@ -1,6 +1,6 @@
-import ICart from "../../../interfaces/ICart";
+import ICart from '../../../interfaces/ICart';
 
-export default interface ICartItemProps {
+interface ICartItemProps {
     id: number,
     image: string,
     linkToProduct: string,
@@ -13,3 +13,5 @@ export default interface ICartItemProps {
     calculateCountProductsInCart: () => void,
     userCart: ICart[] | [],
 }
+
+export default ICartItemProps;

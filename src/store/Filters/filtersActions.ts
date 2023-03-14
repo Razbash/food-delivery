@@ -1,5 +1,6 @@
-import { AppDispatch } from "..";
-import { filtersSlice } from "./filtersSlice";
+import { AppDispatch } from '..';
+
+import { filtersSlice } from './filtersSlice';
 
 export const setFilters = (filtersCollection: number[], filterId: number) => {
     return async (dispatch: AppDispatch) => {
@@ -10,5 +11,5 @@ export const setFilters = (filtersCollection: number[], filterId: number) => {
             : filtersArr = filtersArr.filter(element => element !== filterId);
 
         dispatch(filtersSlice.actions.changeFiltersCollection(filtersArr));
-    }
-}
+    };
+};

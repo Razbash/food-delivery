@@ -1,14 +1,18 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { fetchProducts } from "../../store/Products/productsActions";
-import { fetchRestaurant } from "./store/restaurantActions";
-import { Notification, NotificationTypes, startNotification } from "../../components/Notification";
+import { useAppDispatch, useAppSelector } from '../../store/redux';
 
-import {RestaurantHeader, RestaurantHeaderSkeleton} from "./index";
-import LayoutPage from "../Layouts/LayoutPage";
-import RestaurantMenuList from "./components/RestaurantMenuList";
+import { fetchProducts } from '../../store/Products/productsActions';
+
+import { Notification, NotificationTypes, startNotification } from '../../components/Notification';
+
+import LayoutPage from '../Layouts/LayoutPage';
+
+import { fetchRestaurant } from './store/restaurantActions';
+import RestaurantMenuList from './components/RestaurantMenuList';
+
+import {RestaurantHeader, RestaurantHeaderSkeleton} from './index';
 
 import './restaurantDetail.scss';
 
@@ -29,14 +33,14 @@ const RestaurantDetailPage = () => {
         if (restaurantError) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while uploading restaurant data. (${restaurantError})`
+                text: `An error occurred while uploading restaurant data. (${restaurantError})`,
             }));
         }
 
         if (productsError) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while loading the restaurant menu. (${productsError})`
+                text: `An error occurred while loading the restaurant menu. (${productsError})`,
             }));
         }
 
@@ -56,7 +60,7 @@ const RestaurantDetailPage = () => {
 
             <Notification/>
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default RestaurantDetailPage;

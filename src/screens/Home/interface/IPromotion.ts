@@ -1,4 +1,4 @@
-export default interface IPromotion {
+interface IPromotion {
     id: number,
     name: string,
     text: string,
@@ -7,3 +7,5 @@ export default interface IPromotion {
     background: string,
     color: string,
 }
+
+export default IPromotion;

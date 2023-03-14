@@ -9,7 +9,7 @@ const CardIcon = () => {
             <rect height="2" width="2" x="8" y="21"/>
             <rect height="2" width="4" x="24" y="21"/>
         </svg>
-    )
-}
+    );
+};
 
 export default CardIcon;

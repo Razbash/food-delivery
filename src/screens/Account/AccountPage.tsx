@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
-import { fetchUser } from "../../store/User/userActions";
-import { UserIcon, GeoIcon, CardIcon, ShieldIcon } from "../../ui/icons";
-import { getCookie } from "../../utils/cookie/cookie";
-import LayoutPage from "../Layouts/LayoutPage";
+import { useEffect, useState } from 'react';
+
+import BlockTitle from '../../components/BlockTitle/BlockTitle';
+import { useAppDispatch, useAppSelector } from '../../store/redux';
+import { fetchUser } from '../../store/User/userActions';
+import { UserIcon, GeoIcon, CardIcon, ShieldIcon } from '../../ui/icons';
+import { getCookie } from '../../utils/cookie/cookie';
+import LayoutPage from '../Layouts/LayoutPage';
+
 import './account.scss';
-import Payments from "./components/Payments/Payments";
-import UserAddresses from "./components/UserAddresses/UserAddresses";
-import UserPersonalInformation from "./components/UserPersonalInformation/UserPersonalInformation";
-import UserSecurity from "./components/UserSecurity/UserSecurity";
-import { Notification } from "../../components/Notification";
+import { Notification } from '../../components/Notification';
+
+import Payments from './components/Payments/Payments';
+import UserAddresses from './components/UserAddresses/UserAddresses';
+import UserPersonalInformation from './components/UserPersonalInformation/UserPersonalInformation';
+import UserSecurity from './components/UserSecurity/UserSecurity';
 
 const AccountPage = () => {
     const [currentTabId, setCurrentTabId] = useState<Number>(0);
@@ -26,30 +29,30 @@ const AccountPage = () => {
 
     const tabs = [
         {
-            title: "Account",
-            description: "Personal information",
-            icon: <UserIcon/>
+            title: 'Account',
+            description: 'Personal information',
+            icon: <UserIcon/>,
         },
         {
-            title: "Address",
-            description: "Shippings addresses",
-            icon: <GeoIcon/>
+            title: 'Address',
+            description: 'Shippings addresses',
+            icon: <GeoIcon/>,
         },
         {
-            title: "Payment method",
-            description: "Connected credit cards",
-            icon: <CardIcon/>
+            title: 'Payment method',
+            description: 'Connected credit cards',
+            icon: <CardIcon/>,
         },
         {
-            title: "Security",
-            description: "Password, 2FA",
-            icon: <ShieldIcon/>
+            title: 'Security',
+            description: 'Password, 2FA',
+            icon: <ShieldIcon/>,
         },
     ];
 
     const onTabClickHandler = (id: number) => {
         setCurrentTabId(id);
-    }
+    };
 
     return(
         <LayoutPage>
@@ -60,7 +63,7 @@ const AccountPage = () => {
                     <div className="user-profile__tabs">
                         {tabs.map((element, index) => {
                             const {title, description, icon} = element;
-                            const tabMeta = currentTabId === index ? "user-profile__tab-item user-profile__tab-item--active" : "user-profile__tab-item";
+                            const tabMeta = currentTabId === index ? 'user-profile__tab-item user-profile__tab-item--active' : 'user-profile__tab-item';
 
                             return(
                                 <div className={tabMeta}
@@ -80,7 +83,7 @@ const AccountPage = () => {
                                         </span>
                                     </div>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>
@@ -95,7 +98,7 @@ const AccountPage = () => {
 
             <Notification/>
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default AccountPage;

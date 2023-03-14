@@ -1,5 +1,7 @@
-import CompanyLogoColors from "./CompanyLogoColors";
+import CompanyLogoColors from './CompanyLogoColors';
 
-export default interface ICompanyLogo {
+interface ICompanyLogo {
     color: CompanyLogoColors;
 }
+
+export default ICompanyLogo;

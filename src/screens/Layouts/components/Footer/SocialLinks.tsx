@@ -1,4 +1,4 @@
-import { FacebookIcon, TwitterIcon, InstagramIcon, YoutubeIcon, LinkedinIcon } from "../../../../ui/icons";
+import { FacebookIcon, TwitterIcon, InstagramIcon, YoutubeIcon, LinkedinIcon } from '../../../../ui/icons';
 
 const SocialLinks = () => {
     const socialIcons = [<FacebookIcon/>, <TwitterIcon/>, <InstagramIcon/>, <YoutubeIcon/>, <LinkedinIcon/>];
@@ -10,10 +10,10 @@ const SocialLinks = () => {
                     <div className="social-network__item" key={index}>
                         {element}
                     </div>
-                )
+                );
             })}
         </div>
-    )
-}
+    );
+};
 
 export default SocialLinks;

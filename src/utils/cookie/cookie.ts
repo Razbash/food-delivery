@@ -1,7 +1,7 @@
 const defaultExpiresCookie = new Date(Date.now() + 86400e3).toUTCString();
 
 export function getCookie(name: string) {
-    let matches = document.cookie.match(new RegExp(
+    const matches = document.cookie.match(new RegExp(
         // eslint-disable-next-line
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));

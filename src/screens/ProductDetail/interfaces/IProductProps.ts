@@ -1,6 +1,6 @@
-import IProduct from "../../../interfaces/IProduct";
+import IProduct from '../../../interfaces/IProduct';
 
-export default interface IProductProps {
+interface IProductProps {
     product: IProduct,
     restaurantId: number,
     restaurantName: string,
@@ -8,3 +8,5 @@ export default interface IProductProps {
     onChangeCounter: (count: number) => void,
     addProductToCart: () => void,
 }
+
+export default IProductProps;

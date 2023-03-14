@@ -1,6 +1,7 @@
-import { AppDispatch } from "..";
-import axios from "../../utils/axios";
-import {categoriesSlice} from "./caregoriesSlice";
+import { AppDispatch } from '..';
+import axios from '../../utils/axios';
+
+import {categoriesSlice} from './caregoriesSlice';
 
 export const fetchCategories = () => {
     return async (dispatch: AppDispatch) => {
@@ -11,5 +12,5 @@ export const fetchCategories = () => {
         } catch (error) {
             dispatch(categoriesSlice.actions.fetchError(error as Error));
         }
-    }
-}
+    };
+};

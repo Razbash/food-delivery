@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 const CartIsEmpty = () => {
     return(
@@ -7,7 +7,7 @@ const CartIsEmpty = () => {
             <p className="cart-is-empty__text">Take a look at the main page to select products or find what you need in the search</p>
             <Link to="/" className="cart-is-empty__link button">Go to the main page</Link>
         </div>
-    )
-}
+    );
+};
 
 export default CartIsEmpty;

@@ -11,7 +11,7 @@ const LayoutPage = ({children}:any) => {
             </div>
             <Footer/>
         </>
-    )
-}
+    );
+};
 
 export default LayoutPage;

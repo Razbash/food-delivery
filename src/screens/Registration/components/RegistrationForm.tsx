@@ -1,28 +1,29 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../store/redux";
-import { sendUser } from "../../../store/User/userActions";
-import { Input } from "../../../ui/Form";
-import { Notification, NotificationTypes, startNotification } from "../../../components/Notification";
-import { setCookie } from "../../../utils/cookie/cookie";
-import axios from "../../../utils/axios";
-import EnumSendUserTypes from "../../Account/interfaces/EnumSendUserTypes";
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useAppDispatch, useAppSelector } from '../../../store/redux';
+import { sendUser } from '../../../store/User/userActions';
+import { Input } from '../../../ui/Form';
+import { Notification, NotificationTypes, startNotification } from '../../../components/Notification';
+import { setCookie } from '../../../utils/cookie/cookie';
+import axios from '../../../utils/axios';
+import EnumSendUserTypes from '../../Account/interfaces/EnumSendUserTypes';
 
 
 const RegistrationForm = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const {error} = useAppSelector(state => state.user);
     const dispatch = useAppDispatch();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred when creating a new user. ${error}`
+                text: `An error occurred when creating a new user. ${error}`,
             }));
         }
 
@@ -37,7 +38,7 @@ const RegistrationForm = () => {
         if (findedUserByEmail.data && findedUserByEmail.data.length) {
             dispatch(startNotification({
                 type: NotificationTypes.warning,
-                text: `A user with this email already exists`
+                text: 'A user with this email already exists',
             }));
 
             return;
@@ -50,13 +51,13 @@ const RegistrationForm = () => {
                 lastName: '',
                 email: email,
                 password: password,
-            }
+            };
 
             dispatch(sendUser(newUser, EnumSendUserTypes.CREATE));
 
             dispatch(startNotification({
                 type: NotificationTypes.sucsses,
-                text: `The profile has been created successfully. Tell us more about yourself`
+                text: 'The profile has been created successfully. Tell us more about yourself',
             }));
 
             setCookie('userId', String(generateUserId));
@@ -64,10 +65,10 @@ const RegistrationForm = () => {
         } else {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `Passwords don't match`
+                text: 'Passwords don\'t match',
             }));
         }
-    }
+    };
 
     return(
         <form className="registration-form" onSubmit={onUserRegistration}>
@@ -104,7 +105,7 @@ const RegistrationForm = () => {
 
             <Notification/>
         </form>
-    )
-}
+    );
+};
 
 export default RegistrationForm;

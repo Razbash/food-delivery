@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import IDeal from '../interfaces/IDeal';
 
 interface DealsState {
@@ -11,7 +12,7 @@ const initialState:DealsState = {
     loading: false,
     error: '',
     deals: [],
-}
+};
 
 export const dealsSlice = createSlice({
     name: 'deals',
@@ -26,8 +27,8 @@ export const dealsSlice = createSlice({
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.error = action.payload.message;
-        }
-    }
-})
+        },
+    },
+});
 
 export default dealsSlice.reducer;

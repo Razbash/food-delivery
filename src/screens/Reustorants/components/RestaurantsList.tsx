@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+
 import { fetchRestaurants } from '../store/restaurantsActions';
 import { fetchCategories } from '../../../store/Categories/categoriesActions';
 import { useAppDispatch, useAppSelector } from '../../../store/redux';
 
 import IRestaurant from '../../../interfaces/IRestaurant';
 import IRestaurantsListProps from '../interfaces/IRestaurantsListProps';
+
 import RestaurantsListItem from './RestaurantsListItem';
 import RestaurantsListSkeleton from './RestaurantsListSkeleton';
 
@@ -35,14 +37,14 @@ const ReustorantsList = ({showCounter, list}: IRestaurantsListProps) => {
     }, [restaurants, list]);
 
     useEffect(() => {
-        let renderRestaurants:IRestaurant[] = [];
+        const renderRestaurants:IRestaurant[] = [];
 
         restaurants.map((restaurant) => {
             return restaurant.categoriesId.forEach((category: number) => {
                 if (selectedFilters.includes(category) && !renderRestaurants.includes(restaurant)) {
                     renderRestaurants.push(restaurant);
                 }
-            })
+            });
         });
 
         renderRestaurants.length
@@ -56,7 +58,7 @@ const ReustorantsList = ({showCounter, list}: IRestaurantsListProps) => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred while loading the list of restaurants. (${error})`
+                text: `An error occurred while loading the list of restaurants. (${error})`,
             }));
         }
 
@@ -74,14 +76,14 @@ const ReustorantsList = ({showCounter, list}: IRestaurantsListProps) => {
                 {loading ? <RestaurantsListSkeleton/> : null}
                 {restaurantsList.length
                     ? restaurantsList.map(restaurant => {
-                        return <RestaurantsListItem key={restaurant.id} categories={categories} restaurant={restaurant}/>
+                        return <RestaurantsListItem key={restaurant.id} categories={categories} restaurant={restaurant}/>;
                     })
-                : null}
+                    : null}
             </div>
 
             <Notification/>
         </>
-    )
-}
+    );
+};
 
 export default ReustorantsList;

@@ -1,4 +1,4 @@
-import { NotificationTypes } from "..";
+import { NotificationTypes } from '..';
 
 interface INotificationPayload {
     type: NotificationTypes,

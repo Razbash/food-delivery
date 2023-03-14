@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
-import ImageUploading, { ImageListType } from "react-images-uploading";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../../../store/redux";
-import { sendUser } from "../../../../store/User/userActions";
-import { Input } from "../../../../ui/Form";
-import { setCookie } from "../../../../utils/cookie/cookie";
-import EnumSendUserTypes from "../../interfaces/EnumSendUserTypes";
-import IUserPersonalInformationProps from "../../interfaces/IUserPersonalInformationProps";
+import { useState, useEffect } from 'react';
+import ImageUploading, { ImageListType } from 'react-images-uploading';
+import { useNavigate } from 'react-router-dom';
+
+import { useAppDispatch } from '../../../../store/redux';
+import { sendUser } from '../../../../store/User/userActions';
+import { Input } from '../../../../ui/Form';
+import { setCookie } from '../../../../utils/cookie/cookie';
+import EnumSendUserTypes from '../../interfaces/EnumSendUserTypes';
+import IUserPersonalInformationProps from '../../interfaces/IUserPersonalInformationProps';
 import './userPersonalInformation.scss';
 
 const UserPersonalInformation = ({userData}: IUserPersonalInformationProps) => {
@@ -18,12 +19,12 @@ const UserPersonalInformation = ({userData}: IUserPersonalInformationProps) => {
     const [userPhone, setUserPhone] = useState<string>(phone ? phone : '');
 
     const dispatch = useAppDispatch();
-    let navigate = useNavigate();
-    let activeImage = "";
+    const navigate = useNavigate();
+    let activeImage = '';
 
     const onChangeImage = (newImage: ImageListType) => {
         setUserImage(newImage as never[]);
-    }
+    };
 
     const onSaveChanges = () => {
         const newUserData = {
@@ -34,19 +35,19 @@ const UserPersonalInformation = ({userData}: IUserPersonalInformationProps) => {
             lastName: userLastName,
             email: userEmail,
             phone: userPhone,
-        }
+        };
 
         if (userImage.length) {
             newUserData.image = userImage[0]['data_url'];
         }
 
         dispatch(sendUser(newUserData, EnumSendUserTypes.UPDATE));
-    }
+    };
 
     const logOut = () => {
         setCookie('userId', '');
         navigate('/auth');
-    }
+    };
 
     return(
         <div className="user-personal-information">
@@ -65,12 +66,12 @@ const UserPersonalInformation = ({userData}: IUserPersonalInformationProps) => {
                             onImageUpload,
                         }) => (
                             <div className="user-personal-information__image-controls">
-                                <div style={{"display": "none"}}>
+                                <div style={{'display': 'none'}}>
                                     {activeImage = imageList.length ? imageList[0].data_url : image}
                                 </div>
 
                                 <div className="user-personal-information__user-image"
-                                    style={{"backgroundImage": "url(" + activeImage + ")"}}
+                                    style={{'backgroundImage': 'url(' + activeImage + ')'}}
                                 ></div>
 
                                 <button className="button button--outlined-blue user-personal-information__cnahge-button"
@@ -125,7 +126,7 @@ const UserPersonalInformation = ({userData}: IUserPersonalInformationProps) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default UserPersonalInformation;

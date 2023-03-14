@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import IRestaurant from '../../../interfaces/IRestaurant';
 
 interface RestaurantsState {
@@ -11,7 +12,7 @@ const initialState:RestaurantsState = {
     loading: false,
     error: '',
     restaurants: [],
-}
+};
 
 export const restaurantsSlice = createSlice({
     name: 'restaurants',
@@ -26,8 +27,8 @@ export const restaurantsSlice = createSlice({
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.error = action.payload.message;
-        }
-    }
-})
+        },
+    },
+});
 
 export default restaurantsSlice.reducer;

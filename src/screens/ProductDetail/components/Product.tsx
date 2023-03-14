@@ -1,9 +1,10 @@
-import { useState } from "react";
-import Navigation from "../../../components/Navigation/Navigation";
-import Quantity from "../../../components/Quantity/Quantity";
-import IProductProps from "../interfaces/IProductProps";
+import { useState } from 'react';
 
-import "../productDetail.scss";
+import Navigation from '../../../components/Navigation/Navigation';
+import Quantity from '../../../components/Quantity/Quantity';
+import IProductProps from '../interfaces/IProductProps';
+
+import '../productDetail.scss';
 
 const Product = ({product, restaurantId, restaurantName, counter, onChangeCounter, addProductToCart}: IProductProps) => {
     const [activeImage, setActiveImage] = useState<number>(0);
@@ -19,13 +20,13 @@ const Product = ({product, restaurantId, restaurantName, counter, onChangeCounte
                     <div className="product-detail__images">
                         {images ? images.map((element, index) => {
                             const imageStyle = {
-                                'backgroundImage': 'url(' + element + ')'
+                                'backgroundImage': 'url(' + element + ')',
                             };
 
-                            let imageMeta = "product-detail__image";
+                            let imageMeta = 'product-detail__image';
 
                             if (index === activeImage) {
-                                imageMeta += " product-detail__image--active";
+                                imageMeta += ' product-detail__image--active';
                             }
 
                             return(
@@ -34,7 +35,7 @@ const Product = ({product, restaurantId, restaurantName, counter, onChangeCounte
                                     style={imageStyle}
                                     onMouseEnter={() => setActiveImage(index)}
                                 ></div>
-                            )
+                            );
                         }): null}
                     </div>
                     <div className="product-detail__main-image" style={{'backgroundImage': 'url(' + images[activeImage] + ')'}}></div>
@@ -69,7 +70,7 @@ const Product = ({product, restaurantId, restaurantName, counter, onChangeCounte
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Product;

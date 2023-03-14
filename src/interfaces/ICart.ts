@@ -1,4 +1,6 @@
-export default interface ICart {
+interface ICart {
     productId: number,
     count: number,
 }
+
+export default ICart;

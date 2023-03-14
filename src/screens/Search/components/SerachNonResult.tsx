@@ -15,7 +15,7 @@ const SearchNonResult = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SearchNonResult;

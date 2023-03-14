@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
-import { getCookie } from "../../utils/cookie/cookie";
-import { fetchProducts } from "../../store/Products/productsActions";
-import { countNumberProductsInCart, removeFromCart } from "../../utils/cart/cart";
+import { useEffect, useState } from 'react';
 
-import ICart from "../../interfaces/ICart";
-import IProductInCart from "./interfaces/IProductInCart";
-import IProduct from "../../interfaces/IProduct";
+import { useAppDispatch, useAppSelector } from '../../store/redux';
+import { getCookie } from '../../utils/cookie/cookie';
+import { fetchProducts } from '../../store/Products/productsActions';
+import { countNumberProductsInCart, removeFromCart } from '../../utils/cart/cart';
 
-import LayoutPage from "../Layouts/LayoutPage";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import CartItemsSkeleton from "./components/CartItemsSkeleton";
-import CartItem from "./components/CartItem";
-import CartIsEmpty from "./components/CartIsEmpty";
+import ICart from '../../interfaces/ICart';
+
+import IProduct from '../../interfaces/IProduct';
+
+import LayoutPage from '../Layouts/LayoutPage';
+import BlockTitle from '../../components/BlockTitle/BlockTitle';
+
+import IProductInCart from './interfaces/IProductInCart';
+import CartItemsSkeleton from './components/CartItemsSkeleton';
+import CartItem from './components/CartItem';
+import CartIsEmpty from './components/CartIsEmpty';
 
 import './cart.scss';
 
@@ -39,21 +42,21 @@ const CartPage = () => {
                 if (product.id === userCartItem.productId) {
                     userCartList[index] = {...product, count: userCartItem.count};
                 }
-           });
-       });
+            });
+        });
 
-       setCartList(userCartList);
-       calculateCountProductsInCart();
+        setCartList(userCartList);
+        calculateCountProductsInCart();
     }, [products, userCart]);
 
     const calculateCountProductsInCart = () => {
         setCountProductsInCart(countNumberProductsInCart());
-    }
+    };
 
     const onHandlerRemoveProductFromCart = (index :number) => {
         removeFromCart(index);
         setUserCart(getCookie('cart'));
-    }
+    };
 
     return(
         <LayoutPage>
@@ -87,15 +90,15 @@ const CartPage = () => {
                                             countUserCartItems={product.count}
                                             price={product.price}
                                         />
-                                    )
+                                    );
                                 })}
                             </div>
                         </div>
                     </div>
                 </div>
-            : <CartIsEmpty/>}
+                : <CartIsEmpty/>}
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default CartPage;

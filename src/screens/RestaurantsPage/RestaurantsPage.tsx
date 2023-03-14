@@ -1,6 +1,6 @@
-import CategoriesList from "../../components/Categories/CategoriesList";
-import LayoutPage from "../Layouts/LayoutPage";
-import RestaurantsList from "../Reustorants/components/RestaurantsList";
+import CategoriesList from '../../components/Categories/CategoriesList';
+import LayoutPage from '../Layouts/LayoutPage';
+import RestaurantsList from '../Reustorants/components/RestaurantsList';
 
 const RestaurantsPage = () => {
     return(
@@ -8,7 +8,7 @@ const RestaurantsPage = () => {
             <CategoriesList/>
             <RestaurantsList/>
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default RestaurantsPage;

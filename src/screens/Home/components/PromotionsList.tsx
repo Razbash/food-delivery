@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { fetchPromotions } from "../store/promotionsActions";
-import { useAppDispatch, useAppSelector } from "../../../store/redux";
-import { Notification, startNotification, NotificationTypes } from "../../../components/Notification";
-import PromotionsListItem from "./PromotionsListItem";
-import PromotionsListSkeleton from "./PromotionsListSkeleton";
+import { useEffect } from 'react';
 
-import "../promotions.scss";
+import { fetchPromotions } from '../store/promotionsActions';
+import { useAppDispatch, useAppSelector } from '../../../store/redux';
+import { Notification, startNotification, NotificationTypes } from '../../../components/Notification';
+
+import PromotionsListItem from './PromotionsListItem';
+import PromotionsListSkeleton from './PromotionsListSkeleton';
+
+import '../promotions.scss';
 
 const PromotionsList = () => {
     const dispatch = useAppDispatch();
@@ -21,7 +23,7 @@ const PromotionsList = () => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `An error occurred when uploading promotions. (${error})`
+                text: `An error occurred when uploading promotions. (${error})`,
             }));
         }
 
@@ -32,12 +34,12 @@ const PromotionsList = () => {
         <div className="promotion-list">
             {loading ? <PromotionsListSkeleton/> : null}
             {promotions ? promotions.map(promotion => {
-                return <PromotionsListItem key={promotion.id} {...promotion} />
+                return <PromotionsListItem key={promotion.id} {...promotion} />;
             }) : null}
 
             <Notification/>
         </div>
-    )
-}
+    );
+};
 
 export default PromotionsList;

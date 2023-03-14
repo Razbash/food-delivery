@@ -1,4 +1,4 @@
-import AuthForm from "./components/AuthForm";
+import AuthForm from './components/AuthForm';
 import './auth.scss';
 
 const AuthPage = () => {
@@ -30,7 +30,7 @@ const AuthPage = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default AuthPage;

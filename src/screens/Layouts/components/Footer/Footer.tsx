@@ -1,8 +1,9 @@
-import { CompanyLogo, CompanyLogoColors } from "../CompanyLogo";
-import FooterMenu from "./FooterMenu";
-import SocialLinks from "./SocialLinks";
+import { CompanyLogo, CompanyLogoColors } from '../CompanyLogo';
 
-import "./footer.scss";
+import FooterMenu from './FooterMenu';
+import SocialLinks from './SocialLinks';
+
+import './footer.scss';
 
 const Footer = () => {
     return(
@@ -24,7 +25,7 @@ const Footer = () => {
                 </span>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Footer;

@@ -1,4 +1,4 @@
-import "../productDetail.scss";
+import '../productDetail.scss';
 
 const ProductSkeleton = () => {
     return(
@@ -18,7 +18,7 @@ const ProductSkeleton = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ProductSkeleton;

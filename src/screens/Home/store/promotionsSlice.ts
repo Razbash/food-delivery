@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import IPromotion from '../interface/IPromotion';
 
 interface PromotionsState {
@@ -11,7 +12,7 @@ const initialState:PromotionsState = {
     loading: false,
     error: '',
     promotions: [],
-}
+};
 
 export const promotionsSlice = createSlice({
     name: 'promotions',
@@ -26,8 +27,8 @@ export const promotionsSlice = createSlice({
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.error = action.payload.message;
-        }
-    }
-})
+        },
+    },
+});
 
 export default promotionsSlice.reducer;

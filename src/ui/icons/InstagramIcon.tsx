@@ -10,7 +10,7 @@ const InstagramIcon = () => {
                 c3,0,5.5,0.9,7.3,2.7c1.7,1.8,2.7,4.3,2.7,7.2V39.9L48.6,39.9z"/>
         </svg>
 
-    )
-}
+    );
+};
 
 export default InstagramIcon;

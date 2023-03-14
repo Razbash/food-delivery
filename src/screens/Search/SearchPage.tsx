@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import IRestaurant from "../../interfaces/IRestaurant";
-import { useAppDispatch, useAppSelector } from "../../store/redux";
-import LayoutPage from "../Layouts/LayoutPage";
-import ReustorantsList from "../Reustorants/components/RestaurantsList";
-import { fetchRestaurants } from "../Reustorants/store/restaurantsActions";
-import SearchNonResult from "./components/SerachNonResult";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+import BlockTitle from '../../components/BlockTitle/BlockTitle';
+import IRestaurant from '../../interfaces/IRestaurant';
+import { useAppDispatch, useAppSelector } from '../../store/redux';
+import LayoutPage from '../Layouts/LayoutPage';
+import ReustorantsList from '../Reustorants/components/RestaurantsList';
+import { fetchRestaurants } from '../Reustorants/store/restaurantsActions';
+
+import SearchNonResult from './components/SerachNonResult';
 import './search.scss';
 
 const SearchPage = () => {
@@ -20,8 +22,8 @@ const SearchPage = () => {
 
         const sortedRestaurants = restaurants
             .filter(element => element.name
-            .toLowerCase()
-            .includes(String(searchParametr)));
+                .toLowerCase()
+                .includes(String(searchParametr)));
 
         setrestaurantsList(sortedRestaurants);
 
@@ -37,7 +39,7 @@ const SearchPage = () => {
                 : <SearchNonResult/>
             }
         </LayoutPage>
-    )
-}
+    );
+};
 
 export default SearchPage;

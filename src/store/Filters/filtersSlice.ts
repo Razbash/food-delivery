@@ -6,7 +6,7 @@ interface SelectedFiltersSlice {
 
 const initialState:SelectedFiltersSlice = {
     selectedFilters: [],
-}
+};
 
 export const filtersSlice = createSlice({
     name: 'selectedFilters',
@@ -14,8 +14,8 @@ export const filtersSlice = createSlice({
     reducers: {
         changeFiltersCollection(state, action: PayloadAction<number[]>) {
             state.selectedFilters = action.payload;
-        }
-    }
-})
+        },
+    },
+});
 
 export default filtersSlice.reducer;

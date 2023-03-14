@@ -1,19 +1,20 @@
-import { useAppSelector } from "../../store/redux";
-import ICategoriesListItemProps from "./interfaces/ICategoriesListItemProps";
+import { useAppSelector } from '../../store/redux';
+
+import ICategoriesListItemProps from './interfaces/ICategoriesListItemProps';
 
 const CategoriesListItem = ({id, title, icon, onSetFilters}: ICategoriesListItemProps) => {
     const {selectedFilters} = useAppSelector(state => state.selectedFilters);
-    let itemMeta = "categories-list__item";
+    let itemMeta = 'categories-list__item';
 
     if (selectedFilters.indexOf(id) !== -1 && onSetFilters) {
-        itemMeta += " categories-list__item--selected";
+        itemMeta += ' categories-list__item--selected';
     }
 
     const onClickCategoryItem = () => {
         if (onSetFilters) {
             onSetFilters(id);
         }
-    }
+    };
 
     return(
         <div className={itemMeta}
@@ -31,7 +32,7 @@ const CategoriesListItem = ({id, title, icon, onSetFilters}: ICategoriesListItem
                 {title}
             </span>
         </div>
-    )
-}
+    );
+};
 
 export default CategoriesListItem;

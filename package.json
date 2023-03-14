@@ -30,13 +30,9 @@
     "start": "concurrently \"react-scripts start\" \"npx json-server server.json --port 3001\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "browserslist": {
     "production": [

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../store/redux';
 import { fetchCategories } from '../../store/Categories/categoriesActions';
 import { setFilters } from '../../store/Filters/filtersActions';
@@ -21,7 +22,7 @@ const CategoriesList = () => {
 
     const onSetFilters = (filterId: number) => {
         dispatch(setFilters(selectedFilters, filterId));
-    }
+    };
 
     return(
         <div className="categories-list">
@@ -32,10 +33,10 @@ const CategoriesList = () => {
                         onSetFilters={onSetFilters}
                         {...element}
                     />
-                )
+                );
             }): null}
         </div>
     );
-}
+};
 
 export default CategoriesList;

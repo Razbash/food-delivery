@@ -1,8 +1,8 @@
-import { CalendarIcon, GeoIcon } from "../../../ui/icons";
-import IDeal from "../interfaces/IDeal";
+import { CalendarIcon, GeoIcon } from '../../../ui/icons';
+import IDeal from '../interfaces/IDeal';
 
 const DealsListItem = ({title, status, image, date, restaurant}: IDeal) => {
-        const statusMeta = 'deals-list-item__status deals-list-item__status--' + status;
+    const statusMeta = 'deals-list-item__status deals-list-item__status--' + status;
 
     return(
         <div className="deals-list-item">
@@ -13,7 +13,7 @@ const DealsListItem = ({title, status, image, date, restaurant}: IDeal) => {
                     </span>
                     <span className="deals-list-item__title">{title}</span>
                 </div>
-                <div className="deals-list-item__image" style={{"backgroundImage": `url(${image})`}}></div>
+                <div className="deals-list-item__image" style={{'backgroundImage': `url(${image})`}}></div>
             </div>
             <div className="deals-list-item__separator"></div>
             <div className="deals-list-item__info">
@@ -33,7 +33,7 @@ const DealsListItem = ({title, status, image, date, restaurant}: IDeal) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default DealsListItem;

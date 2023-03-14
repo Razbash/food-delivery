@@ -1,14 +1,18 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import restaurantsReducer   from "../screens/Reustorants/store/restaurantsSlice";
-import categoriesReducer    from "./Categories/caregoriesSlice";
-import filtersReducer       from "./Filters/filtersSlice";
-import notificationReducer  from "../store/Notification/notificationSlice";
-import restaurantReducer    from "../screens/RestaurantDetail/store/restaurantSlice";
-import productsReducer      from "./Products/productsSlice";
-import promotionsReducer    from "../screens/Home/store/promotionsSlice";
-import productReducer       from "../screens/ProductDetail/store/productSlice";
-import dealsReducer         from "../screens/Deals/store/dealsSlice";
-import userReducer          from "../store/User/userSlice";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import restaurantsReducer   from '../screens/Reustorants/store/restaurantsSlice';
+
+import notificationReducer  from '../store/Notification/notificationSlice';
+import restaurantReducer    from '../screens/RestaurantDetail/store/restaurantSlice';
+
+import promotionsReducer    from '../screens/Home/store/promotionsSlice';
+import productReducer       from '../screens/ProductDetail/store/productSlice';
+import dealsReducer         from '../screens/Deals/store/dealsSlice';
+import userReducer          from '../store/User/userSlice';
+
+import productsReducer      from './Products/productsSlice';
+import filtersReducer       from './Filters/filtersSlice';
+import categoriesReducer    from './Categories/caregoriesSlice';
 
 const rootReducer = combineReducers({
     restaurants:     restaurantsReducer,
@@ -25,7 +29,7 @@ const rootReducer = combineReducers({
 
 export function setupStore() {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
     });
 }
 

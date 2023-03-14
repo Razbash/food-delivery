@@ -1,3 +1,5 @@
-export default interface IBlockTitle {
+interface IBlockTitle {
     text: string,
 }
+
+export default IBlockTitle;

@@ -1,5 +1,6 @@
-import { CompanyLogo, CompanyLogoColors } from "../Layouts/components/CompanyLogo";
-import RegistrationForm from "./components/RegistrationForm";
+import { CompanyLogo, CompanyLogoColors } from '../Layouts/components/CompanyLogo';
+
+import RegistrationForm from './components/RegistrationForm';
 import './registration.scss';
 
 const RegistrationPage = () => {
@@ -23,7 +24,7 @@ const RegistrationPage = () => {
                 <RegistrationForm/>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RegistrationPage;

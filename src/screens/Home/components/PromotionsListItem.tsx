@@ -1,8 +1,8 @@
-import IPromotion from "../interface/IPromotion";
+import IPromotion from '../interface/IPromotion';
 
 const PromotionsListItem = ({image, name, text, category, background, color}: IPromotion) => {
-    const elementStyle = {"background": background};
-    const titleStyle = {"color": color};
+    const elementStyle = {'background': background};
+    const titleStyle = {'color': color};
 
     return(
         <div className="promotion-list__item"
@@ -30,6 +30,6 @@ const PromotionsListItem = ({image, name, text, category, background, color}: IP
             </div>
         </div>
     );
-}
+};
 
 export default PromotionsListItem;

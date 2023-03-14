@@ -1,8 +1,8 @@
-import { getCookie, setCookie } from "../cookie/cookie";
-import ICart from "../../interfaces/ICart";
+import { getCookie, setCookie } from '../cookie/cookie';
+import ICart from '../../interfaces/ICart';
 
 export function addToCart(order: ICart) {
-    let cart = getCookie('cart');
+    const cart = getCookie('cart');
 
     if (cart) {
         let productAlreadyInCart = false;
@@ -26,7 +26,7 @@ export function addToCart(order: ICart) {
 }
 
 export function removeFromCart(arrPosition: number) {
-    let cart = getCookie('cart');
+    const cart = getCookie('cart');
 
     const newCart = cart.filter((element:ICart, index:number) => index !== arrPosition);
 
@@ -34,7 +34,7 @@ export function removeFromCart(arrPosition: number) {
 }
 
 export function countNumberProductsInCart() {
-    let cart = getCookie('cart');
+    const cart = getCookie('cart');
 
     return cart
         ? cart.reduce((previousValue: number, currentItem: ICart) => previousValue + currentItem.count, 0)

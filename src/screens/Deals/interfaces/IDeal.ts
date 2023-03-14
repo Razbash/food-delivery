@@ -1,4 +1,4 @@
-export default interface IDeal {
+interface IDeal {
     id: number,
     title: string,
     status: string,
@@ -6,3 +6,5 @@ export default interface IDeal {
     date: string,
     restaurant: string,
 }
+
+export default IDeal;

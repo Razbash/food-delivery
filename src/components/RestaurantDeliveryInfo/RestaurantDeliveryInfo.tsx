@@ -1,7 +1,8 @@
-import IRestaurantDeliveryInfo from "./interfaces/IRestaurantDeliveryInfo";
-import { ClockIcon } from "../../ui/icons";
+import { ClockIcon } from '../../ui/icons';
 
-import "./restaurantsDeliveryInfo.scss";
+import IRestaurantDeliveryInfo from './interfaces/IRestaurantDeliveryInfo';
+
+import './restaurantsDeliveryInfo.scss';
 
 const RestaurantDeliveryInfo = ({minDeliveryTime, maxDeliveryTime, minAmount}: IRestaurantDeliveryInfo) => {
     return(
@@ -16,7 +17,7 @@ const RestaurantDeliveryInfo = ({minDeliveryTime, maxDeliveryTime, minAmount}: I
                 ${minAmount} min sum
             </span>
         </div>
-    )
-}
+    );
+};
 
 export default RestaurantDeliveryInfo;

@@ -1,5 +1,7 @@
-import IUser from "../../Auth/interfaces/IUser";
+import IUser from '../../Auth/interfaces/IUser';
 
-export default interface IUserPersonalInformationProps {
+interface IUserPersonalInformationProps {
     userData: IUser
 }
+
+export default IUserPersonalInformationProps;

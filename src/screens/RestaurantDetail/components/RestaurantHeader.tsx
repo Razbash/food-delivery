@@ -1,15 +1,15 @@
 /// <reference path="../../../../ymaps.d.ts" />
 
-import RestaurantDeliveryInfo from "../../../components/RestaurantDeliveryInfo/RestaurantDeliveryInfo";
-import IRestaurant from "../../../interfaces/IRestaurant";
+import RestaurantDeliveryInfo from '../../../components/RestaurantDeliveryInfo/RestaurantDeliveryInfo';
+import IRestaurant from '../../../interfaces/IRestaurant';
 
 const RestaurantHeader = ({image, name, description, minDeliveryTime, maxDeliveryTime, minAmount, coordinates}: IRestaurant) => {
     if (coordinates) {
         ymaps.ready().then(() => {
-            new ymaps.Map("reustorant_location", {
+            new ymaps.Map('reustorant_location', {
                 center: coordinates,
                 zoom: 12,
-                controls: ['none']
+                controls: ['none'],
             });
         });
     }
@@ -35,12 +35,12 @@ const RestaurantHeader = ({image, name, description, minDeliveryTime, maxDeliver
                 <div className="reustorant-detail-page__map-wrapper">
                     <div id="reustorant_location"
                         className="reustorant-detail-page__map"
-                        style={{"width": "350px", "height": "230px"}}
+                        style={{'width': '350px', 'height': '230px'}}
                     ></div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RestaurantHeader;

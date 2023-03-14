@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
-import CategoriesListItem from "../../../components/Categories/CategoriesListItem";
-import RestaurantDeliveryInfo from "../../../components/RestaurantDeliveryInfo/RestaurantDeliveryInfo";
-import IRestaurantsListItemProps from "../interfaces/IRestaurantsListItemProps";
+import { Link } from 'react-router-dom';
+
+import CategoriesListItem from '../../../components/Categories/CategoriesListItem';
+import RestaurantDeliveryInfo from '../../../components/RestaurantDeliveryInfo/RestaurantDeliveryInfo';
+import IRestaurantsListItemProps from '../interfaces/IRestaurantsListItemProps';
 
 const RestaurantsListItem = ({categories, restaurant}:IRestaurantsListItemProps) => {
     const {id, name, minDeliveryTime, maxDeliveryTime, minAmount, featured, image, categoriesId} = restaurant;
 
     const backgroundImageStyle = {
         'backgroundImage': 'url(' + image + ')',
-    }
+    };
 
     return(
         <Link to={`/restaurant/${id}`} className="reustorants-list__item">
@@ -37,7 +38,7 @@ const RestaurantsListItem = ({categories, restaurant}:IRestaurantsListItemProps)
 
             {featured ? <span className="reustorants-list__label">Featured</span> : null}
         </Link>
-    )
-}
+    );
+};
 
 export default RestaurantsListItem;

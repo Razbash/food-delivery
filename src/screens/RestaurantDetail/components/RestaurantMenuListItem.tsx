@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
-import { PlusIcon } from "../../../ui/icons";
-import IProduct from "../../../interfaces/IProduct";
+import { Link } from 'react-router-dom';
+
+import { PlusIcon } from '../../../ui/icons';
+import IProduct from '../../../interfaces/IProduct';
 
 const RestaurantMenuListItem = ({id, name, description, price, images}: IProduct) => {
     const backgroundImageStyle = {
         'backgroundImage': 'url(' + images[0] + ')',
-    }
+    };
 
     return(
         <Link to={`/products/${id}`} className="reustorant-menu__item">
@@ -25,7 +26,7 @@ const RestaurantMenuListItem = ({id, name, description, price, images}: IProduct
                 </span>
             </div>
         </Link>
-    )
-}
+    );
+};
 
 export default RestaurantMenuListItem;

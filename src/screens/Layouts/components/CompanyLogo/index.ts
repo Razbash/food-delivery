@@ -1,7 +1,7 @@
-import CompanyLogo from "./CompanyLogo";
-import CompanyLogoColors from "./interface/CompanyLogoColors";
+import CompanyLogo from './CompanyLogo';
+import CompanyLogoColors from './interface/CompanyLogoColors';
 
 export {
     CompanyLogo,
-    CompanyLogoColors
-}
+    CompanyLogoColors,
+};

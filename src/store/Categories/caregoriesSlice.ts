@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import ICategory from '../../components/Categories/interfaces/ICategory';
 
 interface CategoriesState {
@@ -11,7 +12,7 @@ const initialState:CategoriesState = {
     loading: false,
     error: '',
     categories: [],
-}
+};
 
 export const categoriesSlice = createSlice({
     name: 'categories',
@@ -26,8 +27,8 @@ export const categoriesSlice = createSlice({
         },
         fetchError(state, action: PayloadAction<Error>) {
             state.error = action.payload.message;
-        }
-    }
-})
+        },
+    },
+});
 
 export default categoriesSlice.reducer;

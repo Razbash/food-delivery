@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { setCookie } from "../../../utils/cookie/cookie";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import Quantity from "../../../components/Quantity/Quantity";
-import TrashIcon from "../../../ui/icons/TrashIcon";
-import ICartItemProps from "../interfaces/ICartItemProps";
+import { setCookie } from '../../../utils/cookie/cookie';
+
+import Quantity from '../../../components/Quantity/Quantity';
+import TrashIcon from '../../../ui/icons/TrashIcon';
+import ICartItemProps from '../interfaces/ICartItemProps';
 
 const CartItem = (props :ICartItemProps) => {
     const {id,
@@ -42,7 +43,7 @@ const CartItem = (props :ICartItemProps) => {
 
     return(
         <div className="cart__list-item">
-            <div style={{"backgroundImage": 'url(' + image + ')'}}
+            <div style={{'backgroundImage': 'url(' + image + ')'}}
                 className="cart__item-image"
             ></div>
 
@@ -63,7 +64,7 @@ const CartItem = (props :ICartItemProps) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default CartItem;

@@ -1,6 +1,8 @@
-import IRestaurant from "../../../interfaces/IRestaurant";
+import IRestaurant from '../../../interfaces/IRestaurant';
 
-export default interface IRestaurantsListProps {
+interface IRestaurantsListProps {
     showCounter?: boolean,
     list?: IRestaurant[],
 }
+
+export default IRestaurantsListProps;

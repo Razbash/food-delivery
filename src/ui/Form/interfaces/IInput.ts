@@ -1,4 +1,4 @@
-export default interface IInput {
+interface IInput {
     label: string,
     id: string,
     placeholder: string,
@@ -9,3 +9,5 @@ export default interface IInput {
     isRequired?: boolean,
     autocomplete?: string,
 }
+
+export default IInput;

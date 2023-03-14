@@ -1,31 +1,32 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../../store/redux";
-import { fetchUser } from "../../../../store/User/userActions";
-import { CartIcon } from "../../../../ui/icons";
-import { countNumberProductsInCart } from "../../../../utils/cart/cart";
-import { getCookie } from "../../../../utils/cookie/cookie";
+import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+
+import { useAppDispatch, useAppSelector } from '../../../../store/redux';
+import { fetchUser } from '../../../../store/User/userActions';
+import { CartIcon } from '../../../../ui/icons';
+import { countNumberProductsInCart } from '../../../../utils/cart/cart';
+import { getCookie } from '../../../../utils/cookie/cookie';
 
 const Menu = () => {
     const [countProducts, setCountProducts] = useState(0);
-    const [userImage, setUserImage] = useState("../../assets/images/users/user.png");
+    const [userImage, setUserImage] = useState('../../assets/images/users/user.png');
     const [userLink, setUserLink] = useState('auth');
     const dispatch = useAppDispatch();
     const {user} = useAppSelector(state => state.user);
 
     const userMenu = [
         {
-            title: "Restaurants",
-            link: "/restaurants",
+            title: 'Restaurants',
+            link: '/restaurants',
         },
         {
-            title: "Deals",
-            link: "/deals",
+            title: 'Deals',
+            link: '/deals',
         },
         {
-            title: "My orders",
-            link: "/orders",
-        }
+            title: 'My orders',
+            link: '/orders',
+        },
     ];
 
     useEffect(() => {
@@ -58,7 +59,7 @@ const Menu = () => {
                                 {element.title}
                             </NavLink>
                         </li>
-                    )
+                    );
                 })}
             </ul>
 
@@ -80,7 +81,7 @@ const Menu = () => {
                 />
             </Link>
         </div>
-    )
-}
+    );
+};
 
 export default Menu;

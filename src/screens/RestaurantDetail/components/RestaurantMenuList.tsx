@@ -1,5 +1,5 @@
-import IRestaurantMenuListProps from "../interface/IRestaurantMenuListProps";
-import { RestaurantMenuListSkeleton, RestaurantMenuListItem } from "../index";
+import IRestaurantMenuListProps from '../interface/IRestaurantMenuListProps';
+import { RestaurantMenuListSkeleton, RestaurantMenuListItem } from '../index';
 
 const RestaurantMenuList = ({products, loading}: IRestaurantMenuListProps) => {
     return(
@@ -13,7 +13,7 @@ const RestaurantMenuList = ({products, loading}: IRestaurantMenuListProps) => {
                 }): null}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RestaurantMenuList;

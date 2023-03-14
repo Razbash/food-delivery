@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Notification, NotificationTypes, startNotification } from "../../../components/Notification";
-import { useAppDispatch, useAppSelector } from "../../../store/redux";
-import { fetchUser } from "../../../store/User/userActions";
-import { Checkbox, Input } from "../../../ui/Form";
-import { setCookie } from "../../../utils/cookie/cookie";
-import { CompanyLogo, CompanyLogoColors } from "../../Layouts/components/CompanyLogo";
-import EyeIcon from "../../../ui/icons/EyeIcon";
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { Notification, NotificationTypes, startNotification } from '../../../components/Notification';
+import { useAppDispatch, useAppSelector } from '../../../store/redux';
+import { fetchUser } from '../../../store/User/userActions';
+import { Checkbox, Input } from '../../../ui/Form';
+import { setCookie } from '../../../utils/cookie/cookie';
+import { CompanyLogo, CompanyLogoColors } from '../../Layouts/components/CompanyLogo';
+import EyeIcon from '../../../ui/icons/EyeIcon';
 
 const AuthForm = () => {
-    const [loginInput, setLoginInput] = useState<string>("");
-    const [passwordInput, setPasswordInput] = useState<string>("");
+    const [loginInput, setLoginInput] = useState<string>('');
+    const [passwordInput, setPasswordInput] = useState<string>('');
     const [keppLogin, setKeepLogin] = useState<boolean>(false);
 
     const dispatch = useAppDispatch();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const {error, user} = useAppSelector(state => state.user);
 
     const onAuth = async(event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         await dispatch(fetchUser(loginInput));
-    }
+    };
 
     useEffect(() => {
         const yearInMilliseconds = new Date(Date.now() + (86400e3 * 365)).toUTCString();
@@ -32,14 +33,14 @@ const AuthForm = () => {
 
             dispatch(startNotification({
                 type: NotificationTypes.sucsses,
-                text: `Welcome!`
+                text: 'Welcome!',
             }));
 
             navigate('/');
         } else if (user !== null) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `The username or password is entered incorrectly, or such an account does not exist.`
+                text: 'The username or password is entered incorrectly, or such an account does not exist.',
             }));
         }
     }, [user]);
@@ -48,7 +49,7 @@ const AuthForm = () => {
         if (error) {
             dispatch(startNotification({
                 type: NotificationTypes.error,
-                text: `${error}`
+                text: `${error}`,
             }));
         }
     }, [error]);
@@ -103,7 +104,7 @@ const AuthForm = () => {
 
             <Notification/>
         </div>
-    )
-}
+    );
+};
 
 export default AuthForm;

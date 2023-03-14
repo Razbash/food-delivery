@@ -1,6 +1,8 @@
-import IProduct from "../../../interfaces/IProduct";
+import IProduct from '../../../interfaces/IProduct';
 
-export default interface IRestaurantMenuListProps {
+interface IRestaurantMenuListProps {
     products: IProduct[],
     loading: boolean,
 }
+
+export default IRestaurantMenuListProps;
