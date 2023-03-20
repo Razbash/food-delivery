@@ -1,6 +1,8 @@
+import Plug from '../../../../ui/Plug/Plug';
+
 const UserAddresses = () => {
     return(
-        <div className=""></div>
+        <Plug/>
     );
 };
 

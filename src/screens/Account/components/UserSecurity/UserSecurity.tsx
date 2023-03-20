@@ -1,6 +1,8 @@
+import Plug from '../../../../ui/Plug/Plug';
+
 const UserSecurity = () => {
     return(
-        <div className=""></div>
+        <Plug/>
     );
 };
 

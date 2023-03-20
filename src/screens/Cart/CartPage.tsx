@@ -6,7 +6,6 @@ import { fetchProducts } from '../../store/Products/productsActions';
 import { countNumberProductsInCart, removeFromCart } from '../../utils/cart/cart';
 
 import ICart from '../../interfaces/ICart';
-
 import IProduct from '../../interfaces/IProduct';
 
 import LayoutPage from '../Layouts/LayoutPage';
