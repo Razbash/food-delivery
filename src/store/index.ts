@@ -1,37 +1,35 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import dealsReducer from './slices/dealsSlice';
-import categoriesReducer from './slices/caregoriesSlice';
-import reustorantsReducer from './slices/reustorantsSlice';
-import reustorantReducer from './slices/reustorantSlice';
-import ordersReducer from './slices/ordersSlice';
-import productReducer from './slices/productSlice';
-import productsReducer from './slices/productsSlice';
-import usersReducer from './slices/usersSlice';
-import userReducer from './slices/userSlice';
-import promotionsReducer from './slices/promotionsSlice';
-import notificationReducer from './slices/notificationSlice';
-import shippingAddressesReducer from "./slices/shippingAddressesSlice";
-import orderReducer from './slices/orderSlice';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import restaurantsReducer   from '../screens/Reustorants/store/restaurantsSlice';
+
+import notificationReducer  from '../store/Notification/notificationSlice';
+import restaurantReducer    from '../screens/RestaurantDetail/store/restaurantSlice';
+
+import promotionsReducer    from '../screens/Home/store/promotionsSlice';
+import productReducer       from '../screens/ProductDetail/store/productSlice';
+import dealsReducer         from '../screens/Deals/store/dealsSlice';
+import userReducer          from '../store/User/userSlice';
+
+import productsReducer      from './Products/productsSlice';
+import filtersReducer       from './Filters/filtersSlice';
+import categoriesReducer    from './Categories/caregoriesSlice';
 
 const rootReducer = combineReducers({
-    deals: dealsReducer,
-    categories: categoriesReducer,
-    reustorants: reustorantsReducer,
-    reustorant: reustorantReducer,
-    orders: ordersReducer,
-    product: productReducer,
-    products: productsReducer,
-    users: usersReducer,
-    user: userReducer,
-    promotions: promotionsReducer,
-    notification: notificationReducer,
-    shippingAddresses: shippingAddressesReducer,
-    order: orderReducer,
+    restaurants:     restaurantsReducer,
+    categories:      categoriesReducer,
+    selectedFilters: filtersReducer,
+    notification:    notificationReducer,
+    restaurant:      restaurantReducer,
+    products:        productsReducer,
+    promotions:      promotionsReducer,
+    product:         productReducer,
+    deals:           dealsReducer,
+    user:            userReducer,
 });
 
 export function setupStore() {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
     });
 }
 

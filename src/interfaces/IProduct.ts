@@ -3,11 +3,10 @@ interface IProduct {
     name: string,
     description: string,
     price: number,
-    image: string,
-    ingredients: string,
-    nutritionalValue: string,
-    reustorant: string,
-    images: []
+    restaurantId: number,
+    images: string[],
+    ingredients?: string,
+    nutritionalValue?: string,
 }
 
 export default IProduct;
