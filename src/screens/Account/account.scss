@@ -104,3 +104,23 @@
         }
     }
 }
+
+@media(max-width: $tablet-width) {
+    .user-profile {
+        grid-template-columns: 1fr;
+
+        &__tabs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+    }
+}
+
+@media(max-width: $small-mobile-width) {
+    .user-profile {
+        &__tabs {
+            grid-template-columns: 1fr;
+        }
+    }
+}

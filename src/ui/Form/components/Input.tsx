@@ -1,7 +1,17 @@
 import IInput from '../interfaces/IInput';
 import '../form.scss';
 
-const Input = ({label, id, value, placeholder, onChange, icon, isRequired = false, type = 'text', autocomplete = 'off'}: IInput) => {
+const Input = ({
+    label,
+    id,
+    value,
+    placeholder,
+    onChange,
+    icon,
+    isRequired = false,
+    type = 'text',
+    autocomplete = 'off',
+}: IInput) => {
     const onSetValue = (value: string) => {
         onChange(value);
     };

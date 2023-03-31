@@ -1,8 +1,9 @@
-import Plug from '../../../../ui/Plug/Plug';
+import { getCookie } from '../../../../utils/cookie/cookie';
+import AddUserAddresses from '../AddUserAddresses/AddUserAddresses';
 
 const UserAddresses = () => {
     return(
-        <Plug/>
+        <AddUserAddresses userId={getCookie('userId')}/>
     );
 };
 
