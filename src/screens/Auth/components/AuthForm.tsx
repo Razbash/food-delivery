@@ -26,7 +26,7 @@ const AuthForm = () => {
     useEffect(() => {
         const yearInMilliseconds = new Date(Date.now() + (86400e3 * 365)).toUTCString();
 
-        if (user.password === passwordInput) {
+        if (user && user.password === passwordInput) {
             keppLogin
                 ? setCookie('userId', user.id, yearInMilliseconds)
                 : setCookie('userId', user.id);

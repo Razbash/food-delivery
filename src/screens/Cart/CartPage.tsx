@@ -36,6 +36,10 @@ const CartPage = () => {
     useEffect(() => {
         const userCartList: IProductInCart[] = [];
 
+        if (!products || !userCart) {
+            return;
+        }
+
         products.forEach((product:IProduct) => {
             userCart.forEach((userCartItem:ICart, index: number) => {
                 if (product.id === userCartItem.productId) {
@@ -59,7 +63,7 @@ const CartPage = () => {
 
     return(
         <LayoutPage>
-            {userCart.length ?
+            {userCart && userCart.length ?
                 <div className="cart">
                     <BlockTitle text="My cart"/>
 
