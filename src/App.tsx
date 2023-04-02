@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { setupStore } from './store';
 import SuspenseSpinner from './ui/SuspenseSpinner/SuspenseSpinner';
 
+import './css/resetStyles.scss';
+
 const HomePage              = lazy(() => import('./screens/Home/HomePage'));
 const RestaurantDetailPage  = lazy(() => import('./screens/RestaurantDetail/RestaurantDetailPage'));
 const ProductDetailPage     = lazy(() => import('./screens/ProductDetail/ProductDetailPage'));
