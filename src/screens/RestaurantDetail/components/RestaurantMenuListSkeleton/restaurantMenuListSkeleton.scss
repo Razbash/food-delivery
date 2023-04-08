@@ -1,0 +1,11 @@
+@import '../../../../css/index.scss';
+
+.restaurant-menu-list-item-skeleton {
+    border-radius: $border-radius;
+    padding: 16px;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    background: $lazy-loader-color;
+    animation: .8s infinite loading-blink;
+    height: 350px;
+}

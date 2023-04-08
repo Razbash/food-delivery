@@ -1,7 +1,7 @@
 import { CompanyLogo, CompanyLogoColors } from '../CompanyLogo';
 
-import FooterMenu from './FooterMenu';
-import SocialLinks from './SocialLinks';
+import FooterMenu from './components/FooterMenu/FooterMenu';
+import SocialLinks from './components/SocialLinks/SocialLinks';
 
 import './footer.scss';
 

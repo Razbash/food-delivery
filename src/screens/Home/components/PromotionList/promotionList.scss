@@ -1,0 +1,13 @@
+@import '../../../../css/index.scss';
+
+.promotion-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+@media (max-width: $mobile-width) {
+    .promotion-list {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,100 @@
+@import '../../../../../../css/index.scss';
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &__text {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+        display: flex;
+    }
+
+    &__text-item {
+        cursor: pointer;
+        margin-inline-end: 28px;
+        transition: color 0.2s ease-in-out;
+        color: $neutral-black;
+
+        a {
+            text-decoration: none;
+        }
+
+        &:last-of-type {
+            &::before {
+                content: "|";
+                margin-inline-end: 28px;
+                color: $neutral-gray-lightest;
+            }
+        }
+
+        &:hover {
+            color: $primary-hover;
+        }
+
+        &:active {
+            color: $primary-dark;
+        }
+    }
+
+    &__cart {
+        position: relative;
+        width: max-content;
+    }
+
+    &__cart-icon {
+        cursor: pointer;
+        background: $primary-light;
+        border-radius: $border-radius;
+        transition: background 0.2s ease-in-out;
+        display: flex;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background: $primary-thirty;
+        }
+    }
+
+    &__cart-counter {
+        @extend %small-tertiary;
+        position: absolute;
+        right: -4px;
+        top: -4px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $primary-default;
+        color: $neutral-white;
+        border-radius: 8px;
+    }
+
+    &__user {
+        width: 48px;
+        height: 48px;
+    }
+
+    &__user-image {
+        cursor: pointer;
+        border-radius: $border-radius;
+        border: 2px solid $neutral-gray-lightest;
+        box-sizing: border-box;
+        transition: border-color 0.2s ease-in-out;
+
+        &:hover {
+            border-color: $primary-thirty;
+        }
+    }
+
+    .cart-icon,
+    .bell-icon {
+        width: 20px;
+        height: 20px;
+        fill: $primary-default;
+    }
+}

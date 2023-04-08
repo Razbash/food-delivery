@@ -8,8 +8,8 @@ import LayoutPage from '../Layouts/LayoutPage';
 import BlockTitle from '../../components/BlockTitle/BlockTitle';
 
 import { fetchDeals } from './store/dealsActions';
-import DealsListSkeleton from './components/DealsListSkeleton';
-import DealsListItem from './components/DealsListItem';
+import DealsListSkeleton from './components/DealsListSkeleton/DealsListSkeleton';
+import DealsListItem from './components/DealsListItem/DealsListItem';
 
 import './deals.scss';
 

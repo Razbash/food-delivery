@@ -1,0 +1,8 @@
+@import '../../../../css/index.scss';
+
+.deals-list-item-skeleton {
+    box-sizing: border-box;
+    height: 273px;
+    background: #f6f6f6;
+    animation: .8s infinite loading-blink;
+}

@@ -1,0 +1,8 @@
+@import '../../../../css/index.scss';
+
+.reustorants-list-skeleton-item {
+    background: $lazy-loader-color;
+    height: 264px;
+    border-radius: 16px;
+    animation: .8s infinite loading-blink;
+}

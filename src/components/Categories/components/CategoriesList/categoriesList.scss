@@ -1,0 +1,12 @@
+@import '../../../../css/index.scss';
+
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 16px;
+    margin-bottom: 40px;
+
+    @media (max-width: $small-mobile-width) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

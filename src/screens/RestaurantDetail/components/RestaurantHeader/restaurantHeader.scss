@@ -1,0 +1,64 @@
+@import '../../../../css/index.scss';
+
+.restaurant-header {
+    background: $neutral-background;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 24px 0;
+    }
+
+    &__image-and-info {
+        display: flex;
+    }
+
+    &__image {
+        border-radius: $border-radius;
+        margin-right: 30px;
+        width: 160px;
+        height: 160px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    &__name {
+        @extend %h2;
+        color: $neutral-black;
+        margin-bottom: 4px;
+    }
+
+    &__description {
+        @extend %body-primary;
+        color: $neutral-black;
+        margin-right: 120px;
+    }
+
+    &__map {
+        overflow: hidden;
+    }
+
+    ymaps {
+        border-radius: 12px;
+    }
+
+    @media (max-width: $wide-tablet-width) {
+        &__description {
+            margin-right: 0;
+        }
+
+        &__map-wrapper {
+            margin-top: 32px;
+        }
+
+        &__map {
+            width: calc(100vw - 80px) !important;
+        }
+    }
+}

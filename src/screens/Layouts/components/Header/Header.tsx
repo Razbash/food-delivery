@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { CrossIcon, HamburgerIcon } from '../../../../ui/icons';
 import { CompanyLogo, CompanyLogoColors } from '../CompanyLogo';
 
-import Menu from './Menu';
-import Search from './Search';
+import Menu from './components/Menu/Menu';
+import Search from './components/Search/Search';
 
 import './header.scss';
 

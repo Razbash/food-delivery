@@ -1,0 +1,20 @@
+@import '../../../../css/index.scss';
+
+.cart-is-empty {
+    margin-bottom: 50px;
+
+    &__title {
+        @extend %h3;
+        color: $neutral-black;
+    }
+
+    &__text {
+        @extend %body-primary;
+    }
+
+    &__link {
+        @extend %button-primary;
+        text-decoration: none;
+        width: max-content;
+    }
+}

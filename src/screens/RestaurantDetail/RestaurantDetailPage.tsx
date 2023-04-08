@@ -10,7 +10,7 @@ import { Notification, NotificationTypes, startNotification } from '../../compon
 import LayoutPage from '../Layouts/LayoutPage';
 
 import { fetchRestaurant } from './store/restaurantActions';
-import RestaurantMenuList from './components/RestaurantMenuList';
+import RestaurantMenuList from './components/RestaurantMenuList/RestaurantMenuList';
 
 import {RestaurantHeader, RestaurantHeaderSkeleton} from './index';
 

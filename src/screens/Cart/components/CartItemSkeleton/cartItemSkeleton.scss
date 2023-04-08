@@ -1,0 +1,13 @@
+@import '../../../../css/index.scss';
+
+.cart-item-loading {
+    height: 76px;
+    border-radius: 12px;
+    background: #f6f6f6;
+    animation: .8s infinite loading-blink;
+
+    &:not(&:last-of-type) {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,99 @@
+@import '../../../../css/index.scss';
+
+.cart-item {
+    display: flex;
+    align-items: center;
+
+    &:not(&:last-of-type) {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid $neutral-gray-lightest;
+    }
+
+    &__name {
+        @extend %subtitle-primary;
+        color: $neutral-black;
+        margin-bottom: 4px;
+        text-decoration: none;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+            opacity: .6;
+        }
+    }
+
+    &__image {
+        border-radius: 12px;
+        margin-right: 12px;
+        width: 76px;
+        height: 76px;
+        flex-shrink: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__product-info {
+        margin-right: auto;
+    }
+
+    &__description {
+        @extend %body-primary;
+        color: $neutral-gray-dark;
+        margin: 0;
+        max-width: 320px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        box-orient: vertical;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+    }
+
+    &__price {
+        @extend %h6;
+        color: $neutral-black;
+        margin-left: auto;
+    }
+
+    &__remove {
+        display: flex;
+        margin-left: 24px;
+        cursor: pointer;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        fill: $neutral-gray-light;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .cart-item {
+        flex-wrap: wrap;
+
+        &__product-info {
+            margin-right: 0;
+            width: calc(100% - 88px); //100% - (image width + margin)
+        }
+
+        &__controls {
+            margin-top: 12px;
+            width: 100%;
+        }
+    }
+}

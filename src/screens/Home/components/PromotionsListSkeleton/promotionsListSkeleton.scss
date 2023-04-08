@@ -1,0 +1,17 @@
+@import '../../../../css/index.scss';
+
+.promotion-list-item-skeleton {
+    height: 196px;
+    width: 100%;
+    background: $lazy-loader-color;
+    animation: .8s infinite loading-blink;
+    border-radius: $border-radius;
+
+    & + & {
+        margin-left: 20px;
+    }
+
+    @media (max-width: $tablet-width) {
+        height: 330px;
+    }
+}

@@ -5,7 +5,7 @@ import BlockTitle from '../../components/BlockTitle/BlockTitle';
 import IRestaurant from '../../interfaces/IRestaurant';
 import { useAppDispatch, useAppSelector } from '../../store/redux';
 import LayoutPage from '../Layouts/LayoutPage';
-import ReustorantsList from '../Reustorants/components/RestaurantsList';
+import ReustorantsList from '../Reustorants/components/RestaurantsList/RestaurantsList';
 import { fetchRestaurants } from '../Reustorants/store/restaurantsActions';
 
 import SearchNonResult from './components/SerachNonResult';

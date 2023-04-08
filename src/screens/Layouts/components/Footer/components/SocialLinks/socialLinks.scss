@@ -1,0 +1,27 @@
+@import '../../../../../../css/index.scss';
+
+.social-network {
+    display: flex;
+    margin-bottom: 40px;
+
+    &__item {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        fill: $neutral-black;
+        padding: 4px;
+        background: $neutral-gray;
+        box-sizing: border-box;
+        border-radius: 50%;
+        display: flex;
+        transition: background 0.2s ease-in-out;
+
+        & + & {
+            margin-left: 16px;
+        }
+
+        &:hover {
+            background: $primary-light;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import '../../../../css/index.scss';
+
+.registration-form {
+    &__fields,
+    &__buttons {
+        margin-bottom: 12px;
+        max-width: 350px;
+    }
+
+    .button {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    &__back-button {
+        @extend %button-primary;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: $neutral-gray;
+        text-decoration: none;
+    }
+}

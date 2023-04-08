@@ -1,6 +1,6 @@
 import { CompanyLogo, CompanyLogoColors } from '../Layouts/components/CompanyLogo';
 
-import RegistrationForm from './components/RegistrationForm';
+import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import './registration.scss';
 
 const RegistrationPage = () => {

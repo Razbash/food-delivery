@@ -5,9 +5,10 @@ import { Notification, NotificationTypes, startNotification } from '../../../com
 import { useAppDispatch, useAppSelector } from '../../../store/redux';
 import { fetchUser } from '../../../store/User/userActions';
 import { Checkbox, Input } from '../../../ui/Form';
+import { EyeIcon } from '../../../ui/icons';
 import { setCookie } from '../../../utils/cookie/cookie';
 import { CompanyLogo, CompanyLogoColors } from '../../Layouts/components/CompanyLogo';
-import EyeIcon from '../../../ui/icons/EyeIcon';
+import './authForm.scss';
 
 const AuthForm = () => {
     const [loginInput, setLoginInput] = useState<string>('');

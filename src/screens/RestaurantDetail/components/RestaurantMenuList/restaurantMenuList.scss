@@ -1,0 +1,31 @@
+@import '../../../../css/index.scss';
+
+.reustorant-menu {
+    &__label {
+        @extend %h5;
+        color: $neutral-black;
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .reustorant-menu {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

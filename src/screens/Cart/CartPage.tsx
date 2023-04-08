@@ -12,9 +12,9 @@ import LayoutPage from '../Layouts/LayoutPage';
 import BlockTitle from '../../components/BlockTitle/BlockTitle';
 
 import IProductInCart from './interfaces/IProductInCart';
-import CartItemsSkeleton from './components/CartItemsSkeleton';
-import CartItem from './components/CartItem';
-import CartIsEmpty from './components/CartIsEmpty';
+import CartItemsSkeleton from './components/CartItemSkeleton/CartItemsSkeleton';
+import CartItem from './components/CartItem/CartItem';
+import CartIsEmpty from './components/CartIsEmpty/CartIsEmpty';
 
 import './cart.scss';
 
